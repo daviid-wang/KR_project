@@ -3,27 +3,51 @@ David Wang 23064035
 Hannah Doret 22846377
 """
 
-from rdflib import *
+from rdflib import Graph, Literal, RDF, URIRef, RDFS
 from rdflib.namespace import *
-from rdflib.serializer import Serializer
-from owlready2 import *
+# from owlready2 import *
 from pyshacl import validate
 
 import json
 
 with open('units.json', 'r') as units:
     units_data = json.load(units)
-    # print(units_data)
 
-with open('majors.json', 'r') as units:
-    units_data = json.load(units)
-    # print(units_data)
+units.close()
+with open('majors.json', 'r') as majors:
+    majors_data = json.load(majors)
 
-print(units_data['AGRI5403']["code"])
+majors.close()
 
 g = Graph()
+h = Namespace("https://university.org")
+
+g.bind("handbook", h)
+
+#create classes
+unit = h.unit
+school = h.school
+board_of_examiners = h.board_of_examiners
+delivery_mode = h.delivery_mode
+level = h.level
+credit = h.credit
+assessment = h.assessment
+prerequisite_unit_compulsory = h.prerequisite_unit_compulsory
+# prerequisite_unit_choice = h.prerequisite_unit_choice
+# prerequisite_points = h.prerequisite_points
+
+
+
+
+g.add((unit, RDF.type, RDFS.Class))
+g.add((unit, RDFS.label, Literal("Unit")))
+
+for unit_name in units_data:
+    unit_instance = h[unit_name]
+    g.add((unit_instance, RDF.type, unit))
+    
 
 
 # .parse(filename= './units.json', format='n3')
 
-# print(handbook.serialize(format='json-ld', indent=4))
+print(g.serialize(format='ttl', indent=4))
