@@ -1,3 +1,8 @@
+"""
+David Wang 23064035
+Hannah Doret 22846377
+"""
+
 from rdflib import *
 from rdflib.namespace import *
 from rdflib.serializer import Serializer
@@ -6,6 +11,13 @@ from pyshacl import validate
 
 import json
 
-handbook = Graph().parse(data='./units.json', format='n3')
+with open('units.json', 'r') as units:
+    units_data = json.load(units)
+    # print(units_data)
 
-print(handbook.serialize(format='json-ld', indent=4))
+print(units_data['AGRI5403']["code"])
+
+handbook = Graph()
+# .parse(filename= './units.json', format='n3')
+
+# print(handbook.serialize(format='json-ld', indent=4))
