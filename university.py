@@ -15,9 +15,15 @@ with open('units.json', 'r') as units:
     units_data = json.load(units)
     # print(units_data)
 
+with open('majors.json', 'r') as units:
+    units_data = json.load(units)
+    # print(units_data)
+
 print(units_data['AGRI5403']["code"])
 
-handbook = Graph()
+g = Graph()
+
+
 # .parse(filename= './units.json', format='n3')
 
 # print(handbook.serialize(format='json-ld', indent=4))
