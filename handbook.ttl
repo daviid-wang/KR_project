@@ -1,0 +1,1332 @@
+@prefix handbook: <https://university.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+handbook:board_of_examiners a rdfs:Class ;
+    rdfs:label "Board of Examiners" .
+
+handbook:credit a rdfs:Class ;
+    rdfs:label "Credit" .
+
+handbook:delivery_mode a rdfs:Class ;
+    rdfs:label "Delivery Mode" .
+
+handbook:level a rdfs:Class ;
+    rdfs:label "Level" .
+
+handbook:school a rdfs:Class ;
+    rdfs:label "School" .
+
+handbook:unit a rdfs:Class ;
+    rdfs:label "Unit" .
+
+<https://university.org/
+-_data_analysis_practical_report
+-field/lab_practical_exercises_and_vignette> a handbook:assessment ;
+    rdfs:label """
+- data analysis practical report
+-field/lab practical exercises and vignette""" .
+
+<https://university.org/,_OSCE_oral_medicine_and_oral_pathology_> a handbook:assessment ;
+    rdfs:label ", OSCE oral medicine and oral pathology " .
+
+<https://university.org/,_and_professional_behaviour_assessment_components> a handbook:assessment ;
+    rdfs:label ", and professional behaviour assessment components" .
+
+<https://university.org/,_written_assessment_-_Oral_Surgery_and_Special_Needs_Dentistry_> a handbook:assessment ;
+    rdfs:label ", written assessment - Oral Surgery and Special Needs Dentistry " .
+
+<https://university.org/:_Masonry_and_Timber_case_studies_> a handbook:assessment ;
+    rdfs:label ": Masonry and Timber case studies " .
+
+<https://university.org/:_steel_and_concrete_construction_case_study_and_> a handbook:assessment ;
+    rdfs:label ": steel and concrete construction case study and " .
+
+handbook:AACE1000 a handbook:unit ;
+    rdfs:label "AACE1000" ;
+    handbook:has_board_of_examiners handbook: ;
+    handbook:has_credit handbook:0 ;
+    handbook:has_description <https://university.org/Academic_Conduct_Essentials_(ACE)_is_a_wholly_online_self-paced_unit_which_introduces_students_to_the_key_principles_and_behaviours_of_academic_integrity_and_helps_students_incorporate_best_practices_in_their_work._The_objective_of_the_unit_is_to_ensure_that_students_understand_their_role_and_responsibilities_in_relation_to_academic_conduct_at_University.> ;
+    handbook:has_level handbook:1 ;
+    handbook:has_school handbook:Library ;
+    handbook:has_title handbook:Academic_Conduct_Essentials_\(ACE\) ;
+    handbook:has_unit_delivery_mode handbook:Online .
+
+handbook:AACE4000 a handbook:unit ;
+    rdfs:label "AACE4000" ;
+    handbook:has_board_of_examiners handbook: ;
+    handbook:has_credit handbook:0 ;
+    handbook:has_description <https://university.org/Academic_Conduct_Essentials_(ACE)_is_a_wholly_online_self-paced_unit_which_introduces_students_to_the_key_principles_and_behaviours_of_academic_integrity_and_helps_students_incorporate_best_practices_in_their_work._The_objective_of_the_unit_is_to_ensure_that_students_understand_their_role_and_responsibilities_in_relation_to_academic_conduct_at_University.> ;
+    handbook:has_level handbook:4 ;
+    handbook:has_school handbook:Library ;
+    handbook:has_title handbook:Academic_Conduct_Essentials_\(ACE\) ;
+    handbook:has_unit_delivery_mode handbook:Online .
+
+handbook:ACCT1100 a handbook:unit ;
+    rdfs:label "ACCT1100" ;
+    handbook:has_board_of_examiners handbook:08_-_Management_and_Commerce ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/The_unit_focuses_on_the_nature_and_scope_of_business_reporting_and_the_need_for_financial_and_non-financial_information_for_business_decision-making._It_provides_students_with_fundamental_financial_management_knowledge_in_the_contemporary_business_environment._The_unit_commences_with_an_introduction_to_the_use_of_business_reports_and_the_role_of_accounting_in_decision_making_for_various_users._Financial_reports_are_then_discussed,_with_a_focus_on_the_preparation_and_analysis_of_financial_statements_from_the_perspectives_of_business_report_users_(stakeholders)._The_unit_also_includes_an_introduction_to_the_basic_financial_decision_tools,_the_use_of_past_and_future-oriented_information,_capital_budgeting_techniques_and_the_application_of_cost-volume-profit_analysis.Limitations_of_financial_data_will_also_be_discussed_in_the_unit.> ;
+    handbook:has_level handbook:1 ;
+    handbook:has_school handbook:UWA_Business_School ;
+    handbook:has_title handbook:Business_Reporting_and_Analysis ;
+    handbook:has_unit_delivery_mode handbook:Both .
+
+handbook:ACCT1101 a handbook:unit ;
+    rdfs:label "ACCT1101" ;
+    handbook:has_board_of_examiners handbook:08_-_Management_and_Commerce ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_provides_an_introduction_to_financial_reporting_as_well_as_a_foundation_for_those_who_may_later_wish_to_specialise_in_accounting._No_prior_knowledge_of_the_subject_is_required._Topics_include_the_core_concepts_and_practices_underlying_the_preparation_of_financial_statements,_financial_statement_analysis_and_the_factors_in_the_business_environment_that_influence_the_demand_and_supply_of_accounting_information._The_understanding_of_the_business_environment,_measurement_concepts_and_analytical_skills_gained_through_this_unit_are_relevant_to_both_accounting_and_non-accounting_majors.> ;
+    handbook:has_level handbook:1 ;
+    handbook:has_school handbook:UWA_Business_School ;
+    handbook:has_title handbook:Financial_Accounting ;
+    handbook:has_unit_delivery_mode handbook:Both .
+
+handbook:ACCT2112 a handbook:unit ;
+    rdfs:label "ACCT2112" ;
+    handbook:has_board_of_examiners handbook:08_-_Management_and_Commerce ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_provides_an_introduction_to_the_role_of_cost_accounting_in_organisations._It_focuses_on_the_fundamental_tools_and_approaches_used_for_classifying_and_assigning_the_various_types_of_costs_incurred_in_an_organisation._Tools_for_planning_and_control_(including_master_budget,_flexible_budgets_and_variances),_and_cost_information_for_decisions_(including_cost_behaviour,_decision_making_and_relevant_information)_are_also_studied.> ;
+    handbook:has_level handbook:2 ;
+    handbook:has_school handbook:UWA_Business_School ;
+    handbook:has_title handbook:Management_Accounting ;
+    handbook:has_unit_delivery_mode handbook:Both .
+
+handbook:ACCT2201 a handbook:unit ;
+    rdfs:label "ACCT2201" ;
+    handbook:has_board_of_examiners handbook:08_-_Management_and_Commerce ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_is_an_intermediate_unit_in_financial_accounting_with_a_primary_focus_on_accounting_for_companies._Current_Australian_practice_is_examined_and_integrated_with_broader_theoretical_perspectives,_seeking_to_provide_the_student_with_a_comprehensive_and_up_to_date_understanding_of_the_key_relevant_issues_in_the_current_corporate_accounting_environment.> ;
+    handbook:has_level handbook:2 ;
+    handbook:has_school handbook:UWA_Business_School ;
+    handbook:has_title handbook:Corporate_Accounting ;
+    handbook:has_unit_delivery_mode handbook:Both .
+
+handbook:ACCT2242 a handbook:unit ;
+    rdfs:label "ACCT2242" ;
+    handbook:has_board_of_examiners handbook:08_-_Management_and_Commerce ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/ACCT2242_Accounting_Information_System_focuses_on_the_importance_of_generating_accounting_data_that_is_valid,_complete,_and_accurate._Good_data_enables_good_business_decision-making._This_unit_further_includes_an_introduction_to_data_analytics_and_data_visualization_to_support_the_development_of_digital_communication_skills_in_graduate_students_and_to_emphasise_the_importance_of_informed_decision-making._Students_will_develop_an_understanding_of_how_data_is_generated_and_stored,_the_importance_of_internal_controls_in_maintaining_the_integrity_of_data,_the_importance_of_data_ethics,_and_emerging_technologies_impacting_the_accounting_function._Incorporating_an_ERP-system,_the_unit_enables_students_to_experience_the_application_of_accounting_information_systems.__Incorporating_data_visualisation,_the_unit_allows_students_to_see_the_link_between_raw_accounting_data_and_the_information_included_in_financial_reports.> ;
+    handbook:has_level handbook:2 ;
+    handbook:has_school handbook:UWA_Business_School ;
+    handbook:has_title handbook:Accounting_Information_Systems ;
+    handbook:has_unit_delivery_mode handbook:Both .
+
+handbook:ACCT2331 a handbook:unit ;
+    rdfs:label "ACCT2331" ;
+    handbook:has_board_of_examiners handbook:09_-_Society_and_Culture ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_provides_an_introduction_to_the_law_and_practice_of_income_taxation_in_Australia._It_focuses_on_the_principles_governing_the_assessment_of_income_and_deductibility_of_expenditure,_the_treatment_of_capital_gains_and_losses,_the_key_provisions_affecting_individuals,_partnerships,_companies_and_trusts,_and_aspects_of_compliance_and_the_appeals_process._Core_provisions_of_the_Income_Tax_Assessment_Act_1936_and_the_Income_Tax_Assessment_Act_1997_are_examined._Kindred_legislation_such_as_the_Fringe_Benefits_Tax_Assessment_Act_1986_and_the_Taxation_Administration_Act_1953_is_also_considered.> ;
+    handbook:has_level handbook:2 ;
+    handbook:has_school handbook:UWA_Business_School ;
+    handbook:has_title handbook:Taxation ;
+    handbook:has_unit_delivery_mode handbook:Both .
+
+handbook:ACCT3203 a handbook:unit ;
+    rdfs:label "ACCT3203" ;
+    handbook:has_board_of_examiners handbook:08_-_Management_and_Commerce ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_focuses_on_the_strategic_aspects_of_management_planning_and_control_for_profit_seeking_firms_and_examines_the_contribution_management_accounting_makes_in_setting_and_maintaining_organisational_direction._Topics_include_the_development_of_performance_measurement_and_evaluation_systems_within_decentralised_firms;_the_use_of_financial_and_non-financial_performance_measures_for_evaluating_business_unit_performance;_pricing_intra-organisational_exchanges;_the_cost_allocation_problem;_and_contemporary_topics_such_as_strategic_cost_management,_customer_profitability_analysis_and_investment_in_new_technology.> ;
+    handbook:has_level handbook:3 ;
+    handbook:has_school handbook:UWA_Business_School ;
+    handbook:has_title handbook:Contemporary_Managerial_Accounting ;
+    handbook:has_unit_delivery_mode handbook:Both .
+
+handbook:ACCT3206 a handbook:unit ;
+    rdfs:label "ACCT3206" ;
+    handbook:has_board_of_examiners handbook:08_-_Management_and_Commerce ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_provides_students_with_an_appreciation_for_the_different_types_of_systems_to_evaluate_and_reward_employees_and_business_units._The_focus_is_on_the_qualities_that_performance_measures_need_to_be_included_in_bonus_plans,_for_promotion_decisions,_or_in_interorganisational_contracts._The_unit_is_grounded_in_recent_developments_in_economics_and_the_behavioural_sciences_which_have_extensively_studied_the_appropriateness_of_performance_measures_and_evaluation_practices_to_stimulate_creativity,_group_collaboration,_and_strategic_alignment._Students_gain_insights_in_these_research_findings_through_interactive_discussions_in_class.> ;
+    handbook:has_level handbook:3 ;
+    handbook:has_school handbook:UWA_Business_School ;
+    handbook:has_title handbook:Performance_Measurement_and_Evaluation ;
+    handbook:has_unit_delivery_mode handbook: .
+
+handbook:ACCT3302 a handbook:unit ;
+    rdfs:label "ACCT3302" ;
+    handbook:has_board_of_examiners handbook:08_-_Management_and_Commerce ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_focuses_on_the_fundamental_analysis_of_four_financial_statements:_the_income_statement;_the_balance_sheet;_statement_of_change_in_equity;_and_the_cash_flow_statement._The_financial_analysis_primarily_involves_the_use_of_ratios_to_analyse_a_firm's_performance_against_appropriate_benchmarks._The_prospective_analysis_involves_the_development_of_forecast_financial_statement_information_which_can_then_be_used_to_estimate_a_firm's_value.> ;
+    handbook:has_level handbook:3 ;
+    handbook:has_school handbook:UWA_Business_School ;
+    handbook:has_title handbook:Financial_Statement_Analysis ;
+    handbook:has_unit_delivery_mode handbook:Both .
+
+handbook:ACCT3321 a handbook:unit ;
+    rdfs:label "ACCT3321" ;
+    handbook:has_board_of_examiners handbook:08_-_Management_and_Commerce ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_is_an_advanced_unit_in_financial_reporting_focusing_on_both_theories_and_practices_relating_to_financial_reporting_and_regulation.__Current_Australian_practice_is_examined_and_integrated_with_broader_theoretical_perspectives,_seeking_to_provide_the_student_with_a_comprehensive_and_up-to-date_understanding_of_contemporary_accounting_standards_and_significant_issues_in_the_current_accounting_environment.> ;
+    handbook:has_level handbook:3 ;
+    handbook:has_school handbook:UWA_Business_School ;
+    handbook:has_title <https://university.org/Financial_Accounting:_Theory_and_Practice> ;
+    handbook:has_unit_delivery_mode handbook:Both .
+
+handbook:ACCT3322 a handbook:unit ;
+    rdfs:label "ACCT3322" ;
+    handbook:has_board_of_examiners handbook:08_-_Management_and_Commerce ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_provides_an_introduction_to_auditing_and_an_overview_of_the_audit_process_and_brings_together_many_of_the_issues_considered_in_other_units_studied_as_part_of_the_Commerce_degree._Topics_include_auditing_concepts_and_procedures;_the_scope_and_limitation_of_auditing;_auditing_standards_and_responsibilities;_legal_aspects;_internal_control;_audit_risk_analysis;_audit_evidence;_and_impact_of_CIS_on_auditing_and_audit_reports._The_unit_also_addresses_many_of_the_current_issues_affecting_the_auditing_profession_including_the_growing_area_of_assurance_services.> ;
+    handbook:has_level handbook:3 ;
+    handbook:has_school handbook:UWA_Business_School ;
+    handbook:has_title handbook:Auditing ;
+    handbook:has_unit_delivery_mode handbook:Both .
+
+handbook:ACCT3323 a handbook:unit ;
+    rdfs:label "ACCT3323" ;
+    handbook:has_board_of_examiners handbook:08_-_Management_and_Commerce ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_focuses_on_the_strategic_application_of_management_accounting_concepts,_tools_and_techniques_to_analyse_and_resolve_problems_of_local_and_international_firms._Topics_include_the_implementation_of_strategies_through_budgets_and_balanced_scorecards,_the_development_of_strategic_supply_chain_alliances_with_activity_based_costing,_the_role_of_transfer_prices_in_aligning_the_incentives_of_autonomous_divisions,_and_the_value_and_cost_of_production_capacity._In-depth_group_discussions_and_evaluations_of_case_studies_are_used_to_develop_an_appreciation_of_how_strategic_management_accounting_concepts,_tools_and_techniques_can_be_deployed_in_the_context_of_the_complex,_real_world_situations_of_many_firms_and_the_behavioural_consequences_that_can_flow_from_such_use.> ;
+    handbook:has_level handbook:3 ;
+    handbook:has_school handbook:UWA_Business_School ;
+    handbook:has_title handbook:Strategic_Management_Accounting ;
+    handbook:has_unit_delivery_mode handbook:Both .
+
+handbook:ACCT4440 a handbook:unit ;
+    rdfs:label "ACCT4440" ;
+    handbook:has_board_of_examiners handbook:08_-_Management_and_Commerce ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_provides_an_advanced_study_in_management_accounting._The_focus_is_on_the_theoretical_development_of_management_accounting_and_advances_in_management_accounting_research._Emphasis_is_placed_on_the_theoretical_perspectives_and_methodologies_associated_with_empirical_research_in_management_accounting,_including_budgeting,_performance_evaluation,_behavioural_issues,_systems_design_and_changing_philosophies._
+Topics_include_the_importance_of_costs_and_quality_in_management_accounting;_contemporary_issues_in_financial_performance_measurements_and_incentive_schemes;_effects_of_budgetary_participation;_budgetary_control_systems;_judgement_and_decision_making._Selected_journal_articles_and_research_studies_are_used_to_assist_students_in_understanding_and_applying_management_accounting_concepts_and_techniques,_and_undertaking_empirical_research_in_management_accounting.> ;
+    handbook:has_level handbook:4 ;
+    handbook:has_school handbook:UWA_Business_School ;
+    handbook:has_title <https://university.org/Management_Accounting:_Issues_and_Perspectives> ;
+    handbook:has_unit_delivery_mode handbook:Both .
+
+handbook:ACCT4471 a handbook:unit ;
+    rdfs:label "ACCT4471" ;
+    handbook:has_board_of_examiners handbook:08_-_Management_and_Commerce ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_examines_the_development_of_accounting_methodology_and_theory,_with_emphasis_on_empirical_research_traditions,_in_particular_market_based_research,_and_the_theoretical_and_institutional_framework_within_which_controversies_are_resolved.> ;
+    handbook:has_level handbook:4 ;
+    handbook:has_school handbook:UWA_Business_School ;
+    handbook:has_title handbook:Advanced_Accounting_Research ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:ACCT4486 a handbook:unit ;
+    rdfs:label "ACCT4486" ;
+    handbook:has_board_of_examiners handbook:08_-_Management_and_Commerce ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_is_taken_over_two_semesters_and_parts_1_to_4_must_be_completed_to_fulfil_the_requirements_of_the_unit._Students_can_commence_the_unit_in_either_semester_1_or_semester_2._It_comprises_a_research_project_of_15,000_to_25,000_words_appropriate_to_the_specialisation_in_the_honours_program.> ;
+    handbook:has_level handbook:4 ;
+    handbook:has_school handbook:UWA_Business_School ;
+    handbook:has_title handbook:Dissertation_\(Accounting\)_Part_1 ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:ACCT4487 a handbook:unit ;
+    rdfs:label "ACCT4487" ;
+    handbook:has_board_of_examiners handbook:08_-_Management_and_Commerce ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_is_taken_over_two_semesters_and_parts_1_to_4_must_be_completed_to_fulfil_the_requirements_of_the_unit._Students_can_commence_the_unit_in_either_semester_1_or_semester_2._It_comprises_a_research_project_of_15,000_to_25,000_words_appropriate_to_the_specialisation_in_the_honours_program.> ;
+    handbook:has_level handbook:4 ;
+    handbook:has_school handbook:UWA_Business_School ;
+    handbook:has_title handbook:Dissertation_\(Accounting\)_Part_2 ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:ACCT4488 a handbook:unit ;
+    rdfs:label "ACCT4488" ;
+    handbook:has_board_of_examiners handbook:08_-_Management_and_Commerce ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_is_taken_over_two_semesters_and_parts_1_to_4_must_be_completed_to_fulfil_the_requirements_of_the_unit._Students_can_commence_the_unit_in_either_semester_1_or_semester_2._It_comprises_a_research_project_of_15,000_to_25,000_words_appropriate_to_the_specialisation_in_the_honours_program.> ;
+    handbook:has_level handbook:4 ;
+    handbook:has_school handbook:UWA_Business_School ;
+    handbook:has_title handbook:Dissertation_\(Accounting\)_Part_3 ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:ACCT4489 a handbook:unit ;
+    rdfs:label "ACCT4489" ;
+    handbook:has_board_of_examiners handbook:08_-_Management_and_Commerce ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_is_taken_over_two_semesters_and_parts_1_to_4_must_be_completed_to_fulfil_the_requirements_of_the_unit._Students_can_commence_the_unit_in_either_semester_1_or_semester_2._It_comprises_a_research_project_of_15,000_to_25,000_words_appropriate_to_the_specialisation_in_the_honours_program.> ;
+    handbook:has_level handbook:4 ;
+    handbook:has_school handbook:UWA_Business_School ;
+    handbook:has_title handbook:Dissertation_\(Accounting\)_Part_4 ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:ACCT5432 a handbook:unit ;
+    rdfs:label "ACCT5432" ;
+    handbook:has_board_of_examiners handbook:08_-_Management_and_Commerce ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_provides_an_understanding_of_accounting_concepts,_issues_and_problems._The_focus_is_on_accounting_for_external_users._It_also_examines_the_basic_concepts_underlying_external_general_purpose_financial_reports_as_well_as_techniques_to_analyse_such_reports._The_unit_initially_uses_a_worksheet_approach_but_then_introduces_debits_and_credits_and_the_use_of_journals_and_ledger_accounts_to_record_the_accounting_cycle.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:UWA_Business_School ;
+    handbook:has_title handbook:Introductory_Financial_Accounting ;
+    handbook:has_unit_delivery_mode handbook:Both .
+
+handbook:ACCT5501 a handbook:unit ;
+    rdfs:label "ACCT5501" ;
+    handbook:has_board_of_examiners handbook:08_-_Management_and_Commerce ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_is_the_capstone_unit_in_the_Master_of_Professional_Accounting._It_aims_to_consolidate_the_understanding_of_accounting_theory_and_practice_gained_in_the_other_units._The_corporate_governance,_economic_consequences/costly_contracting,_conceptual_framework,_and_social_responsibility_perspectives_are_examined_in_relation_to_a_number_of_current_accounting_issues.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:UWA_Business_School ;
+    handbook:has_title handbook:Contemporary_Issues_in_Accounting ;
+    handbook:has_unit_delivery_mode handbook:Both .
+
+handbook:ACCT5511 a handbook:unit ;
+    rdfs:label "ACCT5511" ;
+    handbook:has_board_of_examiners handbook:08_-_Management_and_Commerce ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_is_an_intermediate_unit_in_financial_accounting_with_a_primary_focus_on_accounting_for_companies._Current_Australian_practice_is_examined_and_integrated_with_broader_theoretical_perspectives,_seeking_to_provide_the_student_with_a_comprehensive_and_up-to-date_understanding_of_significant_issues_in_the_current_corporate_accounting_environment.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:UWA_Business_School ;
+    handbook:has_title handbook:Intermediate_Corporate_Financial_Accounting ;
+    handbook:has_unit_delivery_mode handbook:Both .
+
+handbook:ACCT5521 a handbook:unit ;
+    rdfs:label "ACCT5521" ;
+    handbook:has_board_of_examiners handbook:08_-_Management_and_Commerce ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_is_an_advanced_unit_in_corporate_financial_reporting._Current_Australian_practice_is_examined_and_integrated_with_broader_theoretical_perspectives,_seeking_to_provide_the_student_with_a_comprehensive_and_up-to-date_understanding_of_significant_issues_in_the_current_corporate_accounting_environment.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:UWA_Business_School ;
+    handbook:has_title handbook:Advanced_Corporate_Financial_Accounting ;
+    handbook:has_unit_delivery_mode handbook:Both .
+
+handbook:ACCT5522 a handbook:unit ;
+    rdfs:label "ACCT5522" ;
+    handbook:has_board_of_examiners handbook:08_-_Management_and_Commerce ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_deals_with_auditing_principles_and_practice._Topics_include_auditing_standards_and_procedures;_internal_control;_the_role_of_internal_audit_versus_external_audit;_audit_risks_and_their_assessment;_audit_evidence;_statistical_procedures_in_audit_sampling;_electronic_data_processing_(EDP)_audit_and_audit_reports.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:UWA_Business_School ;
+    handbook:has_title handbook:Principles_of_Auditing ;
+    handbook:has_unit_delivery_mode handbook:Both .
+
+handbook:ACCT5531 a handbook:unit ;
+    rdfs:label "ACCT5531" ;
+    handbook:has_board_of_examiners handbook:08_-_Management_and_Commerce ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_explores_the_regulation_of_financial_reporting,_the_role_of_participants_in_the_financial_reporting_framework_(financial_report_constructors,_users_and_regulators)_and_the_preparation_of_financial_reports._The_topics_include_when_to_recognise_assets,_liabilities,_revenue_and_expenses_and_how_to_apply_various_measurement_methods.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:UWA_Business_School ;
+    handbook:has_title <https://university.org/Financial_Accounting:_Theory_and_Practice> ;
+    handbook:has_unit_delivery_mode handbook:Both .
+
+handbook:ACCT5532 a handbook:unit ;
+    rdfs:label "ACCT5532" ;
+    handbook:has_board_of_examiners handbook:08_-_Management_and_Commerce ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_explores_the_role_of_accounting_as_an_information_system_within_the_firm.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:UWA_Business_School ;
+    handbook:has_title handbook:Accounting_Information_Systems ;
+    handbook:has_unit_delivery_mode handbook:Both .
+
+handbook:ACCT5602 a handbook:unit ;
+    rdfs:label "ACCT5602" ;
+    handbook:has_board_of_examiners handbook:08_-_Management_and_Commerce ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_develops_students'_ability_to_understand,_interpret_and_use_financial_reports._It_is_structured_to_provide_an_understanding_of_accounting_concepts,_issues_and_problems_rather_than_educating_someone_to_take_the_role_of_a_professional_accountant._The_focus_of_the_unit_is_on_accounting_for_external_users_and,_after_developing_an_understanding_of_the_basic_concepts_underlying_external_general_purpose_financial_reports,_techniques_to_analyse_such_reports_are_examined._The_unit_also_provides_an_introduction_to_accounting_for_internal_users._Basic_cost_concepts_for_making_operating_and_strategic_decisions_within_an_organisation_are_discussed.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:UWA_Business_School ;
+    handbook:has_title handbook:Accounting ;
+    handbook:has_unit_delivery_mode handbook:Both .
+
+handbook:ACCT5633 a handbook:unit ;
+    rdfs:label "ACCT5633" ;
+    handbook:has_board_of_examiners handbook:08_-_Management_and_Commerce ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_covers_three_principal_areas._The_first_is_cost_accounting_fundamentals_which_includes_an_introduction_to_cost_terms_and_cost_accumulation_systems._The_second_section_is_tools_for_planning_and_control_which_includes_master_budget,_flexible_budgets,_variances_and_management_control,_inventory_costing_and_capacity_analysis._The_last_section_is_cost_information_for_decisions_and_advanced_topics_in_management_accounting._Topics_in_this_section_include_cost-volume_profit_analysis,_decision_making_and_relevant_information,_strategic_cost,_time,_quality_and_inventory_management_and_strategic_pricing.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:UWA_Business_School ;
+    handbook:has_title handbook:Accounting_for_Planning_and_Control ;
+    handbook:has_unit_delivery_mode handbook:Both .
+
+handbook:ACCT5637 a handbook:unit ;
+    rdfs:label "ACCT5637" ;
+    handbook:has_board_of_examiners handbook:08_-_Management_and_Commerce ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_provides_an_introduction_to_the_law_and_practice_of_income_taxation_in_Australia._It_focuses_on_the_principles_governing_the_assessability_of_income_and_deductibility_of_expenditure,_the_treatment_of_capital_gains_and_losses,_the_key_provisions_affecting_individuals,_partnerships,_companies_and_trusts,_and_aspects_of_compliance_and_the_appeals_process._Core_provisions_of_the_Income_Tax_Assessment_Act_1936_and_the_Income_Tax_Assessment_Act_1997_are_examined._Kindred_legislation_such_as_the_Fringe_Benefits_Tax_Assessment_Act_1986_and_the_Taxation_Administration_Act_1953_are_also_considered.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:UWA_Business_School ;
+    handbook:has_title handbook:Principles_of_Taxation ;
+    handbook:has_unit_delivery_mode handbook:Both .
+
+handbook:ACCT5701 a handbook:unit ;
+    rdfs:label "ACCT5701" ;
+    handbook:has_board_of_examiners handbook:08_-_Management_and_Commerce ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/In_Audit_and_Risk,_students_develop_knowledge_and_skills_required_for_applying_professional_judgement_and_professional_scepticism_in_addressing_risk_in_auditing_areas_where_significant_professional_judgement_is_required_in_the_context_of_the_audit_of_general_purpose_financial_statements._The_ability_to_integrate_practical_and_technical_skills_in_the_audit_of_financial_statements_is_an_essential_skill_for_Chartered_Accountants._Students_are_equipped_with_skills_for_identifying_and_assessing_risks_and_controls_while_taking_into_consideration_the_broad_impact_of_changes_in_an_entity_and_its_environment._The_activities_and_assessments_simulate_real-world_audit_experiences_and_challenges_faced_during_planning,_performing_and_concluding_an_audit_of_financial_statements._Communication_and_collaboration_skills_will_be_developed_based_on_simulated_interactions_with_a_variety_of_stakeholders_to_achieve_audit_objectives.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:UWA_Business_School ;
+    handbook:has_title handbook:Audit_and_Risk ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:ACCT5702 a handbook:unit ;
+    rdfs:label "ACCT5702" ;
+    handbook:has_board_of_examiners handbook:08_-_Management_and_Commerce ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/Students_are_introduced_to_the_core_knowledge_and_skills_of_tax_required_to_provide_advice_and_services_for_a_range_of_transactions_and_events_appropriate_to_the_jurisdiction._Chartered_Accountants_need_to_be_aware_of_and_be_able_to_respond_to_tax_impacts_on_a_range_of_transactions_and_events_and_to_identify_when_they_should_seek_advice_from_tax_specialists_on_more_complex_issues._This_unit_focuses_on_areas_of_technical_competence_including_tax_administration_and_controls,_income_tax,_tax_of_structures_and_transactions,_and_other_taxes_and_interactions_with_taxes._It_also_explores_the_skills_and_knowledge_required_to_evaluate_and_explain_the_broad_impact_of_changes_across_a_range_of_areas_that_may_impact_tax_practice._In_a_range_of_learning_activities_and_assessments,_students_develop_and_apply_these_technical_skills_and_professionally_communicate_tax_specific_information_to_a_range_of_stakeholders.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:UWA_Business_School ;
+    handbook:has_title handbook:Taxation_Australia ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:ACCT5703 a handbook:unit ;
+    rdfs:label "ACCT5703" ;
+    handbook:has_board_of_examiners handbook:08_-_Management_and_Commerce ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/Business_performance_is_concerned_with_equipping_students_with_skills_for_critiquing_the_performance_of_a_business_and_supporting_business_decision-making._The_ability_to_critique_the_performance_of_a_business_and_provide_advice_in_the_execution_of_business_strategy_is_an_essential_skill_for_Chartered_Accountants._In_this_unit,_students_apply_appropriate_financial_models_in_conjunction_with_non-financial_factors_in_order_to_evaluate_alternatives_and_determine_appropriate_business_solutions._Students_analyse_financial_and_non-financial_factors_and_develop_a_model_that_incorporates_sensitivity_analysis_to_support_business_investment_decisions._Students_then_evaluate_funding_options_to_support_these_investment_decisions._By_engaging_in_activities_and_assessments_related_to_a_case_study,_students_develop_and_demonstrate_skills_for_communicating_their_insights_and_recommendations_to_a_variety_of_audiences.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:UWA_Business_School ;
+    handbook:has_title handbook:Business_Performance ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:ACCT5704 a handbook:unit ;
+    rdfs:label "ACCT5704" ;
+    handbook:has_board_of_examiners handbook:08_-_Management_and_Commerce ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/In_Financial_Accounting_and_Reporting,_students_apply_International_Financial_Reporting_Standards_(IFRS)_or_local_equivalents,_and_regulatory_and_ethical_requirements_to_account_for_and_report_on_a_diverse_range_of_business_transactions_and_events._
+The_unit_will_advance_students'_technical_knowledge_of_financial_accounting_and_reporting_and_develop_broader_professional_and_business_skills_in_problem_solving,_critical_thinking,_research,_evaluation_and_communication._
+Through_practical_case_studies_and_scenarios,_students_are_required_to_apply_the_accounting_standards_and_use_professional_judgement_to_determine_the_appropriate_accounting_treatment_of_transactions_and_events,_identify_the_impacts_of_those_transactions_and_events_on_financial_statements,_and_prepare_financial_statements_and_related_note_disclosures._As_part_of_these_practical_cases_studies_and_scenarios_students_will_be_required_to_identify_appropriate_courses_of_action_for_complex_ethical_dilemmas_within_a_financial_reporting_context._Students_will_also_be_required_to_keep_abreast_of_new_accounting_standards_as_well_as_revisions_and_amendments_to_existing_standards,_evaluating_these_changes_and_their_implications_to_provide_clear,_concise_and_relevant_advice.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:UWA_Business_School ;
+    handbook:has_title handbook:Financial_Accounting_and_Reporting ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:ACCT5705 a handbook:unit ;
+    rdfs:label "ACCT5705" ;
+    handbook:has_board_of_examiners handbook:08_-_Management_and_Commerce ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_capstone_unit_requires_students_to_build_on_and_integrate_existing_technical_knowledge,_critical_thinking_and_professional_skills_to_provide_business_advice._Students_will_embed_an_ethical_approach_in_the_application_of_these_skills_and_communicate_insights_effectively_to_meet_the_needs_of_a_variety_of_audiences._The_integration_of_technical_knowledge_and_professional_skills_is_crucial_for_Chartered_Accountants,_and_this_unit_focuses_on_providing_opportunities_for_students_to_provide_business_advice_across_multi-disciplines_in_a_variety_of_formal_and_informal_contexts._Through_the_application_of_these_skills,_areas_for_continuing_professional_development_can_also_be_identified._The_interactive_workshop_activities_where_students_work_together_on_activities_and_complete_a_group_presentation_are_a_key_component_of_this_subject._The_unit_also_includes_the_submission_of_the_reflective_portfolio_which_involves_students_thinking_deeply_on_their_own_learnings_and_experiences.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:UWA_Business_School ;
+    handbook:has_title handbook:Chartered_Accountants_Capstone ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:ACCT5706 a handbook:unit ;
+    rdfs:label "ACCT5706" ;
+    handbook:has_board_of_examiners handbook:08_-_Management_and_Commerce ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/Ethics_introduces_candidates_to_fundamental_concepts_and_professional_skills_that_are_developed_throughout_subsequent_units_and_are_essential_for_professional_practice_as_a_Chartered_Accountant._Students_are_introduced_to_skills_for_professional_reflection,_essential_for_objectively_evaluating_their_own_practice_and_for_continuous_improvement,_and_to_consider_the_Code_of_Ethics_that_informs_all_of_the_sub-disciplines_of_accounting._Students_analyse_an_organisation_and_its_business_environment_and_examine_how_it_creates_value_in_the_context_of_ethical_decision_making._They_are_encouraged_to_take_a_holistic_view_when_analysing_an_organisation,_going_beyond_the_numbers_and_asking_‘why'._This_holistic_analysis_provides_the_foundation_from_which_to_identify_risks,_evaluate_alternatives_and_make_sound_recommendations._A_key_component_of_this_unit_is_an_interactive_workshop_where_students_collaborate_to_consider_ethical_issues_and_apply_professional_judgement_to_topical_and_authentic_‘what_if'_business_scenarios.
+In_Risk_and_Technology,_students_analyse_how_businesses_create_and_protect_stakeholder_value_with_a_focus_on_risk_management,_data_and_technology._Students_evaluate_and_respond_to_the_benefits,_risks_and_challenges_organisations_face_arising_from_existing_and_emerging_technologies,_process_automation_and_the_use_and_application_of_data._Students_will_develop_skills_and_knowledge_in_areas_of_technical_practice_including_identifying,_analysing_and_managing_risk,_computational_thinking,_analysis_and_reporting_of_data_and_emerging_technologies._In_real_world_case-study_based_activities_and_associated_assessments,_students_will_apply_ethical_considerations_to_risk_management_and_technology_and_develop_skills_to_communicate_technical_data_to_a_variety_of_audiences._Chartered_Accountants_ANZ_designed_this_unit_in_partnership_with_the_Institute_of_Chartered_Accountants_of_Scotland_(ICAS).> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:UWA_Business_School ;
+    handbook:has_title <https://university.org/Ethics,_Risk_and_Technology> ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:ACCX0101 a handbook:unit ;
+    rdfs:label "ACCX0101" ;
+    handbook:has_board_of_examiners handbook:08_-_Management_and_Commerce ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_provides_a_basic_understanding_of_the_world_of_business_and_accounting,_targeting_those_students_who_will_undertake_a_business_undergraduate_degree.__The_unit_will_use_the_knowledge_and_experience_students_have_as_customers_to_help_them_discover_and_understand_the_key_facets_of_a_business._The_unit_pursues_the_following_themes:_models_of_management,_the_business_environment,_managing_people,_leadership,_corporate_social_responsibility,_organisational_culture,_financial_accounting_for_management,_financial_management,_marketing_and_exploring_social_media_and_e-business.> ;
+    handbook:has_level handbook:0 ;
+    handbook:has_school handbook:UWA_College ;
+    handbook:has_title handbook:Introduction_to_Business__and_Accounting ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:ACCX1101 a handbook:unit ;
+    rdfs:label "ACCX1101" ;
+    handbook:has_board_of_examiners handbook:08_-_Management_and_Commerce ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_provides_an_introduction_to_financial_reporting_as_well_as_a_foundation_for_those_who_may_later_wish_to_specialise_in_accounting._No_prior_knowledge_of_the_subject_is_required._Topics_include_the_core_concepts_and_practices_underlying_the_preparation_of_financial_statements,_financial_statement_analysis_and_the_factors_in_the_business_environment_that_influence_the_demand_and_supply_of_accounting_information._The_understanding_of_the_business_environment,_measurement_concepts_and_analytical_skills_gained_through_this_unit_are_relevant_to_both_accounting_and_non-accounting_majors.> ;
+    handbook:has_level handbook:1 ;
+    handbook:has_school handbook:UWA_College ;
+    handbook:has_title handbook:Financial_Accounting ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:ACRI9000 a handbook:unit ;
+    rdfs:label "ACRI9000" ;
+    handbook:has_board_of_examiners handbook:12_-_Mixed_Field_Programmes ;
+    handbook:has_credit handbook:0 ;
+    handbook:has_description <https://university.org/Academic_Conduct_and_Research_Integrity_(ACRI9000)_is_a_wholly_online_self-paced_unit_which_introduces_students_to_the_key_principles_and_behaviours_of_academic_and_research_integrity_and_helps_students_incorporate_best_practices_in_their_work._The_objective_of_the_unit_is_to_ensure_that_students_understand_their_role_and_responsibilities_in_relation_to_academic_and_research_conduct_at_the_University.> ;
+    handbook:has_level handbook:9 ;
+    handbook:has_school handbook:Library ;
+    handbook:has_title handbook:Academic_Conduct_and_Research_Integrity_\(ACRI\) ;
+    handbook:has_unit_delivery_mode handbook:Online .
+
+handbook:AGRI1001 a handbook:unit ;
+    rdfs:label "AGRI1001" ;
+    handbook:has_board_of_examiners <https://university.org/05_-_Agriculture,_Environmental_and_Related_S> ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/In_this_unit_you_will_learn_about_how_agricultural_systems_vary_globally_across_a_range_of_regions_and_cultures._You_will_explore_the_drivers_of_global_food_security_You_will_be_introduced_to_the_major_foods_produced_around_the_world_and_some_of_the_fascinating_ways_in_which_agriculture,_culture_and_diet_are_intertwined._The_major_Australian_agricultural_systems_will_be_introduced._You_will_review_the_roles_that_agricultural_innovation,_emerging_technologies_and_research_will_have_in_adaptation_to_challenges_such_as_global_warming_and_increasing_global_population_and_affluence._Means_to_improve_environmental_outcomes_will_be_emphasised._You_will_also_learn_how_changing_community_preferences_and_expectations_of_healthy_eating,_animal_welfare,_and_safety_and_acceptability_of_new_and_emerging_technologies_are_impacting_agricultural_systems._You_will_view_research_projects_currently_underway_at_UWA_and_interact_with_UWA_researchers_who_are_having_global_impact._You_will_engage_with_the_agricultural_sector_by_visiting_commercial_farms,_as_well_as_meet_and_interact_with_Western_Australian_farmers_and_industry_leaders.> ;
+    handbook:has_level handbook:1 ;
+    handbook:has_school handbook:Agriculture_and_Environment ;
+    handbook:has_title handbook:Feeding_the_World ;
+    handbook:has_unit_delivery_mode handbook:Both .
+
+handbook:AGRI2201 a handbook:unit ;
+    rdfs:label "AGRI2201" ;
+    handbook:has_board_of_examiners <https://university.org/05_-_Agriculture,_Environmental_and_Related_S> ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/The_focus_of_this_unit_is_the_matching_of_livestock_energy_demand_to_supply_of_feed,_particularly_forage,_within_Australian_agricultural_systems._Pasture_production_is_first_focused_upon_with_an_emphasis_on_the_ecology_of_the_major_pasture_legumes_and_grasses,_especially_in_a_Mediterranean_climate,_as_is_typical_of_Western_Australia._Breeding_of_annual_pasture_legumes_is_examined._The_ruminant_digestive_system_and_reproductive_cycle_are_explored_along_with_the_factors_that_determine_diet,_feed_quality_and_feed_intake.__Current_challenges_and_innovations_in_livestock_systems,_including_in_the_rangelands_of_Western_Australia,_are_explored_in_lectures_and_through_visiting_the_UWA_Future_Farm_and_Shenton_Park_Research_Station_(e.g._saltland_pastures,_perennial_native_shrubs,_novel_annual_pasture_legumes,_legume_breeding,_oestrogenic_pastures_and_low_stress_livestock_handling).__Laboratories_are_used_to_explore_key_concepts_in_more_detail_and_the_skills_needed_to_design_experiments_and_collect_and_explore_data_using_Excel_and_the_statistical_package_R_are_emphasised_throughout_the_unit.> ;
+    handbook:has_level handbook:2 ;
+    handbook:has_school handbook:Agriculture_and_Environment ;
+    handbook:has_title handbook:Pasture_and_Livestock_Systems ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:AGRI2298 a handbook:unit ;
+    rdfs:label "AGRI2298" ;
+    handbook:has_board_of_examiners <https://university.org/05_-_Agriculture,_Environmental_and_Related_S> ;
+    handbook:has_credit handbook:24 ;
+    handbook:has_description <https://university.org/Unit_available_for_students_wishing_to_spend_Semester_studying_at_Bogor_Agricultural_University,_West_Java,_Indonesia_as_part_of_ACICIS_Study_Indonesia's_Agriculture_Semester_Program._This_study_option_will_be_of_particular_interest_to_Agricultural_Science,_Natural_Resource_Management_and_Environmental_Science_students,_though_students_from_other_majors_are_also_welcome_to_take_part._No_background_in_Indonesian_language_is_required_by_participants.
+This_program_allows_students_to_take_units_in_a_number_of_internationally_accredited_study_programs_at_Bogor_Agricultural_University_(IPB),_including_units_in_agribusiness,_agronomy_and_horticulture,_plant_protection,_forestry,_food_science_and_technology,_and_animal_production_technology._With_classes_taught_in_English,_from_an_Indonesian_perspective,_students_will_be_well-placed_to_become_leaders_in_international_agricultural_development_with_a_solid_understanding_of_the_food_security_and_resource_management_challenges_facing_Indonesia_and_the_Indo-Pacific_region._Students_are_also_able_to_undertake_a_professional_practicum_placement_(internship)_at_an_Indonesian_host_organisation_to_complement_their_formal_studies._Host_organisations_will_likely_include_global_research_organisations,_local_and_international_NGOs_and_agricultural_production_companies> ;
+    handbook:has_level handbook:2 ;
+    handbook:has_school handbook:Agriculture_and_Environment ;
+    handbook:has_title handbook:Agricultural_exchange_to_Indonesia ;
+    handbook:has_unit_delivery_mode handbook: .
+
+handbook:AGRI3003 a handbook:unit ;
+    rdfs:label "AGRI3003" ;
+    handbook:has_board_of_examiners <https://university.org/05_-_Agriculture,_Environmental_and_Related_S> ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/Food_needs_to_be_produced_more_efficiently_and_sustainably._There_are_now_rapid_changes_in_the_agricultural_sector,_particularly_with_developments_in_agricultural_technology_and_sensors._This_technology_is_data-driven_and_has_the_potential_to_significantly_increase_production_efficiency_and_reduce_the_environmental_impact_from_agriculture;_however,_the_key_is_making_good_decisions_from_the_data._In_this_unit,_students_will_utilise_their_agricultural_knowledge_and_skills_in_data_science,_geographic_information_systems_(GIS)_and_sensors._The_unit_teaches_students_to_integrate_their_knowledge_of_farming_systems_with_technology-derived_data_to_make_decisions_for_improved_production_efficiency_and_profitability.> ;
+    handbook:has_level handbook:3 ;
+    handbook:has_school handbook:Agriculture_and_Environment ;
+    handbook:has_title handbook:Decisions_from_Data_in__Agriculture ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:AGRI3004 a handbook:unit ;
+    rdfs:label "AGRI3004" ;
+    handbook:has_board_of_examiners <https://university.org/05_-_Agriculture,_Environmental_and_Related_S> ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_translates_generic_business_management_and_planning__concepts_in_the_field_of__marketing,_finance,_supply_chain_logistics_and_human_resource_management_to_the_specific_context_of_organisations_in_the_agribusiness_and_agritech_sectors,_including_farming_enterprises._Through_analyses_of_current_agribusiness_case_studies,_students_are_exposed_to_the_real_world_issues_faced_by_agribusiness_managers,_are_provided_with_a_deep__understanding_of_the_key_concepts_required_to_successfully_manage_an_agribusiness.__The_overall_objective_of_the_unit_is_to_provide_key_skills_for_the_next_generation_of_agribusiness_managers.> ;
+    handbook:has_level handbook:3 ;
+    handbook:has_school handbook:Agriculture_and_Environment ;
+    handbook:has_title handbook:Agribusiness_Planning_and_Management ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:AGRI4401 a handbook:unit ;
+    rdfs:label "AGRI4401" ;
+    handbook:has_board_of_examiners <https://university.org/05_-_Agriculture,_Environmental_and_Related_S> ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/Global_agriculture_needs_to_feed_an_increasing_world_population_while_also_facing_climate_variability,_increased_input_costs_and_environmental_sustainability_issues._In_this_unit_students_learn_how_precision_agriculture_technology_can_be_used_in_rainfed_cropping_systems_to_meet_these_challenges._This_concept_is_based_on_observing,_measuring_and_responding_to_variability_in_crop_growth_and_yield_in_the_field._The_unit_consists_of_lectures,_practicals_and_a_full-day_field_trip.> ;
+    handbook:has_level handbook:4 ;
+    handbook:has_school handbook:Agriculture_and_Environment ;
+    handbook:has_title handbook:Precision_Agriculture ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:AGRI4407 a handbook:unit ;
+    rdfs:label "AGRI4407" ;
+    handbook:has_board_of_examiners <https://university.org/05_-_Agriculture,_Environmental_and_Related_S> ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_is_an_advanced_unit_linking_soil_fertility,_plant_nutrition_and_human_diet._It_emphasises_(1)_plant_accumulation_of_macronutrients_and_micronutrients_in_edible_parts_and_bioavailability_of_these_nutrients_in_the_human_digestive_tract;_and_(2)_supply_of_antioxidants,_vitamins_and_other_health-promoting_phytochemicals_in_edible_plant_parts._Special_attention_is_paid_to_the_balance_between_nutrients_and_antinutrients_in_plant-based_food._Physiological_mechanisms_governing_uptake_of_mineral_nutrients_from_soil_and_transport_to_and_remobilisation_from_non-edible_into_edible_plant_parts_(particularly_grains)_are_emphasised_together_with_biosynthesis_of_phytochemicals_(nutraceuticals)_in_edible_plant_tissues._Various_types_of_biofortification_(e.g._fertilisation_and_other_agricultural_measures,_selection_of_genotypes_with_enhanced_nutrient_accumulation_in_edible_parts,_etc.)_are_covered._Students_gain_an_understanding_of_the_dynamics_of_nutrient_cycling_from_soil_to_plants_to_humans,_as_well_as_the_importance_of_nutritional_food_quality._While_the_main_emphasis_is_on_soils_and_plants,_attention_is_also_paid_to_food_processing_and_social_and_health_issues_associated_with_food_choice_and_quality.> ;
+    handbook:has_level handbook:4 ;
+    handbook:has_school handbook:Agriculture_and_Environment ;
+    handbook:has_title handbook:Plant_and_Human_Nutrition ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:AGRI4409 a handbook:unit ;
+    rdfs:label "AGRI4409" ;
+    handbook:has_board_of_examiners <https://university.org/05_-_Agriculture,_Environmental_and_Related_S> ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_provides_an_introduction_to_Australian_agricultural_production_systems,_and_the_core_applied_scientific_techniques_used_in_Agricultural_Science.__Different_elements_of_the_discipline_of_Agricultural_Science_are_explored,_from_animal_ethics_and_welfare,_to_soil-plant_interactions,_through_to_current_and_emerging_technologies_in_precision_agriculture._Through_practical_laboratory_classes_and_field_work_students_develop_the_skills_needed_to_work_as_an_effective_agricultural_scientist.__Global_issues,_such_as_food_security_and_climate_change_are_discussed_within_the_context_of_broadacre_production_systems_in_Mediterranean_and_low-rainfall_environments.> ;
+    handbook:has_level handbook:4 ;
+    handbook:has_school handbook:Agriculture_and_Environment ;
+    handbook:has_title handbook:Fundamentals_of_Agricultural_Science ;
+    handbook:has_unit_delivery_mode handbook:Both .
+
+handbook:AGRI4410 a handbook:unit ;
+    rdfs:label "AGRI4410" ;
+    handbook:has_board_of_examiners <https://university.org/05_-_Agriculture,_Environmental_and_Related_S> ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/Genes_are_the_backbone_of_life,_and_plant_improvement_is_based_on_the_knowledge_of_applied_genetics_and_supported_by_modern_biotechnologies._This_unit_allows_students_to_extend_their_knowledge_and_interest_in_genetics_in_the_applied_field_of_plant_improvement_and_biotechnology._Whether_the_focus_of_study_is_in_genetic_conservation_in_native_plants_or_genetic_improvement_in_domesticated_plants_and_animals,_the_principles_are_the_same._The_unit_provides_a_very_sound_foundation_in_evolutionary_genetics_theory_and_principles_that_are_applicable_to_any_genetic_system._Students_also_study_biotechnologies_that_support_modern_breeding_programs,_and_at_the_conclusion_of_the_unit,_are_able_to_make_sound_judgements_on_the_value_of_'traditional'_plant_breeding,_genetic_engineering_or_molecular_genetic_markers_in_crop_improvement.> ;
+    handbook:has_level handbook:4 ;
+    handbook:has_school handbook:Agriculture_and_Environment ;
+    handbook:has_title handbook:Breeding_and_Biotechnology ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:AGRI5402 a handbook:unit ;
+    rdfs:label "AGRI5402" ;
+    handbook:has_board_of_examiners handbook:09_-_Society_and_Culture ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_is_designed_to_introduce_students_to_the_relevant_concepts_and_principles_in_economics_and_business_management_and_analytical_tools_in_making_strategic_decisions_in_the_agribusiness_environment._The_unit_starts_by_exploring_economic_concepts_and_principles_relevant_for_analysing_strategic_decisions_in_perfect_competitive_markets._The_economic_fundamentals_of_strategic_management_in_agribusiness_are_explored_by_examining_principles_that_underlie_production_decisions,_the_cost_structure_and_profit_maximization_behaviour_of_firms._Logistical_and_organisational_issues_that_affect_the_size_and_scope_of_a_firm_and_how_decisions_are_made_along_the_food_value_chains_are_examined._Students_are_also_introduced_to_research_methods_in_agribusiness.
+The_goal_of_this_unit_is_to_prepare_students_for_professional_endeavours_that_demand_skills_in_managerial_decision_making_and_communication_in_an_agricultural-related_environment.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:Agriculture_and_Environment ;
+    handbook:has_title handbook:Agribusiness ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:AGRI5403 a handbook:unit ;
+    rdfs:label "AGRI5403" ;
+    handbook:has_board_of_examiners <https://university.org/05_-_Agriculture,_Environmental_and_Related_S> ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_is_a_course_on_agricultural_commodity_markets_in_general_and_specifically_a_commodity_futures_and_options_markets_course._The_emphasis_will_be_on_major_commercial_agriculture_field_crops_and_livestock_markets_relevant_to_Australia._The_course_will_involve_study_of_commodity_price_behavior._Attention_will_be_paid_to_the_role_of_futures_markets_as_an_institution_in_a_market_economy,_as_well_as_use_of_futures_contracts_and_options_on_futures_contracts_in_firm_asset_and_risk_management._Emphasis_will_be_placed_on_the_mechanics_of_futures_and_options_trading,_basic_relationships_between_cash_and_futures_markets,_fundamental_and_technical_behavior_of_commodity_futures_prices,_hedging_strategies,_futures_market_regulation,_and_commodity_futures_market_performance.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:Agriculture_and_Environment ;
+    handbook:has_title handbook:Advanced_Commodity_Marketing ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:AGRI5502 a handbook:unit ;
+    rdfs:label "AGRI5502" ;
+    handbook:has_board_of_examiners <https://university.org/05_-_Agriculture,_Environmental_and_Related_S> ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/Students_learn_how_the_theory_of_plant_and_animal_breeding_and_biotechnology_is_applied_in_practice_through_analysing_real-_world_cases._This_unit_improves_communication_skills_and_analytical_skills_and_is_taught_in_modules._Each_module_or_case_is_taught_in_blocks_of_two_weeks._Experienced_professionals_with_special_expertise_in_an_area_of_genetics_and_genomics_relevant_to_breeding_and_biotechnology_deliver_the_lectures._Only_revolutionary,_successful_and_applicable_cases_in_breeding_and_biotechnology_are_chosen_and_presented_in_the_unit._The_lecturer_responsible_for_each_module_gives_students_a_recent_publication_in_a_contemporary_area_of_development_in_breeding_and_biotechnology_and_a_three-hour_lecture/discussion,_clearly_contextualising_the_focused_area_in_the_big_picture_of_breeding_and_biotechnology._Students_read_the_paper,_participate_in_the_lecture/discussion,_and_find_two_related_papers_in_the_same_area_from_the_literature._Based_on_the_materials/information_given_and_found,_students_write_a_one_page_commentary_critically_analysing_the_case,_including_the_genetic_foundation,_process_of_development_and_successful_application_in_the_industry._Students_may_also_comment_on_what_they_have_learned,_critical_issues_and_possible_future_directions._Students_also_have_a_chance_to_give_a_five-minute_oral_presentation_for_each_module.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:Agriculture_and_Environment ;
+    handbook:has_title handbook:Case_Studies_in_Breeding_and_Biotechnology ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:AGRI5503 a handbook:unit ;
+    rdfs:label "AGRI5503" ;
+    handbook:has_board_of_examiners <https://university.org/05_-_Agriculture,_Environmental_and_Related_S> ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_develops_students_understanding_of_the_systems_that_control_physiological_processes_in_animals,_and_the_ways_we_can_modify_these_processes_with_modern_science_and_technology_to_implement_'clean,_green_and_ethical'_management._The_unit_is_based_on_three_modules,_each_of_which_is_introduced_during_a_tutorial_where_students_are_briefed_on_the_content_of_each_module,_on_the_level_of_understanding_that_is_required,_and_on_the_method_of_assessment._This_mode_of_teaching_allows_students_flexibility_and_choice_so_they_can_best_match_their_background,_other_components_of_their_curriculum,_and_their_research_interests._
+During_the_first_module_'The_interaction_between_reproduction_on_production:_real-life_problem',_students_visit_a_production_system_of_their_choice,_interview_the_producers,_identify_a_problem_and_search_the_literature_and_analyse_the_literature_using_special_statistical_tools._Students_write_a_consultant_report_that_describes_the_quantitative_comparison_of_the_impact_of_reproduction_and_production,_and_proposes_solutions_to_improve_both_production,_reproduction_and_animal_wellbeing._The_industry_context,_especially_the_social-economic_context,_needs_to_be_considered_in_the_final_discussion._
+During_the_second_module_'New_animal_industries',_students_are_assigned_to_a_case_study_focused_on_a_new_industry._Students_deliver_a_consultant_report_describing_the_new_industry,_its_development_in_Australia,_the_advantages_and_limitations_of_the_industry_and_propose_recommendations_to_further_develop_a_new_industry_of_choice.
+_
+For_the_third_module_'Impact_of_animal_industries_on_the_environment',_students_are_asked_to_distill_information_available_on_the_environmental_impact_of_livestock_production_and_to_focus_on_the_animal_production/nutrition_aspects_of_the_livestock_producer's_enterprise_in_a_written_report.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:Agriculture_and_Environment ;
+    handbook:has_title handbook:Animal_Production_Systems ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:AGRI5505 a handbook:unit ;
+    rdfs:label "AGRI5505" ;
+    handbook:has_board_of_examiners <https://university.org/05_-_Agriculture,_Environmental_and_Related_S> ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/Integrated_pest_management_(IPM)_is_a_decision_system_with_an_economic_basis_used_to_limit_the_damage_caused_by_pests_(weeds,_diseases_and_insects)._This_unit_explores_the_practical_and_paddock-scale_approach_to_development_and_deployment_of_IPM_tactics_for_shorter-term_(1-2_seasons)_pest_problems._The_unit_highlights_examples_and_reasons_for_successful_and_failed_pest_management_approaches,_underlying_economic_implications,_as_well_as_short-_and_long-term_consequences_of_pest_management_decisions._Additionally,_different_practical_approaches_to_IPM_are_highlighted,_including_various_combinations_of_chemical_(mode_of_action_grouping,_application_methods,_pesticide_resistance_evolution_detailed),_cultural,_physical,_biological,_and_genetic_(e.g._host_plant_resistance)_options,_and_feature_situations_where_different_options_have_most_or_least_to_offer_in_terms_of_practical_IPM._This_unit_aims_to_provide_a_clear_understanding_of_the_knowledge_required_to_produce_and_implement_practical_IPM_plans,_including_monitoring_methods_for_early_detection;_assessing_damage_and_losses;_economics_of_practical_pest_control;_usefulness_of_different_pest_control_options;_and_awareness_of_unintended_consequences._It_is_ideally_suited_to_students_with_interests_in_applied_crop_protection_and_also_highly_relevant_to_students_with_interests_in_crop_and/or_animal_(i.e.,_feed-base)_production_systems,_but_also_those_with_a_broader_interest_in_food_security_and_natural_resource_management.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:Agriculture_and_Environment ;
+    handbook:has_title handbook:Integrated_Pest_Management_-_Practical ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:AGRI5506 a handbook:unit ;
+    rdfs:label "AGRI5506" ;
+    handbook:has_board_of_examiners <https://university.org/05_-_Agriculture,_Environmental_and_Related_Studies> ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/Pests_are_defined_as_organisms_that_damage_human_interests,_especially_in_the_production_of_food,_feed_and_fibre.__Pests_may_have_worse_effects_in_agriculture_for_two_broad_reasons.__First,_food,_feed_and_fibre_are_mostly_produced_from_domesticated_species,_which_are_selectively_bred_to_maximize_production_(yield).__However,_maximizing_production_increases_susceptibility_to_pests.__Second,_the_production_systems_designed_to_maximize_food,_feed_and_fibre_production_from_domesticated_species_may_also_be_optimal_for_pest_species_too.__Integrated_pest_management_(IPM)_is_a_decision_system_used_to_limit_the_damage_caused_by_pests,_with_an_economic_basis.__This_unit_considers_the_evolution_of_domesticated_species_and_production_systems,_their_geographic_origins_and_spread_around_the_world,_their_corresponding_pests,_the_development_of_pest_control_methods_(especially_chemical_pesticides),_and_the_continued_evolution_of_pests_to_resist_various_pest_control_methods_(especially_chemical_pesticides).__The_unit_explores_the_development_of_IPM_as_pest_control_methods_failed,_due_to_pest_resistance,_with_a_focus_on_the_economics_underlying_of_pest_management_decisions.__Both_short_term_and_long_term_consequences_of_pest_control_methods_are_considered,_as_are_different_forms_of_production_system.__Different_scenarios_with_varying_balance_between_costs_and_benefits_of_production_and_susceptibility,_pest_control_methods_and_pest_resistance_are_considered.__The_development_of_biological_control_is_explored.__This_unit_aims_to_provide_a_clear_understanding_of_the_knowledge_required_to_produce_an_IPM_plan,_including_economics_of_production_and_pest_control,_methods_to_measure_damage,_compare_utility_of_different_pest_control_methods,_and_consider_unintended_consequences_of_each.__Examples_of_differing_severity_of_pests,_and_pest_control_methods,_from_a_wide_range_of_plant_and_animal_production_systems_in_Australia_and_around_the_world.__This_unit_is_relevant_to_students_with_interests_in_production_systems,_food_security,_natural_resource_management,_environmental_risk_assessment,_and_environmental/ecological_modelling.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:Biological_Sciences ;
+    handbook:has_title handbook:Integrated_Pest_Management_-_Principles ;
+    handbook:has_unit_delivery_mode handbook:Both .
+
+handbook:AGRI5507 a handbook:unit ;
+    rdfs:label "AGRI5507" ;
+    handbook:has_board_of_examiners <https://university.org/05_-_Agriculture,_Environmental_and_Related_Studies> ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/Integrated_pest_management_(IPM)_is_a_decision_system_used_to_limit_the_damage_caused_by_pests_(weeds,_diseases_and_insects)._Underpinning_all_successful_IPM_decisions,_development_and_implementation,_is_having_a_sound_understanding_of_ecological_aspects_of_the_target_pest._Without_such_knowledge,_few_IPM_strategies_are_ever_successful._This_unit_explores_the_ecological_basis_and_strategic_approach_to_develop_and_deploy_IPM_for_long_term_(5-10_years_or_more)_and_over_large_geographic_scale_(within_farms_or_area-wide),_highlighting_examples_of_successful_and_failed_pest_control_approaches,_and_how_their_success_or_failure_relate_to_ecological_aspects_of_pests._This_unit_also_highlights_the_underlying_economic_implications_as_well_as_short-_and_long-term_consequences_of_pest_management_decisions._The_unit_also_covers_different_ecological_approaches_to_IPM_to_decrease_the_risk_and_magnitude_of_pest_outbreaks_over_time,_and_details_pest_epidemiology_and_the_critical_factors_driving_pest_challenges_across_arable_cropping,_animal_(feed-base),_and_horticultural_industries._The_main_ecological_strategies_cover_landscapes,_lifecycle_analyses,_natural_enemies_of_pests_and_their_requirements,_cultural_controls_and_agronomy,_host_plant_and_animal_resistance_to_pests,_GMOs,_and_other_more_specific_methods._It_will_also_explore_the_role_of_environmental_and_agronomic_factors,_including_climate_change,_crop_rotations,_etc._in_altering_the_ecological_basis_and_successful_application_of_IPM._This_unit_aims_to_provide_a_clear_understanding_of_the_ecological_knowledge_required_to_understand,_predict_and_secure_successful_IPM_outcomes,_and_will_demonstrate_the_consequences_of_not_having_this_foundational_ecological_understanding._In_particular,_this_unit_will_highlight_the_complexity_and_challenges_affecting_IPM_outcomes_due_to_interacting_multiple_environmental_and_agronomic_factors._The_unit_is_critical_to_students_with_interests_in_applied_crop_protection_and_also_highly_relevant_to_students_with_broader_interests_in_crop,_animal_(i.e.,_feed-base)_or_horticultural_production_systems_in_particular,_but_also_food_security_in_general.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:Agriculture_and_Environment ;
+    handbook:has_title handbook:Integrated_Pest_Management_-_Ecological ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:AGRI5508 a handbook:unit ;
+    rdfs:label "AGRI5508" ;
+    handbook:has_board_of_examiners <https://university.org/05_-_Agriculture,_Environmental_and_Related_Studies> ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/The_focus_of_this_unit_is_on_grazing_systems_that_produce_healthy_animals_and_high_quality_products_using_the_principles_of_clean,_green_and_ethical_animal_production._Topics_include_the_efficiency_of_feed_utilisation,_matching_feed_supply_to_animal_needs_to_improve_reproductive_efficiency,_benefits_of_plant_diversity_and_how_grazing_behaviour_and_learned_responses_of_animals_can_be_used_to_manage_diversity._There_is_a_focus_on_the_ability_of_grazing_systems_to_be_profitable_but_also_contribute_to_healthy_landscapes_through_the_use_of_novel_plants_to_improve_water_use,_nutrient_flows_and_soil_erosion,_and_animal_health_through_the_provision_of_shade,_shelter,_control_of_gastrointestinal_nematodes_and_reduced_methane_production_for_livestock._The_unit_consists_of_three_blocks_of_two-day_sessions_(including_a_field_trip_to_the_UWA_Future_Farm_at_Pingelly)._This_unit_is_essential_for_all_students_interested_in_a_career_in_agricultural_science,_meeting_the_challenge_of_developing_profitable_production_systems_and_managing_risk_in_the_face_of_increased_climate_variability._It_is_also_relevant_for_students_with_an_interest_in_natural_resource_management.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:Agriculture_and_Environment ;
+    handbook:has_title handbook:Sustainable_Grazing_Systems ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:AGRI5571 a handbook:unit ;
+    rdfs:label "AGRI5571" ;
+    handbook:has_board_of_examiners <https://university.org/05_-_Agriculture,_Environmental_and_Related_S> ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_is_an_advanced_unit_linking_soil_chemistry_and_biology_in_the_soil-water-plant-microbe_continuum,_emphasising_interactions_that_govern_soil_health_and_fertility._It_deals_with_nutrient_cycling_in_soils_with_respect_to_nutrient_offtake_in_agricultural_products_as_well_as_losses_to_ground-_and_surface_waters_and_air._Students_gain_an_understanding_of_the_chemical_equilibria_and_processes_in_soil_solution_and_at_the_solid_surfaces_as_well_as_how_soil_microbiome_abundance_and_diversity_influence_soil_ecological_services.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:Agriculture_and_Environment ;
+    handbook:has_title handbook:Advanced_Soil_Science ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:AHEA2201 a handbook:unit ;
+    rdfs:label "AHEA2201" ;
+    handbook:has_board_of_examiners handbook:06_-_Health ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_is_run_by_the_Centre_for_Aboriginal_Medical_and_Dental_Health._It_is_directed_at_students_who_are_interested_in_learning_more_about_Aboriginal_health_and_helps_students_improve_their_understanding_of_the_position_of_Aboriginal_people_in_contemporary_Australian_society_as_a_basis_for_working_with_Aboriginal_people_during_their_health_career._Taught_predominantly_by_Aboriginal_people,_the_unit_addresses_historical_and_cultural_issues_that_underlie_current_Aboriginal_health_problems_and_explores_specific_health_issues_affecting_Aboriginal_people._The_unit_also_explores_in_more_detail_interactions_between_Aboriginal_and_non-Aboriginal_service_providers_in_a_range_of_settings_and_the_implications_of_these_experiences_on_attempts_to_improve_Aboriginal_health.> ;
+    handbook:has_level handbook:2 ;
+    handbook:has_school handbook:Medical_School ;
+    handbook:has_title handbook:Aboriginal_Health_and_Wellbeing ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:AHEA3200 a handbook:unit ;
+    rdfs:label "AHEA3200" ;
+    handbook:has_board_of_examiners handbook:06_-_Health ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_is_run_by_the_Centre_for_Aboriginal_Medical_and_Dental_Health_and_Aboriginal_organisations_in_the_community._It_is_directed_at_students_who_are_interested_in_learning_more_about_Aboriginal_health_and_helps_improve_their_understanding_of_the_position_of_Aboriginal_people_in_contemporary_Australian_society_as_a_basis_for_working_with_Aboriginal_people_during_their_health_career._Taught_predominantly_by_Aboriginal_people,_the_unit_addresses_historical_and_cultural_issues_that_underlie_current_Aboriginal_health_problems,_and_explores_specific_health_issues_affecting_Aboriginal_people._The_unit_also_explores_in_more_detail_interactions_between_Aboriginal_and_non-Aboriginal_service_providers_in_a_range_of_settings_and_the_implications_of_these_experiences_on_attempts_to_improve_Aboriginal_health.> ;
+    handbook:has_level handbook:3 ;
+    handbook:has_school handbook:Medical_School ;
+    handbook:has_title handbook:Aboriginal_Health_Community_Organisation_Placement ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:AHEA3300 a handbook:unit ;
+    rdfs:label "AHEA3300" ;
+    handbook:has_board_of_examiners handbook:06_-_Health ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_will_involve_students_in_an_Aboriginal_health_research_project._Aboriginal_health_research_seminars_will_cover_the_following_topics:_how_to_engage_effectively_with_the_Aboriginal_community;_Aboriginal_health_qualitative_research_design,_methods_and_process;_how_to_complete_a_literature_review;_and_the_principles_of_ethical_research._Students_will_be_encouraged_to_engage_in_a_discussion_of_the_material_delivered_and_supported_to_undertake_the_assessments_required_for_this_unit._Students_will_be_assessed_on_the_following:_a_research_report_and_a_presentation_of_research_findings.> ;
+    handbook:has_level handbook:3 ;
+    handbook:has_school handbook:Medical_School ;
+    handbook:has_title handbook:Aboriginal_Health_Research_Project ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:AHEA3301 a handbook:unit ;
+    rdfs:label "AHEA3301" ;
+    handbook:has_board_of_examiners handbook:06_-_Health ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/Social_and_emotional_wellbeing_(SEWB)_in_Aboriginal_community_contexts_is_still_relatively_poorly_understood_within_mainstream_health_and_healthcare_service_settings._This_unit_continues_the_exposure_of_students_to_the_complexity_of_factors_at_play_in_health_and_wellbeing_with_a_particular_focus_on_a_multidimensional_analysis_of_these_factors._Drawing_on_a_range_of_case_studies_from_individual_and_community_contexts,_a_seminar_series_guides_students_through_a_deeper_understanding_of_causation,_engagement,_strategies_and_ways_of_working_utilising_the_multidimensional_model_as_a_framework.> ;
+    handbook:has_level handbook:3 ;
+    handbook:has_school handbook:Medical_School ;
+    handbook:has_title handbook:Aboriginal_Social_and_Emotional_Wellbeing ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:AHEA5755 a handbook:unit ;
+    rdfs:label "AHEA5755" ;
+    handbook:has_board_of_examiners handbook:06_-_Health ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_provides_students_with_an_opportunity_to_learn_in_depth_through_interaction_with_Aboriginal_lecturers_and_guest_speakers._Health_issues_covered_include_historic_and_cultural_concerns;_impacts_of_policies_and_programs;_and_contemporary_and_contentious_factors_that_influence_Aboriginal_people_today._Other_topics_include_Aboriginal_health_statistics_and_specific_health_problems;_environmental_health;_community_diagnosis;_sociocultural_factors_in_health;_community_development_and_disease_prevention;_and_the_role_of_Aboriginal_medical_services_and_their_relationship_to_state_health_services._The_unit_is_run_in_a_mixed_lecture_and_tutorial_format._The_learning_outcomes_are_achieved_through_lectures,_guest_speakers,_student_group_discussions,_media_resources_and_discussion_with_a_panel_of_Aboriginal_professionals.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:Medical_School ;
+    handbook:has_title handbook:Aboriginal_Health ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:AHEA5801 a handbook:unit ;
+    rdfs:label "AHEA5801" ;
+    handbook:has_board_of_examiners handbook:06_-_Health ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_is_delivered_in_both_lecture_and_seminar_format_by_the_Centre_for_Aboriginal_Medical_and_Dental_Health_with_invited_lecturers_for_particular_areas_of_expertise._Part_of_the_unit_focuses_on_building_relationships_with_Aboriginal_organisations_and_individuals_in_order_to_begin_to_develop_the_research_project_proposal._Students_develop_their_ability_to_explore_and_critique_literature_through_student_presentation_and_facilitation_within_seminars.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:Medical_School ;
+    handbook:has_title handbook:Aboriginal_Health_Research_and_Ethics ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:AHEA5880 a handbook:unit ;
+    rdfs:label "AHEA5880" ;
+    handbook:has_board_of_examiners handbook:06_-_Health ;
+    handbook:has_credit handbook:72 ;
+    handbook:has_description <https://university.org/This_unit_represents_the_research_component_of_the_Master_of_Aboriginal_Health_and_requires_students_to_implement_the_research_project_proposal_developed_in_AHEA5801_Aboriginal_Health_Research_and_Ethics_(formerly_AHEA8801_Aboriginal_Health_Research_and_Ethics)._Students_undertake_an_appropriate_research_project_based_on_their_individual_settings_and_connections_with_Aboriginal_communities._Students_need_to_build_the_community_relationships_necessary_for_their_projects_as_part_of_this_unit,_with_both_clinical_and_cultural_supervision_to_guide_them._The_unit_extends_over_three_semesters_allowing_adequate_time_for_project_refinement,_community_liaison,_data_collection_and_analysis,_final_synthesis_and_translation_of_findings._Supervisors_ensure_projects_contribute_new_knowledge_to_the_field_and_that_they_are_meaningful_to_the_setting_in_which_the_projects_occur.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:Medical_School ;
+    handbook:has_title handbook:Aboriginal_Health_Thesis_\(Research\)_\(full-time\) ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:AHEA5881 a handbook:unit ;
+    rdfs:label "AHEA5881" ;
+    handbook:has_board_of_examiners handbook:06_-_Health ;
+    handbook:has_credit handbook:72 ;
+    handbook:has_description <https://university.org/This_unit_represents_the_research_component_of_the_Master_of_Aboriginal_Health_and_requires_students_to_implement_the_research_project_proposal_developed_in_AHEA5801_Aboriginal_Health_Research_and_Ethics._Students_undertake_an_appropriate_research_project_based_on_their_individual_settings_and_connections_with_Aboriginal_communities._Students_need_to_build_the_community_relationships_necessary_for_their_projects_as_part_of_this_unit,_with_both_clinical_and_cultural_supervision_to_guide_them._The_unit_extends_over_three_semesters_allowing_adequate_time_for_project_refinement,_community_liaison,_data_collection_and_analysis,_final_synthesis_and_translation_of_findings._Supervisors_ensure_projects_contribute_new_knowledge_to_the_field_and_that_they_are_meaningful_to_the_setting_in_which_the_projects_occur.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:Medical_School ;
+    handbook:has_title handbook:Aboriginal_Health_Thesis_\(Research\)_\(part-time\) ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:ANHB0036 a handbook:unit ;
+    rdfs:label "ANHB0036" ;
+    handbook:has_board_of_examiners handbook:12_-_Mixed_Field_Programmes ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/By_the_end_of_this_unit,_you_will_have_studied_the_two_crucial_concepts_that_help_us_to_a_better_understanding_of_ourselves:_firstly,_‘What_we_are_made_of',_in_which_we_examine_the_cells_and_the_DNA_in_our_cells_through_to_the_organs_and_systems_that_enable_our_bodies_to_function_and_reproduce;_and_secondly,_'Who_we_are',_which_helps_us_to_understand_what_makes_the_eight_billion_of_us_on_our_planet_so_different_and_yet_so_similar_to_each_other_because_of_our_genetic_inheritance.
+By_choosing_to_study_Human_Anatomy_and_Biology_you_are_embarking_on_an_exciting_and_illuminating_pathway_that_will_teach_you_about_that_amazing_organism_-_YOU!> ;
+    handbook:has_level handbook:0 ;
+    handbook:has_school handbook:Indigenous_Studies ;
+    handbook:has_title <https://university.org/Foundations_of_Anatomy_&_Human_Biology> ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:ANHB1101 a handbook:unit ;
+    rdfs:label "ANHB1101" ;
+    handbook:has_board_of_examiners handbook:01_-_Natural_and_Physical_Sciences ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_explores_the_biology_of_'becoming_human'_in_an_integrative_way,_with_emphasis_on_human_evolution,_genetics,_development_and_structure.__How_we_'become_human'_is_explored_from_the_perspective_of_both_the_individual_and_the_species,_all_considered_within_the_context_of_evolution.> ;
+    handbook:has_level handbook:1 ;
+    handbook:has_school handbook:Human_Sciences ;
+    handbook:has_title <https://university.org/Human_Biology_I:_Becoming_Human> ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:ANHB1102 a handbook:unit ;
+    rdfs:label "ANHB1102" ;
+    handbook:has_board_of_examiners handbook:01_-_Natural_and_Physical_Sciences ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_explores_the_biology_of_'being_human'_in_today's_world_with_an_emphasis_on_how_humans_interact_with_the_environment_and_with_each_other._The_unit_includes_(1)_the_genetic_and_evolutionary_processes_which_determine_human_differences_within_and_between_populations;_(2)_the_basic_structure_and_function_of_the_human_body_at_the_level_of_tissues,_organs_and_systems;_(3)_how_the_nervous_and_endocrine_systems_interact_to_maintain_homeostasis;_(4)_the_processes_of_nutrition,_growth,_development_and_ageing;_and_(5)_the_relationship_of_the_biology_of_humans_to_their_evolutionary_history.> ;
+    handbook:has_level handbook:1 ;
+    handbook:has_school handbook:Human_Sciences ;
+    handbook:has_title <https://university.org/Human_Biology_II:_Being_Human> ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:ANHB2212 a handbook:unit ;
+    rdfs:label "ANHB2212" ;
+    handbook:has_board_of_examiners handbook:01_-_Natural_and_Physical_Sciences ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/The_study_of_human_structure_and_development_begins_with_an_overview_of_early_development_followed_by_the_low-power_examination_of_serial_sections_through_human_embryos_and_fetuses._The_aim_of_this_is_not_to_engage_in_detailed_histological_or_embryological_analysis_but_to_build_an_understanding_of_the_body_plan_and_how_it_develops._The_anatomy_of_the_vertebral_column,_articular_system_and_the_body_wall_follow._The_systemic_and_regional_anatomy_of_the_thorax,_abdomen_and_the_pelvis_come_next.__In_each_regional_study_area_the_embryology_is_reinforced_and_the_students_return_to_look_more_closely_at_each_region_using_fetal_serial_sections.> ;
+    handbook:has_level handbook:2 ;
+    handbook:has_school handbook:Human_Sciences ;
+    handbook:has_title handbook:Human_Structure_and_Development ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:ANHB2213 a handbook:unit ;
+    rdfs:label "ANHB2213" ;
+    handbook:has_board_of_examiners handbook:01_-_Natural_and_Physical_Sciences ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_offers_a_regional_study_of_the_entire_upper_and_lower_limbs,_describing_joints_and_joint_movements,_muscle_groups_and_patterns_of_innervation._It_draws_attention_to_specialised_functions_of_the_limbs_such_as_hand_mechanisms_and_locomotion._Topics_of_interest_like_nerve_injuries_relate_the_basic_structure_to_altered_function._This_is_followed_by_the_study_of_the_anatomical_organisation_of_the_head_and_neck._In_addition_to_the_topographic_organisation_of_this_region,_attention_is_paid_to_functional_areas_like_mastication,_swallowing_and_the_eye,_along_with_embryonic_development_and_its_correlation.> ;
+    handbook:has_level handbook:2 ;
+    handbook:has_school handbook:Human_Sciences ;
+    handbook:has_title handbook:Human_Functional_Anatomy ;
+    handbook:has_unit_delivery_mode handbook: .
+
+handbook:ANHB2214 a handbook:unit ;
+    rdfs:label "ANHB2214" ;
+    handbook:has_board_of_examiners handbook:01_-_Natural_and_Physical_Sciences ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_explores_nine_systems_of_the_human_body_view_macroscopic_to_microscopic_views_including:_skeletal,_muscular,_integumentary,_cardiovascular,_respiratory,_lymphatic,_endocrine,_digestive_and_urinary._Over_nine_weeks,_students_will_spend_one_hour_per_week_in_the_human_gross_anatomy_laboratory_observing_the_macroscopic_structure_of_organs_within_systems_and_one_hour_per_week_examining_the_microscopic_structure_of_organs_using_microscopes._Students_will_become_proficient_in_basic_light_microscopy._Principles_of_cell_biology_will_be_introduced_over_two_weeks_to_aid_the_transition_of_students_from_ANHB2214_Human_Organs_and_Systems_to_ANHB3323_Cells,_Tissue,_and_Development.> ;
+    handbook:has_level handbook:2 ;
+    handbook:has_school handbook:Human_Sciences ;
+    handbook:has_title handbook:Human_Organs_and_Systems ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:ANHB2215 a handbook:unit ;
+    rdfs:label "ANHB2215" ;
+    handbook:has_board_of_examiners handbook:01_-_Natural_and_Physical_Sciences ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/Biological_anthropology_is_concerned_with_the_nature_of_variation_and_the_ways_in_which_the_biology_and_behaviour_of_humans_are_influenced_by_genetic,_developmental,_ecological_and_cultural_factors._This_unit_looks_at_human_variation_in_contemporary_populations_from_the_perspective_of_evolutionary_ecology._It_focuses_on_ecological_principles_as_applied_to_human_populations,_the_emergence_of_adaptations_during_the_process_of_gene-environment_interaction_during_development,_and_the_interplay_of_cultural_and_biological_factors_in_human_behaviour._Topics_covered_include_principles_of_individual_and_kin_selection,_principles_of_human_ecology,_genetic_sources_of_variation_(beyond_mutation),_evolution_of_human_development,_reproductive_and_parental_investment_strategies,_biological_approach_to_culture,_and_evolutionary_and_developmental_perspectives_on_the_human_life_cycle.> ;
+    handbook:has_level handbook:2 ;
+    handbook:has_school handbook:Human_Sciences ;
+    handbook:has_title <https://university.org/Biological_Anthropology:_Human_Adaptation_and_Variation> ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:ANHB2216 a handbook:unit ;
+    rdfs:label "ANHB2216" ;
+    handbook:has_board_of_examiners handbook:01_-_Natural_and_Physical_Sciences ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_builds_on_Level_1_human_biology_to_develop_the_structural_and_functional_basis_of_human_reproduction_including_structure_and_function_of_the_reproductive_organs,_gametogenesis,_fertilisation,_early_embryogenesis,_fetal_development_and_preparation_for_birth,_maternal_adaptations_to_pregnancy_and_reproductive_ageing._Particular_emphasis_is_placed_on_the_hormonal_control_of_reproduction._This_information_is_then_used_to_examine_social_issues_including_human_sexuality,_infertility,_birth_control,_the_cause_and_prevention_of_malformation_and_the_impact_of_new_techniques_in_reproductive_biology._The_unit_provides_students_with_a_sound_understanding_of_human_reproduction_in_light_of_our_evolutionary_history,_culture_and_society.> ;
+    handbook:has_level handbook:2 ;
+    handbook:has_school handbook:Human_Sciences ;
+    handbook:has_title handbook:Human_Reproductive_Biology ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:ANHB2217 a handbook:unit ;
+    rdfs:label "ANHB2217" ;
+    handbook:has_board_of_examiners handbook:01_-_Natural_and_Physical_Sciences ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_examines_the_central,_peripheral_and_visceral_nervous_systems_of_humans._Higher_cortical_function,_motor_control,_memory,_emotion,_motivation_and_homeostasis_are_explored._
+ANHB2217_aims_to_give_students_a_thorough_understanding_of_neuroanatomy_and_neurophysiology_which_form_the_foundations_of_neuroscience._Content_will_be_delivered_by_active_learning_lectures_and_exploring_cadaveric_material_and_clinical_images_in_the_dissection_laboratory.> ;
+    handbook:has_level handbook:2 ;
+    handbook:has_school handbook:Human_Sciences ;
+    handbook:has_title handbook:Human_Neurobiology ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:ANHB3310 a handbook:unit ;
+    rdfs:label "ANHB3310" ;
+    handbook:has_board_of_examiners handbook:01_-_Natural_and_Physical_Sciences ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/In_this_unit_students_establish_necessary_skills_for_the_investigative_process_including_rigorous_definition_of_problems_and_questions;_careful_and_appropriate_design_of_experiments_and_selection_of_method;_creative_thinking;_careful_acquisition_of_data_(from_literature,_field_or_laboratory_work);_rigorous_but_imaginative_validation,_manipulation_and_interpretation_of_data;_and_presentation_of_investigations_both_as_written_and_verbal_reports._Using_these_techniques,_students_carry_out_their_own_group_projects_to_independently_investigate_the_organisation_of_a_specific_issue_arising_from_their_studies_in_other_Level_3_units_in_Anatomy_and_Human_Biology._The_flexible_structure_of_the_unit_allows_for_reading,_tutorials_and_practical_project_work_in_areas_of_particular_interest_to_individuals_or_small_groups_of_students._Some_flexibility_of_scheduling_is_also_possible,_with_the_consultation_and_consent_of_the_unit_coordinator.> ;
+    handbook:has_level handbook:3 ;
+    handbook:has_school handbook:Human_Sciences ;
+    handbook:has_title <https://university.org/Human_Biology:_Applications_and_Investigations_I> ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:ANHB3315 a handbook:unit ;
+    rdfs:label "ANHB3315" ;
+    handbook:has_board_of_examiners handbook:01_-_Natural_and_Physical_Sciences ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_is_available_in_odd_years_only_and_complements_ANHB3322_Human/Primate_Social_Organisation_that_is_available_in_even_years._This_unit_is_an_extension_of_ANHB2215_Biological_Anthropology:_Human_Adaptation_and_Variation._
+Emphasis_is_placed_on_human_reproductive_biology_and_ecology_in_relation_to_growth,_development,_behaviour_and_evolution._Particular_attention_is_paid_to_using_principles_of_life_history_theory,_parental_investment_theory,_sexual_selection_and_cooperation_theory_for_developing_new_perspectives_on_human_evolution._Topics_are_also_discussed_in_comparison_with_non-human_primates_and_other_species.> ;
+    handbook:has_level handbook:3 ;
+    handbook:has_school handbook:Human_Sciences ;
+    handbook:has_title handbook:Human_Evolutionary_Ecology ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:ANHB3316 a handbook:unit ;
+    rdfs:label "ANHB3316" ;
+    handbook:has_board_of_examiners handbook:01_-_Natural_and_Physical_Sciences ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_is_an_extension_of_ANHB2216_Human_Reproductive_Biology._Emphasis_is_placed_on_integrating_molecular,_cellular,_structural_and_functional_aspects_of_reproduction_to_address_contemporary_problems._For_example,_the_molecular_basis_of_hormone_secretion,_action_and_metabolism_is_dealt_with_as_a_basis_for_considering_determinants_of_fetal_growth._This_information_is_then_integrated_to_explore_the_biological,_social_and_ethical_consequences_of_low_birth_weight_that_impact_on_individuals'_long-term_health._A_particular_emphasis_is_placed_on_the_influence_of_stress,_nutritional_status_and_the_effect_of_new_technologies_on_human_reproduction._Workshops_cover_topics_ranging_from_experimental_methods_in_endocrinology_to_assisted_reproductive_technology,_to_human_lactation.> ;
+    handbook:has_level handbook:3 ;
+    handbook:has_school handbook:Human_Sciences ;
+    handbook:has_title handbook:Human_Reproduction ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:ANHB3320 a handbook:unit ;
+    rdfs:label "ANHB3320" ;
+    handbook:has_board_of_examiners handbook:01_-_Natural_and_Physical_Sciences ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/In_this_unit_students_establish_necessary_skills_for_the_investigative_process_including_rigorous_definition_of_problems_and_questions;_careful_and_appropriate_design_of_experiments_and_selection_of_method;_creative_thinking;_careful_acquisition_of_data_(from_literature,_field_or_laboratory_work);_rigorous_but_imaginative_validation,_manipulation_and_interpretation_of_data;_and_presentation_of_investigations_both_as_written_and_verbal_reports._Using_these_techniques,_students_carry_out_their_own_group_projects_to_independently_investigate_the_organisation_of_a_specific_issue_arising_from_their_studies_in_other_Level_3_units_in_Anatomy_and_Human_Biology._The_flexible_structure_of_the_unit_allows_for_reading,_tutorials_and_practical_project_work_in_areas_of_particular_interest_to_individuals_or_small_groups_of_students._Some_flexibility_of_scheduling_is_also_possible,_with_the_consultation_and_consent_of_the_unit_coordinator.> ;
+    handbook:has_level handbook:3 ;
+    handbook:has_school handbook:Human_Sciences ;
+    handbook:has_title <https://university.org/Human_Biology:_Applications_and_Investigations_II> ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:ANHB3321 a handbook:unit ;
+    rdfs:label "ANHB3321" ;
+    handbook:has_board_of_examiners handbook:01_-_Natural_and_Physical_Sciences ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_is_concerned_with_the_nature,_development_and_causes_of_human_variation_from_an_evolutionary_perspective,_developing_many_of_the_integrative_themes_of_Level_2_Human_Biology._It_encompasses_human_development,_population_biology,_ecology,_cellular_biology_and_genetics._Topics_covered_include_the_population_biology_of_human_disease,_secular_trends_and_the_impact_of_modernisation,_population_variation_and_sex_differences,_social_organisation_and_other_life_history_traits_as_mediating_factors_between_environment_and_individual._A_series_of_laboratory/workshop_sessions_focuses_on_the_study_of_genetic_and_phenotypic_variations_and_the_use_of_these_techniques_in_the_study_of_human_population_biology.> ;
+    handbook:has_level handbook:3 ;
+    handbook:has_school handbook:Human_Sciences ;
+    handbook:has_title <https://university.org/Biological_Anthropology:_Genes_and_Society> ;
+    handbook:has_unit_delivery_mode handbook:Both .
+
+handbook:ANHB3322 a handbook:unit ;
+    rdfs:label "ANHB3322" ;
+    handbook:has_board_of_examiners handbook:01_-_Natural_and_Physical_Sciences ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_runs_in_even_years_only_and_complements_ANHB3315_Human_Evolutionary_Ecology,_which_runs_in_odd_years_only._Emphasis_is_placed_on_applying_evolutionary_thinking_to_human/primate_social_organisation_and_its_underlying_individual_strategies_as_well_as_the_cognitive_and_cultural_underpinnings_of_sociality._Topics_to_be_covered_include_mate_choice_strategies,_cooperation_and_conflict_within_and_between_groups,_social_learning_and_culture_as_well_as_cultural_cognition.> ;
+    handbook:has_level handbook:3 ;
+    handbook:has_school handbook:Human_Sciences ;
+    handbook:has_title <https://university.org/Human/Primate_Social_Organisation> ;
+    handbook:has_unit_delivery_mode handbook: .
+
+handbook:ANHB3323 a handbook:unit ;
+    rdfs:label "ANHB3323" ;
+    handbook:has_board_of_examiners handbook:01_-_Natural_and_Physical_Sciences ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_offers_an_advanced_course_in_investigating_the_organisation_of_human_cells_and_tissues._The_lectures,_seminars/tutorials_and_laboratory_classes_cover_the_sophisticated_cellular_interactions_and_molecular_events_that_lead_to_the_following:_(1)_tissue_formation_during_embryogenesis;_(2)_growth;_(3)_homeostasis_of_normal_adult_tissues;_(4)_repair_in_response_to_damage;_(5)_disease;_(6)_ageing;_and_(7)_tissue_engineering._The_theory,_practice_and_applications_of_methods_of_tissue_preparation,_cell_culture,_immunocytochemistry,_confocal_and_electron_microscopy,_in_situ_hybridisation_and_image_analysis_are_emphasised.> ;
+    handbook:has_level handbook:3 ;
+    handbook:has_school handbook:Human_Sciences ;
+    handbook:has_title <https://university.org/Cells,_Tissues_and_Development> ;
+    handbook:has_unit_delivery_mode handbook:Both .
+
+handbook:ANHB3324 a handbook:unit ;
+    rdfs:label "ANHB3324" ;
+    handbook:has_board_of_examiners handbook:01_-_Natural_and_Physical_Sciences ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_is_taught_as_two_modules,_one_focusing_on_head_and_neck_anatomy_and_the_other_on_limb_anatomy.__Each_module_teaches_the_relevant_embryology,_gross_anatomy,_clinical_application_and_imaging_to_ensure_a_holistic_understanding_of_human_anatomy.> ;
+    handbook:has_level handbook:3 ;
+    handbook:has_school handbook:Human_Sciences ;
+    handbook:has_title handbook:Human_Structure_and_Function ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:ANHB5431 a handbook:unit ;
+    rdfs:label "ANHB5431" ;
+    handbook:has_board_of_examiners handbook:06_-_Health ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_consists_of_six_modules:_(1)_biopotentials_and_their_measurement;_(2)_equipment_and_instrumentation_(non-biopotential);_(3)_performing_polysomnography_(PSG);_(4)_reading,_scoring_and_analysing_sleep_(I);_(5)_reading,_scoring_and_analysing_sleep_(II);_and_(6)_data_management,_confidentiality,_ethics.
+Students_undertaking_the_Graduate_Diploma_in_Dental_Sleep_Medicine_(52340)_are_advised_to_complete_ANHB5432_Fundamentals_of_Sleep_Biology_first._Students_undertaking_the_Graduate_Certificate_in_Adult_Sleep_Science_(51210)_or_the__Graduate_Diploma_in_Sleep_Science_(52320)_are_advised_that_this_unit_is_a_prerequisite_for_the_intensive_units_ANHB5433_Sleep_Technology_in_Practice_and_ANHB5434_Sleep_Biology_in_Practice.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:Human_Sciences ;
+    handbook:has_title handbook:Fundamentals_of_Sleep_Technology ;
+    handbook:has_unit_delivery_mode handbook: .
+
+handbook:ANHB5432 a handbook:unit ;
+    rdfs:label "ANHB5432" ;
+    handbook:has_board_of_examiners handbook:06_-_Health ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_consists_of_six_modules:_(1)_introduction_to_sleep;_(2)_regulation_of_sleep;_(3)_anatomy_and_physiology_of_normal_sleep;_(4)_respiratory_sleep_disorders;_(5)_treatment_of_respiratory_sleep_disorders;_and_(6)_non-respiratory_sleep_disorders_and_their_treatment.
+It_is_preferred_that_Sleep_Science_and_Dental_Sleep_Medicine_students_take_this_unit_first,_however_ANHB5431_Fundamentals_of_Sleep_Technology_is_the_only_prerequisite_unit_for_the_intensive_units_ANHB5433_Sleep_Technology_in_Practice_and_ANHB5434_Sleep_Biology_in_Practice,_units_in_the_Graduate_Certificate_in_Adult_Sleep_Science_(51210),_or_the_Graduate_Diploma_in_Sleep_Science_(52320).> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:Human_Sciences ;
+    handbook:has_title handbook:Fundamentals_of_Sleep_Biology ;
+    handbook:has_unit_delivery_mode handbook: .
+
+handbook:ANHB5433 a handbook:unit ;
+    rdfs:label "ANHB5433" ;
+    handbook:has_board_of_examiners handbook:06_-_Health ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_consists_of_six_modules:_(1)_professional_conduct;_(2)_instrumentation_for_sleep_staging;_(3)_ancillary_instrumentation;_(4)_polysomnography_(PSG)_software;_(5)_overnight_monitoring_and_documentation;_and_(6)_portable_sleep_monitoring_devices.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:Human_Sciences ;
+    handbook:has_title handbook:Sleep_Technology_in_Practice ;
+    handbook:has_unit_delivery_mode handbook: .
+
+handbook:ANHB5434 a handbook:unit ;
+    rdfs:label "ANHB5434" ;
+    handbook:has_board_of_examiners handbook:06_-_Health ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_consists_of_six_modules:_(1)_sleep_staging;_(2)_respiratory_scoring;_(3)_other_scoring_and_report_generation;_(4)_Continuous_Positive_Airway_Pressure_(CPAP);_(5)_NIV_and_O2;_and_(6)_Multiple_Sleep_Latency_Test_(MSLT)_and_Maintenance_of_Wakefulness_Test_(MWT).> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:Human_Sciences ;
+    handbook:has_title handbook:Sleep_Biology_in_Practice ;
+    handbook:has_unit_delivery_mode handbook: .
+
+handbook:ANHB5451 a handbook:unit ;
+    rdfs:label "ANHB5451" ;
+    handbook:has_board_of_examiners handbook:01_-_Natural_and_Physical_Sciences ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_covers_three_major_topics:_(1)_human_cellular_biology;_(2)_human_structure_and_function;_and_(3)_human_genetics.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school <https://university.org/Physics,_Mathematics_and_Computing> ;
+    handbook:has_title handbook:Anatomy_and_Biology_for_Medical_Physicists ;
+    handbook:has_unit_delivery_mode handbook:Both .
+
+handbook:ANHB5453 a handbook:unit ;
+    rdfs:label "ANHB5453" ;
+    handbook:has_board_of_examiners handbook:06_-_Health ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_consists_of_three_modules:_(1)_advanced_sleep_studies_and_therapies;_(2)_advanced_instrumentation_and_technology_for_sleep_monitoring;_and_(3)_laboratory_management.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:Human_Sciences ;
+    handbook:has_title handbook:Advanced_Sleep_Technology_and_Laboratory_Management ;
+    handbook:has_unit_delivery_mode handbook: .
+
+handbook:ANHB5454 a handbook:unit ;
+    rdfs:label "ANHB5454" ;
+    handbook:has_board_of_examiners handbook:06_-_Health ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_consists_of_three_modules:_(1)_diagnostic_polysomnography_(PSG),_multiple_sleep_latency_test_(MSLT)_and_maintenance_of_wakefulness_test_(MWT)_scoring;_(2)_treatment_PSG_scoring;_and_(3)_advanced_scoring_and_actigraphy.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:Human_Sciences ;
+    handbook:has_title handbook:Advanced_Sleep_Scoring ;
+    handbook:has_unit_delivery_mode handbook: .
+
+handbook:ANHB5456 a handbook:unit ;
+    rdfs:label "ANHB5456" ;
+    handbook:has_board_of_examiners handbook:01_-_Natural_and_Physical_Sciences ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_provides_students_with_knowledge_and_comprehension_of_statistical_methods_used_in_clinical_science_research_and_analytical_skills_necessary_for_interpreting_clinical_science_research.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:Human_Sciences ;
+    handbook:has_title handbook:Clinical_Research_and_Biostatistics ;
+    handbook:has_unit_delivery_mode handbook: .
+
+handbook:ANHB5457 a handbook:unit ;
+    rdfs:label "ANHB5457" ;
+    handbook:has_board_of_examiners handbook:06_-_Health ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_consists_of_six_modules:_(1)_advanced_sleep_disorders;_(2)_advanced_therapies;_(3)_advanced_monitoring;_(4)_advanced_technology;_(5)_sleep_laboratory_management_I;_and_(6)_sleep_laboratory_management_II.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:Human_Sciences ;
+    handbook:has_title handbook:Advanced_Competencies_in_Sleep_Science ;
+    handbook:has_unit_delivery_mode handbook: .
+
+handbook:ANHB5530 a handbook:unit ;
+    rdfs:label "ANHB5530" ;
+    handbook:has_board_of_examiners handbook:01_-_Natural_and_Physical_Sciences ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_focuses_on_the_anatomical_basis_for_sleep_disorders_and_their_treatment._It_provides_a_clear_focus_on_the_dentally_relevent_aspects_as_well_as_the_wider_anatomical_background_so_the_student_gains_a_comprehensive_understanding_of_the_current_knowledge_of_the_anatomy_associated_with_obstructive_sleep_apnoea._Students_are_assumed_to_have_access_to_a_sleep_laboratory_or_clinic_near_their_home_or_practice,_where_they_can_develop_a_relationship_with_a_local_respiratory_physician_or_dedicated_sleep_physician_who_can_act_as_a_mentor_as_well_as_facilitate_sleep_laboratory_visits.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:Human_Sciences ;
+    handbook:has_title handbook:Advanced_Sleep_Disorders_and_Anatomy_of_Sleep ;
+    handbook:has_unit_delivery_mode handbook: .
+
+handbook:ANHB5532 a handbook:unit ;
+    rdfs:label "ANHB5532" ;
+    handbook:has_board_of_examiners handbook:06_-_Health ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_is_to_be_delivered_in_six_online_modules_with_student_activities_including_an_observational_site_visit,_supporting_the_online_lectures._At_the_completion_of_the_unit_students_are_able_to_understand_the_medical_co-morbidities_and_dental_conditions_associated_with_sleep_disordered_breathing._Medical_conditions_with_a_direct_relationship_with_sleep_disordered_breathing_are_described_in_detail._Students_also_understand_the_importance_of_evidence-based_medical_and_dental_practice_and_understand_that_the_use_of_oral_appliances_for_sleep_breathing_disorders_has_a_medical_outcome_and_therefore_understand_that_medical_conditions_are_vitally_important_in_understanding_dental_sleep_medicine._Students_develop_the_basic_skills_in_evaluating_the_upper_airway_and_the_requirements_for_determining_the_suitability_for_oral_appliance_therapy._The_role_and_specific_tasks_relevant_to_a_comprehensive_dental_examination_prior_to_implementing_oral_appliance_therapy_are_explained._Students_who_have_previous_understanding_of_dentistry_re-learn_and_update_their_knowledge_in_oral/dental_conditions_relevant_to_sleep_breathing_disorders.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:Human_Sciences ;
+    handbook:has_title handbook:Fundamentals_of_Dental_Sleep_Medicine ;
+    handbook:has_unit_delivery_mode handbook: .
+
+handbook:ANHB5533 a handbook:unit ;
+    rdfs:label "ANHB5533" ;
+    handbook:has_board_of_examiners handbook:06_-_Health ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_is_to_be_delivered_in_six_online_modules._It_gives_students_a_comprehensive_understanding_of_the_history_of_oral_appliance_therapy_for_treatment_of_sleep_disordered_breathing._Evidence-based_protocols_and_current_treatment_paradigms_are_explored_in_detail_and_students_complete_the_unit_with_the_skills_to_make_informed_treatment_choices_for_patients,_and_explore_the_range_of_oral_appliances,_their_fabrication_and_use._The_current_evidence-based_treatment_protocols_are_presented_in_a_cohesive_form_structured_against_the_stepwise_treatment_of_patients._It_includes_pre-treatment,_monitoring_and_medical_liaison._Guidelines_for_the_scope_and_extent_of_dentist_participation_in_treatment_of_sleep_disordered_breathing_are_presented_as_well_as_the_basic_legal_requirements_of_the_dentist._At_the_completion_of_the_unit_students_have_the_skills_to_select_appropriate_appliance_options_for_patients_and_have_a_comprehensive_understanding_of_their_indications_and_contraindications_for_treatment._Students_are_advised_to_complete_ANHB5532_Fundamentals_of_Dental_Sleep_Medicine_first.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:Human_Sciences ;
+    handbook:has_title handbook:Oral_Appliance_Therapy_in_Sleep_Disordered_Breathing ;
+    handbook:has_unit_delivery_mode handbook: .
+
+handbook:ANHB5534 a handbook:unit ;
+    rdfs:label "ANHB5534" ;
+    handbook:has_board_of_examiners handbook:06_-_Health ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_is_to_be_delivered_in_six_online_modules._Students_learn_about_assessment_of_medical_and_dental_conditions_as_well_as_relevant_imaging_and_other_techniques_to_screen_patients_referred_for_treatment_of_sleep_disordered_breathing._This_includes_the_use_of_lateral_cephalometry_and_panoramic_radiographs._The_use_of_cone_beam_volumetric_tomography_and_magnetic_resonance_imaging_and_evidence_supporting_their_specific_uses_in_sleep_apnoea_cases_are_learning_outcomes_of_the_unit._At_the_completion_of_the_unit_students_have_the_skills_to_use_evidence-based_predictors_of_treatment_outcomes._The_unit_focuses_on_discussions_of_history,_examination,_clinical_tests_and_treatment_planning_for_a_series_of_cases._A_templated_approach_to_development_of_diagnostic_skills_and_selection_of_treatment_option_alternatives_are_presented_for_students.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:Human_Sciences ;
+    handbook:has_title handbook:Dental_Sleep_Medicine_in_Practice ;
+    handbook:has_unit_delivery_mode handbook: .
+
+handbook:ANHB5535 a handbook:unit ;
+    rdfs:label "ANHB5535" ;
+    handbook:has_board_of_examiners handbook:06_-_Health ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_is_to_be_delivered_in_six_online_modules._It_gives_students_the_skills_to_evaluate_and_manage_patients_suitable_for_a_surgical_approach._The_unit_brings_together_learning_from_previous_units_to_provide_students_with_overall_integration_of_the_medical_and_dental_knowledge,_clinical_skills_and_understanding_pertaining_to_the_role_of_dentists_in_the_multidisciplinary_management_of_obstructive_sleep_apnoea.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:Human_Sciences ;
+    handbook:has_title handbook:Advanced_Competency_in_Dental_Sleep_Medicine ;
+    handbook:has_unit_delivery_mode handbook: .
+
+handbook:ANHB5546 a handbook:unit ;
+    rdfs:label "ANHB5546" ;
+    handbook:has_board_of_examiners handbook:06_-_Health ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/At_the_completion_of_this_unit_students_will_be_able_to_understand_the_medical_co-morbidities_and_dental_conditions_associated_with_sleep-disordered_breathing_and_to_appreciate_the_multi-disciplinary_management_of_patients._Students_will_gain_an_understanding_of_the_importance_of_evidence_based_medical_and_dental_practice_and_that_a_relationship_between_medical_and_dental_disciplines_is_important_for_the_use_of_oral_appliances_for_treating_sleep-disordered_breathing.__Students_will_develop_basic_skills_in_evaluating_the_upper_airway_and_the_requirements_for_determining_the_suitability_for_oral_appliance_therapy._The_role_and_specific_tasks_relevant_to_a_comprehensive_dental_examination_prior_to_implementing_oral_appliance_therapy_will_be_explained._Evidence-based_protocols_and_current_treatment_paradigms_will_be_explored_in_detail_and_the_student_will_complete_the_course_with_the_skills_to_make_informed_treatment_choices_for_patients.__A_range_of_oral_appliances_will_be_explored_and_current_evidence-based_treatment_protocols_will_be_presented_in_a_cohesive_form_structured_against_the_stepwise_treatment_of_patients,_including_pre-treatment,_monitoring_and_medical_liaison._Guidelines_for_the_scope_and_extent_of_dentist_participation_in_treatment_of_sleep-disordered_breathing_will_be_presented_as_will_the_basic_legal_requirements_of_the_dentist._At_the_completion_of_the_unit_students_will_have_the_skills_to_select_appropriate_appliance_options_for_patients_and_have_a_comprehensive_understanding_of_their_indications_and_contraindications_for_treatment.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:Human_Sciences ;
+    handbook:has_title handbook:Foundations_of_Dental_Sleep_Medicine ;
+    handbook:has_unit_delivery_mode handbook: .
+
+handbook:ANHX1101 a handbook:unit ;
+    rdfs:label "ANHX1101" ;
+    handbook:has_board_of_examiners handbook:01_-_Natural_and_Physical_Sciences ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_explores_the_biology_of_'becoming_human'_in_an_integrative_way,_with_emphasis_on_human_evolution,_genetics,_development_and_structure.__How_we_'become_human'_is_explored_from_the_perspective_of_both_the_individual_and_the_species,_all_considered_within_the_context_of_evolution.> ;
+    handbook:has_level handbook:1 ;
+    handbook:has_school handbook:UWA_College ;
+    handbook:has_title handbook:Human_Biology_1_\(Becoming_Human\) ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:ANHX1102 a handbook:unit ;
+    rdfs:label "ANHX1102" ;
+    handbook:has_board_of_examiners handbook:01_-_Natural_and_Physical_Sciences ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_explores_the_biology_of_'being_human'_in_today's_world_with_an_emphasis_on_how_humans_interact_with_the_environment_and_with_each_other._The_unit_includes_(1)_the_genetic_and_evolutionary_processes_which_determine_human_differences_within_and_between_populations;_(2)_the_basic_structure_and_function_of_the_human_body_at_the_level_of_tissues,_organs_and_systems;_(3)_how_the_nervous_and_endocrine_systems_interact_to_maintain_homeostasis;_(4)_the_processes_of_nutrition,_growth,_development_and_ageing;_and_(5)_the_relationship_of_the_biology_of_humans_to_their_evolutionary_history.> ;
+    handbook:has_level handbook:1 ;
+    handbook:has_school handbook:UWA_College ;
+    handbook:has_title handbook:Human_Biology_2_\(Being_Human\) ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:ANIM2001 a handbook:unit ;
+    rdfs:label "ANIM2001" ;
+    handbook:has_board_of_examiners handbook:01_-_Natural_and_Physical_Sciences ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_will_emphasise_the_global_impact_that_Darwin's_theory_of_evolution_has_had_on_a_range_of_human_endeavours._The_unit_provides_an_engaging_environment_for_understanding_how_evolutionary_principles_have_shaped_contemporary_human_populations_and_global_human_endeavours,_such_as_the_need_to_communicate_through_language,_to_feed_ourselves,_fight_disease,_design_our_everyday_products,_conduct_business_transactions,_and_fuel_our_artistic_talents._The_unit_will_also_explore_the_darker_side_of_Darwinism,_tackling_unsettling_topics_such_as_‘scientific_racism',_colonialism,_and_the_basis_for_human_conflict._In_doing_so_the_unit_explores_the_variation_in_culture_and_religious_belief_that_is_so_important_in_developing_an_objective_understanding_of_cultural_diversity._Students_will_gain_an_understanding_of_how_Darwinian_principles_can_be_used_to_help_us_understand_our_own_actions,_but_also_to_respond_to_some_of_the_biggest_challenges_facing_humankind,_including_the_loss_of_biodiversity,_climate_change_and_disease._Overall,_students_will_gain_a_broad_understanding_of_what_it_is_to_be_human,_in_the_context_of_evolution,_in_a_culturally_diverse_and_environmentally_challenged_world..> ;
+    handbook:has_level handbook:2 ;
+    handbook:has_school handbook:Biological_Sciences ;
+    handbook:has_title handbook:The_Darwinian_Revolution ;
+    handbook:has_unit_delivery_mode handbook:Both .
+
+handbook:ANIM2207 a handbook:unit ;
+    rdfs:label "ANIM2207" ;
+    handbook:has_board_of_examiners handbook:01_-_Natural_and_Physical_Sciences ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/Animals_provide_evidence_of_the_many_and_varied_solutions_to_the_challenges_imposed_on_them_by_their_changing_environment._This_unit_builds_on_knowledge_of_the_diversity_of_animals_and_interprets_the_differences_and_similarities_within_the_framework_of_their_evolutionary_relationships_to_each_other._While_sometimes_very_different,_animals_provide_many_fascinating_examples_of_solutions_to_the_problems_of_gaining_nutrients,_removing_wastes_and_surviving_to_reproduce_the_next_generation._The_unit_provides_a_broad_overview_of_animal_function_and_structure_and_integrates_this_information_with_that_introduced_in_earlier_units_of_the_major._It_is_a_step_leading_to_the_units_of_Level_3_of_the_major_where_the_underlying_fundamental_mechanisms_and_processes_are_revealed.> ;
+    handbook:has_level handbook:2 ;
+    handbook:has_school handbook:Biological_Sciences ;
+    handbook:has_title handbook:Animal_Form_and_Function ;
+    handbook:has_unit_delivery_mode handbook:Both .
+
+handbook:ANIM2209 a handbook:unit ;
+    rdfs:label "ANIM2209" ;
+    handbook:has_board_of_examiners handbook:01_-_Natural_and_Physical_Sciences ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_is_designed_for_students_studying_biological_science_majors_wishing_to_gain_experience_in_animal_field_studies._The_main_part_of_this_unit_is_an_eight-day_field_trip_to_Coral_Bay,_located_in_in_the_heart_of_the_Ningaloo_Reef_World_Heritage_Area_in_the_northwest_of_Western_Australia._The_field_trip_is_typically_held_in_July_during_the_break_between_semesters_1_and_2._You_learn_techniques_such_as_mist_netting,_mammal_trapping,_marine_fauna_surveys_and_experimental_design_and_analysis._
+The_field_trip_itself_is_divided_into_two_parts._The_first_comprises_a_series_of_field-based_exercises_that_runs_over_five_consecutive_days_(each_exercise_led_by_a_different_Biological_Sciences_academic)._While_individual_projects_change_from_year_to_year,_the_unifying_aim_of_these_exercises_is_to_equip_students_with_field-based_skills_and_experiences._The_second_part_of_the_field_trip_involves_a_single_research_project_run_over_three_days._In_this_second_component,_students_work_collaboratively_in_groups_(16_students)_to_collect_and_compile_data_for_subsequent_organisation,_analysis_and_dissemination_by_each_student.> ;
+    handbook:has_level handbook:2 ;
+    handbook:has_school handbook:Biological_Sciences ;
+    handbook:has_title handbook:Field_Studies_in_Zoology ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:ANIM2220 a handbook:unit ;
+    rdfs:label "ANIM2220" ;
+    handbook:has_board_of_examiners handbook:01_-_Natural_and_Physical_Sciences ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_will_focus_on_the_spectrum_of_animal_diversity,_from_single_celled_organisms_through_to_vertebrates.__This_diversity_will_be_categorised_systematically_into_the_35_phyla,_and_classes_of_the_major_phyla,_the_organisation_of_which_reflects_their_evolutionary_history._The_evolution_of_animals_will_be_illustrated_using_the_classic_study_of_the_change_in_body_structure_(‘bauplans'),_from_simple_to_complex_tissues,_organs,_segmentation,_limbs_and_other_body_parts.__This_will_be_compared_with_evolution_discerned_by_modern_molecular_sequence_methods,_and_how_the_differences_between_these_methods_can_be_understood.__Factors_influencing_the_evolution_of_animal_diversity_will_be_explored,_within_and_between_phyla,_in_the_context_of_coincidental_changes_in_climate,_geology,_and_ecology_throughout_evolutionary_history.__Theoretical_concepts_developed_during_lectures_will_be_explored_in_laboratory_classes._Representative_species_from_major_phyla_and_classes_will_be_examined_to_understand_body_structure,_and_to_demonstrate_the_characters_used_to_categorise_animals_into_phyla_and_classes.> ;
+    handbook:has_level handbook:2 ;
+    handbook:has_school handbook:Biological_Sciences ;
+    handbook:has_title handbook:Animal_Diversity ;
+    handbook:has_unit_delivery_mode handbook:Both .
+
+handbook:ANIM2297 a handbook:unit ;
+    rdfs:label "ANIM2297" ;
+    handbook:has_board_of_examiners <https://university.org/05_-_Agriculture,_Environmental_and_Related_S> ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_will_examine_human-wildlife_conflict_in_Sri_Lanka.__This_is_a_2_week_field_project_in_close_collaboration_with_Sabaragamuwa_University_of_Sri_Lanka.__
+Students_will_learn_about_the_competing_economic_and_conservation_aims_and_land_use_in_Sri_Lanka,_one_of_the_world's_biodiversity_hotspots.__There_are_two_main_agricultural_activities,_small_scale_village_gardens_and_large_scale_commercial_tea_plantations.__Both_replace_natural_forests,_the_first_human-wildlife_conflict._Gardens_are_raided_by_wildlife,_especially_monkeys_and_elephants,_creating_the_second_human-wildlife_conflict.__The_wildlife_is_valued_by_the_tourism_industry,_creating_a_third_conflict_between_agriculture_and_tourism.___
+UWA_students_will_visit_to_government_departments_(National_Parks,_Forest),_industry_(tea_plantations,_village_gardens)_and_NGOs,_with_suitable_work_related_learning_in_field_situations.__Where_possible,_UWA_students_may_work_SUSL_students_in_classes_and_research_projects.__Learning_outcomes_will_include_a_wider_and_deeper_understanding_of_conversation_and_development_issues,_and_a_greater_appreciation_of_Sri_Lankan_culture,_and_rebuilding_after_a_long_civil_war.
+UWA_students_will_compare_aspects_of_human-wildlife_conflict_in_Sri_Lanka_with_those_present_in_Australia.__The_wildlife_species,_agricultural_systems_and_culture_differ,_yet_the_problems_are_similar.__This_unit_will_allow_the_students_to_broaden_their_experience_of_a_widespread_issue_across_the_world> ;
+    handbook:has_level handbook:2 ;
+    handbook:has_school handbook:Biological_Sciences ;
+    handbook:has_title handbook:Human-wildlife_conflict_in_the_Tropics ;
+    handbook:has_unit_delivery_mode handbook: .
+
+handbook:ANIM3306 a handbook:unit ;
+    rdfs:label "ANIM3306" ;
+    handbook:has_board_of_examiners <https://university.org/05_-_Agriculture,_Environmental_and_Related_S> ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_is_based_on_a_new_approach_to_agriculture_through_the_development_of_animal_production_systems_that_are_clean,_green_and_ethical_(CGE)._The_objective_is_for_students_to_learn_the_scientific_principles_that_underpin_(1)_the_reduction_in_the_use_of_chemicals_and_artificial_hormones_(clean);_(2)_the_reduction_of_the_negative_impact_on_the_environment_(green);_and_(3)_the_optimisation_of_animal_welfare_(ethical)._The_unit_is_taught_within_the_current_landscape_of_farming_systems_in_Western_Australia_and_global_animal_production_systems.> ;
+    handbook:has_level handbook:3 ;
+    handbook:has_school handbook:Agriculture_and_Environment ;
+    handbook:has_title <https://university.org/Clean,_Green_and_Ethical_Animal_Production> ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:ANIM3320 a handbook:unit ;
+    rdfs:label "ANIM3320" ;
+    handbook:has_board_of_examiners handbook:01_-_Natural_and_Physical_Sciences ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_deals_with_the_development_and_mature_organisation_of_the_nervous_system_in_a_wide_range_of_animals._The_unit_examines_the_complex_wiring_of_the_brain_and_how_this_organisation_relates_to_an_animal's_behaviour,_ecology_and_environmental_needs._As_examples,_the_unit_includes_studies_of_deep-sea_fish_and_those_birds_and_mammals_which_span_the_aquatic_and_terrestrial_habitats._Animals_with_highly_specialised_senses,_such_as_owls,_are_also_considered._The_unit_provides_a_unique_perspective_of_neuroscience—students_gain_a_non-human_centric_view_of_the_central_nervous_system_and_acquire_a_better_understanding_and_appreciation_for_brain_variation_and_adaptation_across_the_animal_kingdom._The_laboratory_classes_provide_practical_experience_in_the_examination_of_the_nervous_system_and_instruction_in_methodology_and_experimental_design.> ;
+    handbook:has_level handbook:3 ;
+    handbook:has_school handbook:Biological_Sciences ;
+    handbook:has_title handbook:Comparative_Neurobiology ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:ANIM3353 a handbook:unit ;
+    rdfs:label "ANIM3353" ;
+    handbook:has_board_of_examiners <https://university.org/05_-_Agriculture,_Environmental_and_Related_S> ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_develops_a_critical_approach_to_current_issues_in_wildlife_management._Emphasis_is_placed_on_learning_wildlife_management_through_hands-on_experience,_hence_the_focus_on_field_work_and_case_studies._The_unit_examines_management_strategies_that_can_be_adopted_to_protect_endangered_and_vulnerable_animals_and_to_control_feral_animals_and_pests._Students_also_examine_the_commercial_exploitation_of_native_animal_populations_and_broad_scale_management_actions_that_may_affect_many_animal_species,_such_as_predator_control_and_fire._There_is_some_emphasis_on_management_of_small_populations_as_this_is_a_major_issue_for_most_endangered_species_in_Australia._Students_are_expected_to_read_original_journal_articles_as_well_as_make_use_of_standard_reference_texts._Students_participate_in_a_series_of_debates_on_recent_and/or_controversial_topics._Students_are_also_involved_in_case_studies_of_relevant_topics_and_participate_in_a_field_trip_at_Harry_Waring_Marsupial_Reserve_where_population_data_is_collected_for_later_analysis_in_class.> ;
+    handbook:has_level handbook:3 ;
+    handbook:has_school handbook:Biological_Sciences ;
+    handbook:has_title handbook:Wildlife_Conservation_and_Management ;
+    handbook:has_unit_delivery_mode handbook:Both .
+
+handbook:ANIM3361 a handbook:unit ;
+    rdfs:label "ANIM3361" ;
+    handbook:has_board_of_examiners handbook:01_-_Natural_and_Physical_Sciences ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_analyses_the_way_animal_populations_fluctuate_and_use_resources_in_space_and_time._It_considers_how_individuals_within_populations_interact_with_each_other_and_with_individuals_in_populations_of_other_species,_including_those_interactions_that_contribute_to_the_determination_of_the_biodiversity_apparent_in_communities_today._It_covers_population_parameters_such_as_age_structure,_birth_and_death_rates_and_how_these_are_used_to_construct_life_tables_and_population_models._Theories_and_empirical_evidence_as_to_how_biodiversity_has_developed_over_time_and_is_currently_maintained_are_considered_along_with_discussion_of_how_biodiversity_contributes_to_ecosystem_function_and_how_that_biodiversity_should_be_managed_and_conserved.> ;
+    handbook:has_level handbook:3 ;
+    handbook:has_school handbook:Biological_Sciences ;
+    handbook:has_title handbook:Animal_Ecology ;
+    handbook:has_unit_delivery_mode handbook:Both .
+
+handbook:ANIM3363 a handbook:unit ;
+    rdfs:label "ANIM3363" ;
+    handbook:has_board_of_examiners handbook:01_-_Natural_and_Physical_Sciences ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_builds_on_fundamental_aspects_of_structure_and_function_to_examine_how_animals_work_across_the_diversity_of_environments,_from_deserts_to_rainforests_and_polar_regions,_and_from_ponds_to_salt_lakes._It_examines_the_physical_environment_in_which_animals_live,_and_the_fundamental_importance_of_physiological_processes_in_integrating_animal_systems_with_respect_to_especially_energy,_thermal_and_water_balance._There_is_a_strong_comparative_approach_for_both_vertebrate_and_invertebrate_animals._These_essential_physiological_processes_are_studied_using_homeostasis_as_an_organising_principle,_and_the_actions_of_the_nervous_system_and_hormones_in_controlling_and_modulating_them._There_is_a_strong_emphasis_on_sensory_adaptations_and_how_sensory_information_is_used_by_animals_to_safely_navigate_their_environments._A_rigorous_comparative_phylogenetic_methods_perspective_is_provided_to_the_interpretation_of_physiological_adaptation._The_mechanosensory_research_project_is_a_mini-research_project_that_introduces_students_to_important_skills_such_as_experimental_design,_literature_searching,_data_analysis,_and_data_presentation._The_laboratory_essay_examines_and_researches_an_environmental_physiology_topic_introduced_in_the_laboratory_periods.> ;
+    handbook:has_level handbook:3 ;
+    handbook:has_school handbook:Biological_Sciences ;
+    handbook:has_title handbook:Environmental_Physiology ;
+    handbook:has_unit_delivery_mode handbook:Both .
+
+handbook:ANIM3365 a handbook:unit ;
+    rdfs:label "ANIM3365" ;
+    handbook:has_board_of_examiners handbook:01_-_Natural_and_Physical_Sciences ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/The_Behavioural_Ecology_unit_covers_the_broad_area_of_behavioural_ecology_–_how_an_animal's_behaviour_is_adapted_to_its_physical_and_social_environment._The_unit_comprises_five_modules:_(1)_Foundations_of_Behavioural_Ecology;_(2)_Sexual_Selection;_(3)_Predator-prey_interactions;_(4)_Perception_and_Signalling;_and_(5)_Kinship,_Conflict,_Cooperation_and_Social_Behaviour._The_unit_is_taught_by_a_team_of_lecturers_who_combine_expertise_in_all_of_these_areas._The_unit_integrates_these_themes_within_an_evolutionary_framework_that_explores_the_adaptive_basis_of_behaviour,_individual_plasticity_and_the_genetic_basis_of_behaviour,_ecological_interactions_governing_social,_sexual_and_antipredator_behaviours,_along_with_a_strong_mechanistic_understanding_of_how_perceptual_systems_work._This_is_a_required_unit_for_the_Zoology_major,_but_it_should_also_be_relevant_to_any_student_with_interests_in_animal_biology,_ecology,_evolutionary_biology_and_natural_history.> ;
+    handbook:has_level handbook:3 ;
+    handbook:has_school handbook:Biological_Sciences ;
+    handbook:has_title handbook:Behavioural_Ecology ;
+    handbook:has_unit_delivery_mode handbook:Both .
+
+handbook:ANIM4410 a handbook:unit ;
+    rdfs:label "ANIM4410" ;
+    handbook:has_board_of_examiners handbook:01_-_Natural_and_Physical_Sciences ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/A_key_skill_for_students_entering_a_career_in_zoology_is_the_ability_to_identify_animals_to_species-level_using_taxonomic_keys._This_is_relevant_to_students_working,_for_example,_as_environmental_consultants,_for_government_conservation_agencies,_and_those_who_wish_to_do_fieldwork_as_part_of_further_graduate_study._Being_able_to_identify_animals_is_also_an_enjoyable_part_of_interacting_with_nature._
+This_unit_will_introduce_students_to_the_skills,_tools,_and_resources_needed_for_the_identification_of_species_in_a_series_of_target_taxonomic_groups._Each_week_will_be_co-taught_with_an_expert_in_the_taxonomic_group,_and_students_will_be_given_hands-on_experience_identifying_actual_specimens.
+This_course_will_feature_teaching_by_expert_curators_from_the_Western_Australian_Museum,_who_will_help_students_learn_to_identify_animals._This_course_is_taught_in_a_flipped_format._Each_week,_students_will_listen_to_and_revise_pre-recorded_material,_followed_by_an_online_quiz_to_reinforce_the_necessary_knowledge_for_students_to_evaluate_voucher_specimens._Students_will_then_come_to_a_lab_session,_and_work_with_experts_to_apply_this_knowledge_to_animal_specimens._
+Special_topics_include:_
+What_are_taxonomy_and_systematics?
+What_is_a_species?_
+The_taxonomic_challenge_in_Australia:_how_many_undescribed_species_are_there?_
+Why_do_museums_voucher_animals?
+How_species_are_described?_
+Understanding_cryptic_diversity_
+What_to_do_if_it's_not_a_described_species
+Tools_and_resources_for_identifying_species
+DNA_barcoding_as_a_tool
+Taxonomic_groups_for_inclusion_will_focus_on_those_that_are_relevant_in_Australia_for_conservation,_medical,_biosecurity,_or_economic_reasons_–_those_that_students_are_most_likely_to_need_to_identify_in_a_workplace.> ;
+    handbook:has_level handbook:4 ;
+    handbook:has_school handbook:Biological_Sciences ;
+    handbook:has_title handbook:Animal_Identification ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:ANIM5110 a handbook:unit ;
+    rdfs:label "ANIM5110" ;
+    handbook:has_board_of_examiners handbook:01_-_Natural_and_Physical_Sciences ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/Australia_is_home_to_some_of_the_most_bizarre_and_unusual_mammalian_fauna_on_the_planet;_it_is_one_of_only_two_countries_where_all_three_extant_subclasses_of_mammals,_including_marsupials_(the_metatheria),_can_be_found._During_this_unit,_students_will_explore_a_series_of_fascinating_lectures,_labs_and_field_excursions_that_will_highlight_the_unique_biology_of_Australian_marsupials._Contrasts_will_be_drawn_between_marsupials_and_monotremes,_and_native_eutherian_mammals._The_unit_will_endeavour_to_focus_on_Western_Australian_species_wherever_possible._The_topics_to_be_covered_during_the_course_of_the_unit_will_include:_1)_origin_and_evolution,_2)_diversity_across_ecological_niches,_3)_musculoskeletal_anatomy_and_adaptations,_4)_unique_anatomy,_5)_reproductive_biology_(including_contrasts_with_monotremes_and_Australian_rodents),_6)_nutrition_and_feeding_strategies,_7)_thermoregulation_and_ecophysiology,_8)_communication_and_social_behaviour,_9)_health_and_disease,_10)_an_indigenous_perspective,_11)_marsupials_in_suburbia_and_12)_threats,_decline_and_management_strategies._The_unit_will_include_12_weeks_of_lectures,_laboratory_sessions,_excursions_and_field_work_(combined_online/face-to-face_delivery).> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:Biological_Sciences ;
+    handbook:has_title handbook:Biology_of_Australian_marsupials ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:ANIM5502 a handbook:unit ;
+    rdfs:label "ANIM5502" ;
+    handbook:has_board_of_examiners handbook:01_-_Natural_and_Physical_Sciences ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/There_are_three_primary_academic_objectives_of_the_unit:__(1)_to_provide_experiential_learning_in_a_research_group_atmosphere._Students_become_part_of_the_Centre_for_Evolutionary_Biology_(CEB)_and_bring_their_ideas_to_fruition_through_discussion_with_the_members_of_the_group_and_their_mentor._They_participate_in_fortnightly_CEB_meetings_where_established_researchers_present_their_data_and_answer_questions_from_the_group._The_students_see_how_science_is_a_collegial_and_constructive_process;__(2)_to_learn_the_generic_skills_of_scientific_thinking,_hypothesis_testing,_data_handling_and_scientific_communication;_and_(3)_to_develop_specialised_knowledge_of_the_practical_considerations_of_research_in_their_area_of_study—learning_(but_not_limited_to)_techniques_such_as_biometry,_behavioural_analysis,_meta-analysis,_quantitative/molecular_genetics/genomics_or_comparative_analyses._The_areas_of_theory_covered_depend_on_the_project_but_could_include_natural/sexual_selection,_sperm_competition,_immunity,_sensory_ecology,_conservation_biology_and_population/quantitative_genetics._Projects_that_focus_on_a_range_of_study_organisms,_including_terrestrial,_marine_and_freshwater_vertebrate_and_invertebrate_groups_may_be_available_for_practical_work.> ;
+    handbook:has_level handbook:5 ;
+    handbook:has_school handbook:Biological_Sciences ;
+    handbook:has_title handbook:Evolutionary_Ecology ;
+    handbook:has_unit_delivery_mode handbook:Face_to_face .
+
+handbook:ANTH1001 a handbook:unit ;
+    rdfs:label "ANTH1001" ;
+    handbook:has_board_of_examiners handbook:09_-_Society_and_Culture ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/We_live_in_an_increasingly_multi-cultural_world_where_there_are_many_ways_of_'being_human'._At_the_same_time,_all_people_share_some_experiences_in_common:_all_learn,_share_and_communicate_beliefs,_create_and_maintain_social_relationships,_adapt_to_their_environments,_and_make_a_living_through_particular_modes_of_production._This_unit_explores_the_world's_rich_diversity_of_human_experience_and_practice,_looking_at_cross-cultural_examples_of_it_in_domains_such_as_religion,_identity,_subsistence,_social_inequality_and_communication._It_also_considers_the_variety_of_ways_that_anthropologists_conduct_their_research.> ;
+    handbook:has_level handbook:1 ;
+    handbook:has_school handbook:Social_Sciences ;
+    handbook:has_title <https://university.org/Being_Human:_Culture,_Identity_and_Society> ;
+    handbook:has_unit_delivery_mode handbook:Both .
+
+handbook:ANTH1002 a handbook:unit ;
+    rdfs:label "ANTH1002" ;
+    handbook:has_board_of_examiners handbook:09_-_Society_and_Culture ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/What_does_globalisation_mean_at_local_levels?_In_the_face_of_so_much_'progress',_why_are_many_people_still_so_poor_and_others_so_rich?_This_unit_explores_how_people's_lives_have_been_transformed_by_colonialism,_economic_development_and_globalisation._Focusing_particularly_on_Australia_and_our_region,_it_examines_various_social_science_perspectives_on_inequality,_migration,_urbanisation,_work,_modernisation,_globalisation,_culture,_communication_and_the_environment.> ;
+    handbook:has_level handbook:1 ;
+    handbook:has_school handbook:Social_Sciences ;
+    handbook:has_title <https://university.org/Global_Change,_Local_Responses> ;
+    handbook:has_unit_delivery_mode handbook: .
+
+handbook:ANTH2001 a handbook:unit ;
+    rdfs:label "ANTH2001" ;
+    handbook:has_board_of_examiners handbook:09_-_Society_and_Culture ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_traces_the_development_of_major_concepts_in_anthropological_and_sociological_theory_from_Enlightenment_schemas_of_social_evolution_to_the_modernist_framework_of_structuralism._Topics_treated_may_include,_among_other_themes,_the_notion_of_the_'primitive',_unilinear_and_multilinear_frameworks_of_societal_evolution_and_their_impacts,_materialism_and_idealism_in_social_theory,_attitudes_toward_the_position_of_women_in_different_societies,_the_rise_and_demise_of_varieties_of_functionalism,_debates_over_the_definition_of_culture,_the_relationship_of_anthropology_and_history,_cultural_ecology_and_the_reconsideration_of_Marxist_models._Consideration_of_seminal_sociological_theorists,_such_as_Marx,_Durkheim_and_Weber,_is_complemented_by_examination_of_key_figures_in_the_development_of_anthropological_traditions_of_enquiry,_such_as_Morgan,_Boas,_Malinowski,_Mead,_Levi-Strauss_and_others._The_development_of_social_thought_leads_into_ANTH3402_Contemporary_Social_Thought.> ;
+    handbook:has_level handbook:2 ;
+    handbook:has_school handbook:Social_Sciences ;
+    handbook:has_title handbook:Social_Thought ;
+    handbook:has_unit_delivery_mode handbook:Both .
+
+handbook:ANTH2225 a handbook:unit ;
+    rdfs:label "ANTH2225" ;
+    handbook:has_board_of_examiners handbook:09_-_Society_and_Culture ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_both_introduces_contemporary_case_studies_from_around_the_world,_and_looks_at_what_part_energy_transitions,_shifting_modes_of_subsistence,_and_environmental_changes_have_played_in_the_human_story,_over_millions_of_years._It_does_so_in_order_to_address_what_are_the_greatest_challenges_facing_contemporary_human_societies:_how_to_undertake_wholesale_energy_transitions,_and_to_develop_sustainable_food_systems,_in_a_context_of_climate_emergency._Drawing_on_literature_from_across_environmental_and_economic_anthropology,_it_will_examine_how_these_challenges_might_be_met,_through_re-imagining_our_‘cultures_of_energy',_by_developing_new_modes_of_production,_and_by_re-organising_relations_with_our_‘discards'_(i.e._rubbish)_and,_ultimately,_by_rethinking_the_very_form_of_human_connections_with_other_parts_of_the_living_world_(land,_crops,_fish,_animals,_bacteria_and_viruses)._Climate_change_will_force_human_societies_to_adapt,_in_ways_that_will_generate_new_kinds_of_human_sociality,_and_will_require_new_modes_of_multi-species_relations._This_unit_will_give_students_the_tools_necessary_not_only_for_navigating,_but_for_pro-actively_influencing,_how_those_changes_will_unfold_for_the_generations_ahead.> ;
+    handbook:has_level handbook:2 ;
+    handbook:has_school handbook:Social_Sciences ;
+    handbook:has_title <https://university.org/Human_Futures:_Energy,_Food_and_Sustainable_Environments> ;
+    handbook:has_unit_delivery_mode handbook:Both .
+
+handbook:ANTH2401 a handbook:unit ;
+    rdfs:label "ANTH2401" ;
+    handbook:has_board_of_examiners handbook:09_-_Society_and_Culture ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/Cultures_have_not_only_been_represented,_but_also_produced_and_reproduced_through_the_use_of_film_and_other_mass_media._This_unit_critically_examines_such_issues_as_the_anthropological_construction_of_myths_about_other_cultures,_the_textual_nature_of_media,_the_histories_of_various_media_and_their_implications_for_contemporary_representations,_relationships_between_the_representers_and_the_represented,_and_the_modes_of_ethnographically_investigating_media._It_focuses_on_issues_of_the_roles_of_subjectivity_and_power_in_the_process_of_representing,_seeking_to_sensitise_students_to_the_ways_in_which_media_construe_and_construct_cultures,_both_constraining_and_liberating_our_understandings,_especially_in_cross-cultural_contexts_of_learning_and_dialogue._Students_who_take_the_unit_are_particularly_well_prepared_to_enter_the_field_of_media_production_and_those_organisations_involved_in_the_promulgation_and_analysis_of_media_productions.> ;
+    handbook:has_level handbook:2 ;
+    handbook:has_school handbook:Social_Sciences ;
+    handbook:has_title handbook:Constructing_Cultures_Through_Media ;
+    handbook:has_unit_delivery_mode handbook: .
+
+handbook:ANTH2402 a handbook:unit ;
+    rdfs:label "ANTH2402" ;
+    handbook:has_board_of_examiners handbook:09_-_Society_and_Culture ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/What_is_religion?_This_unit_explores_how_anthropologists_and_sociologists_have_approached_religion_as_a_central_domain_of_human_experience_and_asks_whether_it_is_analytically_useful_to_take_religion_as_a_discreet_category._Beginning_with_foundational_thinkers_like_Durkheim,_Weber,_Marx_and_Freud,_the_unit_explores_the_relationship_between_religion_and_other_realms_of_social,_political_and_economic_life._The_unit_offers_an_introduction_to_evolutionary,_functional,_structural,_psychoanalytical_and_symbolic_perspectives_that_have_been_influential_not_only_in_the_study_of_religion,_but_in_the_disciplines_of_Sociology_and_Anthropology_more_generally._Drawing_on_classical_anthropological_studies_of_small-scale_societies,_recent_studies_of_contemporary_globalised_religion_and_original_ethnographic_research,_students_explore_religious_phenomena_such_as_ritual,_belief,_possession,_magic,_sorcery_and_conversion.> ;
+    handbook:has_level handbook:2 ;
+    handbook:has_school handbook:Social_Sciences ;
+    handbook:has_title handbook:Religion_in_Society ;
+    handbook:has_unit_delivery_mode handbook: .
+
+handbook:ANTH2405 a handbook:unit ;
+    rdfs:label "ANTH2405" ;
+    handbook:has_board_of_examiners handbook:09_-_Society_and_Culture ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/Culture/gender/sexuality_provides_a_significant_site_from_which_all_forms_of_social_life_can_be_explored._This_unit_examines_the_centrality_and_diversity_of_gender_relations_and_sexual_identity_by_placing_an_emphasis_on_cultural_beliefs_and_practices_in_a_range_of_ethnographic_settings._By_way_of_written_texts,_popular_culture_and_contemporary_film,_the_themes_considered_include_how_the_relationships_between_women_and_men_are_constituted,_the_politics_of_sexual_difference,_gender-crossing,_dress_and_language,_and_the_intersection_and_representation_of_gender_with_race,_class,_religion,_age_and_ethnicity.> ;
+    handbook:has_level handbook:2 ;
+    handbook:has_school handbook:Social_Sciences ;
+    handbook:has_title <https://university.org/Sex,_Gender_and_Social_Life> ;
+    handbook:has_unit_delivery_mode handbook: .
+
+handbook:ANTH2406 a handbook:unit ;
+    rdfs:label "ANTH2406" ;
+    handbook:has_board_of_examiners handbook:09_-_Society_and_Culture ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_examines_the_dynamics_of_power,_governance_and_resistance_by_adopting_sociological_and_anthropological_approaches_to_the_study_of_society,_law_and_politics._Students_examine_a_range_of_topics_in_Australia_and_internationally,_including_case-studies_of_legislation_and_policies_in_areas_such_as_school_funding,_immunisation_and_‘pill_testing'_of_illicit_drugs._Students_will_also_examine_the_broader_politics_of_influence,_ranging_from_the_power_of_think_tanks_and_philanthropic_organisations_in_seeking_to_steer_the_direction_of_policy_and_legislation,_through_to_case-studies_of_citizen_resistance_movements> ;
+    handbook:has_level handbook:2 ;
+    handbook:has_school handbook:Social_Sciences ;
+    handbook:has_title <https://university.org/Society,_Law_and_Politics> ;
+    handbook:has_unit_delivery_mode handbook:Both .
+
+handbook:ANTH2407 a handbook:unit ;
+    rdfs:label "ANTH2407" ;
+    handbook:has_board_of_examiners handbook:09_-_Society_and_Culture ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/What_does_it_mean_to_live_within_(and_outside_of)_Australian_social_structures_and_systems?_Is_there_any_such_thing_as_'Australian_society'_and,_if_so,_how_do_social_scientists_go_about_describing_and_analysing_it?_This_unit_examines_the_main_theoretical_perspectives_that_have_been_applied_to_studies_of_Australian_social_life._An_important_objective_is_to_provide_students_with_the_conceptual_tools_required_for_developing_a_critical_understanding_of_major_characteristics_of_'Australian_society'._Particular_attention_is_paid_to_issues_relating_to_institutions_like_the_family_and_education,_as_well_as_issues_of_belonging_and_community_identity._Topics_covered_include_Australian_community_studies,_national_identity_and_migration,_gender_relations,_social_inequality_and_stratification,_and_the_rural_versus_urban_divide._Historical_and_contemporary_analyses_of_Australian_society_are_complemented_by_a_selection_of_thought-provoking_ethnographic_and_documentary_films.> ;
+    handbook:has_level handbook:2 ;
+    handbook:has_school handbook:Social_Sciences ;
+    handbook:has_title handbook:Australian_Society ;
+    handbook:has_unit_delivery_mode handbook: .
+
+handbook:ANTH2701 a handbook:unit ;
+    rdfs:label "ANTH2701" ;
+    handbook:has_board_of_examiners handbook:09_-_Society_and_Culture ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/This_unit_aims_to_introduce_students_to_anthropological_and_sociological_perspectives_on_human_engagements_with_the_natural_environment._It_draws_on_case_material_from_societies_around_the_world_to_illustrate_a_variety_of_environmental_beliefs_and_practices._The_unit_familiarises_students_with_the_main_theoretical_currents_in_environmental_anthropology_and_provides_them_with_a_selection_of_frameworks_for_thinking_about_human_interactions_with_nature._It_encourages_students_to_think_analytically_about_the_values_and_knowledge_that_human_communities,_urban_and_rural,_hold_about_landscapes,_plants_and_animals._The_unit_is_relevant_to_students_from_a_range_of_disciplines_including_agriculture_and_the_environmental_sciences._It_provides_students_with_insights_into_the_range_of_skills_and_background_knowledge_necessary_for_applying_anthropological_training_to_environment-related_research_topics.> ;
+    handbook:has_level handbook:2 ;
+    handbook:has_school handbook:Social_Sciences ;
+    handbook:has_title <https://university.org/Culture,_Ecologies,_Extinction:_Environment_and_Society_in_a_Time_of_Crisis> ;
+    handbook:has_unit_delivery_mode handbook: .
+
+handbook:ANTH2801 a handbook:unit ;
+    rdfs:label "ANTH2801" ;
+    handbook:has_board_of_examiners handbook:09_-_Society_and_Culture ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/We_are_living_in_extraordinary_times,_characterised_by_both_mobility_and_immobility,_and_resulting_in_increasingly_transnational_lives._Even_people_who_do_not_move_are_often_members_of_transnational_networks_of_work,_family,_and_friendship_relations_that_require_us_to_live_our_lives_both_on-_and_off-line._And_yet,_while_unprecedented_numbers_of_people_are_on_the_move,_both_within_and_across_national_borders,_there_are_growing_limits_and_controls_on_certain_types_of_movement._In_this_unit,_we_explore_different_types_of_mobilities,_and_their_limits,_to_better_understand_their_impact_on_our_personal_experiences_and_our_collective_communities._Asylum_seekers_and_refugees_flee_civil_war_and_political_repression,_undertaking_forced_migration_and_illegal_border_crossings,_often_culminating_in_exile_and_mass_displacement._Migrants,_who_are_increasingly_women,_move_for_labour_and_career_opportunities,_often_on_temporary_visas_that_can_easily_result_in_precarious_status_and_interrupted_lives._Young_people_are_among_the_most_mobile_as_the_traditional_transitions_to_adulthood_are_replaced_by_mobility_aspirations_and_imperatives._Older_people_are_among_the_least_mobile,_but_face_particular_challenges_growing_old_in_such_uncertain_times.
+The_unit_aims_to_familiarise_students_with_a_range_of_theoretical_perspectives_on_ethnicity_and_identity,_citizenship_and_belonging,_family_life_and_social_relations._Students_are_introduced_to_key_methodological_tools_including_network_analysis_and_online_methods._The_unit_also_provides_students_with_insights_into_the_range_of_skills_and_knowledge_necessary_to_apply_their_social_science_training_to_migrant_and_refugee-related_issues._It_encourages_students_to_think_about_career_options,_professional_development_and_transferable_skills_while_providing_a_theoretical_grounding_in_refugee,_transnational_migration_and_mobility_studies.> ;
+    handbook:has_level handbook:2 ;
+    handbook:has_school handbook:Social_Sciences ;
+    handbook:has_title <https://university.org/Migrants,_Refugees_and_Travellers:_Mobility_and_Immobility_in_Transnational_Lives> ;
+    handbook:has_unit_delivery_mode handbook: .
+
+handbook:ANTH2901 a handbook:unit ;
+    rdfs:label "ANTH2901" ;
+    handbook:has_board_of_examiners handbook:09_-_Society_and_Culture ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description <https://university.org/Far_from_fading_away_with_the_advance_of_modernity,_religion_is_here_to_stay._Indeed,_the_global_processes_that_seem_to_draw_us_all_into_tighter_networks_of_interaction_often_intensify_commitments_to_particular_religious_traditions._This_unit_approaches_questions_surrounding_religion_and_globalisation_historically_and_cross-culturally,_with_particular_emphasis_on_the_historical_roles_of_religion_within_the_European_tradition_and_on_contemporary_religious_trends_in_Australia_and_the_wider_Asia–Pacific_and_Indian_Ocean_regions.> ;
+    handbook:has_level handbook:2 ;
+    handbook:has_school handbook:Social_Sciences ;
+    handbook:has_title handbook:Religion_and_Globalisation ;
+    handbook:has_unit_delivery_mode handbook: .
+
+handbook:ANTH2902 a handbook:unit ;
+    rdfs:label "ANTH2902" ;
+    handbook:has_board_of_examiners handbook:09_-_Society_and_Culture ;
+    handbook:has_credit handbook:6 ;
+    handbook:has_description 

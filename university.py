@@ -144,13 +144,21 @@ for unit_name in units_data:
     g.add((unit_code, has_description, unit_description))
     g.add((unit_code, has_credit, unit_credit))
     
-    i += 1
-    if i == 5:
-        break
+    # i += 1
+    # if i == 5:
+    #     break
 
+results = g.query("""
+    PREFIX handbook: <https://university.org/>
+    
+    SELECT ?unit ?description 
+    WHERE {
+        ?unit handbook:has_description ?description .
+    }
+""")
 
+# for result in results:
+#     print(result)
 
-
-
-#print graph
-print(g.serialize(format='ttl', indent=4))
+# print graph
+print(g.serialize(destination = "handbook.ttl", format='ttl', indent=4))
