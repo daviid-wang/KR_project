@@ -3,8 +3,8 @@ David Wang 23064035
 Hannah Doret 22846377
 """
 
-from rdflib import Graph, Literal, RDF, URIRef, RDFS
-from rdflib.namespace import *
+from rdflib import Graph, Literal, URIRef, RDFS
+from rdflib.namespace import RDF, Namespace
 # from owlready2 import *
 from pyshacl import validate
 
@@ -46,9 +46,11 @@ g.add((school, RDFS.label, Literal("School")))
 
 
 #Create relations
+has_title = h.has_title
 has_school = h.has_school
 
 #Add relations
+g.add((has_school, RDF.type, RDF.Property))
 g.add((has_school, RDF.type, RDF.Property))
 
 
@@ -59,16 +61,36 @@ i = 0
 
 for unit_name in units_data:
     
+    #Define URI
     unit_code = h[unit_name]
-    print(unit_code)
+    unit_title = h[units_data[unit_name]["title"].replace(" ", "_")]
     unit_school = h[units_data[unit_name]["school"].replace(" ", "_")]
-    print(unit_school)
-    # CITS3200 = h[CITS3200]
+    unit_board_of_examiners = h[units_data[unit_name]["board_of_examiners"].replace(" ", "_")]
+    unit_delivery_mode = h[units_data[unit_name]["delivery_mode"].replace(" ", "_")]
+    unit_level = h[units_data[unit_name]["level"].replace(" ", "_")]
+    unit_description = h[units_data[unit_name]["description"].replace(" ", "_")]
+    unit_credit = h[units_data[unit_name]["credit"].replace(" ", "_")]
+    unit_outcomes = h[units_data[unit_name]["outcomes"].replace(" ", "_")]
+    unit_assessment = h[units_data[unit_name]["assessment"].replace(" ", "_")]
+    unit_prerequisites_text = h[units_data[unit_name]["prerequisites_text"].replace(" ", "_")]
+    unit_prerequisites_cnf = h[units_data[unit_name]["prerequisites_cnf"].replace(" ", "_")]
+    unit_advisable_prior_study = h[units_data[unit_name]["advisable_prior_study"].replace(" ", "_")]
+    unit_contact = h[units_data[unit_name]["contact"].replace(" ", "_")]
+    
+    
+    #Name
     g.add((unit_code, RDF.type, unit))
     g.add((unit_code, RDFS.label, Literal(unit_name)))
+
+    #Title
+    g.add((unit_title, RDFS.label , Literal(units_data[unit_name]["title"])))
+    
+    #School
     g.add((unit_school, RDF.type, school))
     g.add((unit_school, RDFS.label, Literal(units_data[unit_name]["school"])))
     
+    #Add relations to graph
+    g.add((unit_code, has_title, unit_title))
     g.add((unit_code, has_school, unit_school))
     i += 1
     if i == 5:
