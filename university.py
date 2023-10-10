@@ -8,6 +8,8 @@ from rdflib.namespace import RDF, Namespace
 # from owlready2 import *
 from pyshacl import validate
 
+from functions import *
+
 import json
 
 #Open and parse json objects
@@ -58,6 +60,36 @@ g.add((assessment, RDFS.label, Literal("Assessment")))
 g.add((major, RDF.type, RDFS.Class))
 g.add((major, RDFS.label, Literal("Major")))
 
+# Create specific assessment objects
+assignment = h.assignment
+report = h.report
+quiz = h.quiz
+presentation = h.presentation
+exam = h.exam
+seminar = h.seminar
+practical = h.practical
+activity = h.activity
+debate = h.debate
+paper = h.paper
+research_proposal = h.research_proposal
+review = h.review
+essay = h.essay
+test = h.test
+# Add assessment objects (type = assessment class)
+g.add((assignment, RDF.type, assessment))
+g.add((report, RDF.type, assessment)) 
+g.add((quiz, RDF.type, assessment)) 
+g.add((presentation, RDF.type, assessment)) 
+g.add((exam, RDF.type, assessment)) 
+g.add((seminar, RDF.type, assessment)) 
+g.add((practical, RDF.type, assessment)) 
+g.add((activity, RDF.type, assessment)) 
+g.add((debate, RDF.type, assessment)) 
+g.add((paper, RDF.type, assessment)) 
+g.add((research_proposal, RDF.type, assessment)) 
+g.add((review, RDF.type, assessment)) 
+g.add((essay, RDF.type, assessment)) 
+g.add((test, RDF.type, assessment)) 
 
 #Create relations
 has_title = h.has_title
@@ -73,6 +105,7 @@ major_of_courses = h.major_of_courses
 has_unit = h.has_unit
 has_bridging = h.has_bridging
 has_major = h.has_major
+has_name = h.has_name # used for assessment object names eg. "exam"
 
 #Add relations
 g.add((has_title, RDF.type, RDF.Property))
@@ -88,6 +121,7 @@ g.add((major_of_courses, RDF.type, RDF.Property))
 g.add((has_unit, RDF.type, RDF.Property))
 g.add((has_bridging, RDF.type, RDF.Property))
 g.add((has_major, RDF.type, RDF.Property))
+g.add((has_name, RDF.type, RDF.Property))
 
 
 
@@ -138,11 +172,18 @@ for unit_name in units_data:
     g.add((unit_credit, RDF.type, credit))
     g.add((unit_credit, RDFS.label, Literal(units_data[unit_name]["credit"])))
     
-
+    #Assessments
+    assessments = []
     for assessment_item in units_data[unit_name]["assessment"]:
-        g.add((h[assessment_item.replace(" ", "_")], RDF.type, assessment))
-        g.add((h[assessment_item.replace(" ", "_")], RDFS.label, Literal(assessment_item)))
-        g.add((unit_code, has_assessment, h[assessment_item.replace(" ", "_")]))
+        these_assessments = determine_assessments(assessment_item)
+        # add assessments we found to the assessments list, without duplicates (do we want duplicates??? eg. if 2 of the strings mentioned reports)
+        for assessment in these_assessments:
+            if assessment not in assessments:
+                assessments.append(assessment)
+    for a in assessments:
+        # refer to the URI we already created for this type of assessment, and add relation to it
+        assessment_object = h[a]
+        g.add((unit_code, has_assessment, assessment_object))
     
     #Add relations to graph
     g.add((unit_code, has_title, Literal(units_data[unit_name]["title"])))
@@ -166,12 +207,12 @@ for major_name in majors_data:
     g.add((major_code, RDF.type, major))
     g.add((major_code, RDFS.label, Literal(major_name)))
     g.add((major_code, has_title, Literal(majors_data[major_name]["title"])))
+    g.add((major_code, has_description, Literal(majors_data[major_name]["description"])))
     g.add((major_code, major_of_courses, Literal(majors_data[major_name]["courses"]) ))
 
     major_school = h[majors_data[major_name]["school"].replace(" ", "_")]
     g.add((major_school, RDF.type, school))
     g.add((major_school, RDFS.label, Literal(majors_data[major_name]["school"])))
-
     g.add((major_code, has_school, major_school))
 
     for bridging_unit in majors_data[major_name]["bridging"]:
@@ -184,6 +225,10 @@ for major_name in majors_data:
         g.add((unit_code, RDF.type, unit))
         g.add((major_code, has_unit, unit_code))
         g.add((unit_code, has_major, major_code))
+
+    if majors_data[major_name].get("outcomes") != None:
+        for major_outcome in majors_data[major_name]["outcomes"]:
+            g.add((major_code, has_outcome, Literal(major_outcome)))
 
 
 results = g.query("""
@@ -200,18 +245,3 @@ results = g.query("""
 
 # print graph
 print(g.serialize(destination = "handbook.ttl", format='ttl', indent=4))
-
-
-# hannah's notes
-#
-# URIs are only used to make objects unique in the knowledge graph, 
-#       we don't need to make URIs for literals, 
-#       eg. unit_description = h[units_data[unit_name]["description"].replace(" ", "_")] is not necessary
-#       instead we can just give the unit object a description literal by doing:
-#       g.add((unit_code, has_description, Literal(units_data[unit_name]["description"])))
-#
-# i am thinking that maybe we don't need to give unit objects a relation to a school,
-#       instead we could give major objects a relation to a school, and then the unit's school
-#       can be inferred from the unit's major's school
-#       same for board of examiners.
-#
