@@ -37,6 +37,8 @@ prerequisite_unit_compulsory = h.prerequisite_unit_compulsory
 # prerequisite_unit_choice = h.prerequisite_unit_choice
 # prerequisite_points = h.prerequisite_points
 contact = h.contact
+major = h.major
+
 
 #Add Classes
 g.add((unit, RDF.type, RDFS.Class))
@@ -51,6 +53,8 @@ g.add((level, RDF.type, RDFS.Class))
 g.add((level, RDFS.label, Literal("Level")))
 g.add((credit, RDF.type, RDFS.Class))
 g.add((credit, RDFS.label, Literal("Credit")))
+g.add((major, RDF.type, RDFS.Class))
+g.add((major, RDFS.label, Literal("Major")))
 
 
 #Create relations
@@ -61,6 +65,9 @@ has_unit_delivery_mode = h.has_unit_delivery_mode
 has_level = h.has_level
 has_description = h.has_description
 has_credit = h.has_credit
+major_of_courses = h.major_of_courses
+has_unit = h.has_unit
+has_bridging = h.has_bridging
 
 #Add relations
 g.add((has_title, RDF.type, RDF.Property))
@@ -70,6 +77,9 @@ g.add((has_unit_delivery_mode, RDF.type, RDF.Property))
 g.add((has_level, RDF.type, RDF.Property))
 g.add((has_description, RDF.type, RDF.Property))
 g.add((has_credit, RDF.type, RDF.Property))
+g.add((major_of_courses, RDF.type, RDF.Property))
+g.add((has_unit, RDF.type, RDF.Property))
+g.add((has_bridging, RDF.type, RDF.Property))
 
 
 
@@ -86,7 +96,6 @@ for unit_name in units_data:
     unit_board_of_examiners = h[units_data[unit_name]["board_of_examiners"].replace(" ", "_")]
     unit_delivery_mode = h[units_data[unit_name]["delivery_mode"].replace(" ", "_")]
     unit_level = h[units_data[unit_name]["level"].replace(" ", "_")]
-    unit_description = h[units_data[unit_name]["description"].replace(" ", "_")]
     unit_credit = h[units_data[unit_name]["credit"].replace(" ", "_")]
 
     # delete?
@@ -123,9 +132,6 @@ for unit_name in units_data:
     g.add((unit_level, RDF.type, level))
     g.add((unit_level, RDFS.label, Literal(units_data[unit_name]["level"])))
     
-    #Description
-    g.add((unit_description, RDFS.label, Literal(units_data[unit_name]["description"])))
-    
     #Credit
     g.add((unit_credit, RDF.type, credit))
     g.add((unit_credit, RDFS.label, Literal(units_data[unit_name]["credit"])))
@@ -141,12 +147,39 @@ for unit_name in units_data:
     g.add((unit_code, has_board_of_examiners, unit_board_of_examiners))
     g.add((unit_code, has_unit_delivery_mode, unit_delivery_mode))
     g.add((unit_code, has_level, unit_level))
-    g.add((unit_code, has_description, unit_description))
+    g.add((unit_code, has_description, Literal(units_data[unit_name]["description"])))
+    
     g.add((unit_code, has_credit, unit_credit))
     
     # i += 1
     # if i == 5:
     #     break
+
+for major_name in majors_data:
+
+    major_code = h[major_name]
+    g.add((major_code, RDF.type, major))
+    g.add((major_code, RDFS.label, Literal(major_name)))
+    g.add((major_code, has_title, Literal(majors_data[major_name]["title"])))
+    g.add((major_code, major_of_courses, Literal(majors_data[major_name]["courses"]) ))
+
+    major_school = h[majors_data[major_name]["school"].replace(" ", "_")]
+    g.add((major_school, RDF.type, school))
+    g.add((major_school, RDFS.label, Literal(majors_data[major_name]["school"])))
+
+    g.add((major_code, has_school, major_school))
+
+    for bridging_unit in majors_data[major_name]["bridging"]:
+        unit_code = h[bridging_unit]
+        g.add((unit_code, RDF.type, unit))
+        g.add((major_code, has_bridging, unit_code))
+
+    for taught_unit in majors_data[major_name]["units"]:
+        unit_code = h[taught_unit]
+        g.add((unit_code, RDF.type, unit))
+        g.add((major_code, has_unit, unit_code))
+
+
 
 results = g.query("""
     PREFIX handbook: <https://university.org/>
@@ -162,3 +195,18 @@ results = g.query("""
 
 # print graph
 print(g.serialize(destination = "handbook.ttl", format='ttl', indent=4))
+
+
+# hannah's notes
+#
+# URIs are only used to make objects unique in the knowledge graph, 
+#       we don't need to make URIs for literals, 
+#       eg. unit_description = h[units_data[unit_name]["description"].replace(" ", "_")] is not necessary
+#       instead we can just give the unit object a description literal by doing:
+#       g.add((unit_code, has_description, Literal(units_data[unit_name]["description"])))
+#
+# i am thinking that maybe we don't need to give unit objects a relation to a school,
+#       instead we could give major objects a relation to a school, and then the unit's school
+#       can be inferred from the unit's major's school
+#       same for board of examiners.
+#
