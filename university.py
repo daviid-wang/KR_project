@@ -68,6 +68,7 @@ has_credit = h.has_credit
 major_of_courses = h.major_of_courses
 has_unit = h.has_unit
 has_bridging = h.has_bridging
+has_major = h.has_major
 
 #Add relations
 g.add((has_title, RDF.type, RDF.Property))
@@ -80,6 +81,7 @@ g.add((has_credit, RDF.type, RDF.Property))
 g.add((major_of_courses, RDF.type, RDF.Property))
 g.add((has_unit, RDF.type, RDF.Property))
 g.add((has_bridging, RDF.type, RDF.Property))
+g.add((has_major, RDF.type, RDF.Property))
 
 
 
@@ -178,7 +180,7 @@ for major_name in majors_data:
         unit_code = h[taught_unit]
         g.add((unit_code, RDF.type, unit))
         g.add((major_code, has_unit, unit_code))
-
+        g.add((unit_code, has_major, major_code))
 
 
 results = g.query("""
