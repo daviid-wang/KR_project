@@ -53,6 +53,8 @@ g.add((level, RDF.type, RDFS.Class))
 g.add((level, RDFS.label, Literal("Level")))
 g.add((credit, RDF.type, RDFS.Class))
 g.add((credit, RDFS.label, Literal("Credit")))
+g.add((assessment, RDF.type, RDFS.Class))
+g.add((assessment, RDFS.label, Literal("Assessment")))
 g.add((major, RDF.type, RDFS.Class))
 g.add((major, RDFS.label, Literal("Major")))
 
@@ -65,6 +67,8 @@ has_unit_delivery_mode = h.has_unit_delivery_mode
 has_level = h.has_level
 has_description = h.has_description
 has_credit = h.has_credit
+has_outcome = h.has_outcome
+has_assessment = h.has_assessment
 major_of_courses = h.major_of_courses
 has_unit = h.has_unit
 has_bridging = h.has_bridging
@@ -78,6 +82,8 @@ g.add((has_unit_delivery_mode, RDF.type, RDF.Property))
 g.add((has_level, RDF.type, RDF.Property))
 g.add((has_description, RDF.type, RDF.Property))
 g.add((has_credit, RDF.type, RDF.Property))
+g.add((has_outcome, RDF.type, RDF.Property))
+g.add((has_assessment, RDF.type, RDF.Property))
 g.add((major_of_courses, RDF.type, RDF.Property))
 g.add((has_unit, RDF.type, RDF.Property))
 g.add((has_bridging, RDF.type, RDF.Property))
@@ -93,7 +99,7 @@ for unit_name in units_data:
     
     #Define URI
     unit_code = h[unit_name]
-    unit_title = h[units_data[unit_name]["title"].replace(" ", "_")]
+    # unit_title = h[units_data[unit_name]["title"].replace(" ", "_")]
     unit_school = h[units_data[unit_name]["school"].replace(" ", "_")]
     unit_board_of_examiners = h[units_data[unit_name]["board_of_examiners"].replace(" ", "_")]
     unit_delivery_mode = h[units_data[unit_name]["delivery_mode"].replace(" ", "_")]
@@ -101,9 +107,6 @@ for unit_name in units_data:
     unit_credit = h[units_data[unit_name]["credit"].replace(" ", "_")]
 
     # delete?
-    # unit_outcomes = h[units_data[unit_name]["outcomes"].replace(" ", "_")]
-    
-    # unit_assessment = h[units_data[unit_name]["assessment"].replace(" ", "_")]
         
     # unit_prerequisites_text = h[units_data[unit_name]["prerequisites_text"].replace(" ", "_")]
     # unit_prerequisites_cnf = h[units_data[unit_name]["prerequisites_cnf"].replace(" ", "_")]
@@ -114,9 +117,6 @@ for unit_name in units_data:
     #Name
     g.add((unit_code, RDF.type, unit))
     g.add((unit_code, RDFS.label, Literal(unit_name)))
-
-    #Title
-    g.add((unit_title, RDFS.label , Literal(units_data[unit_name]["title"])))
     
     #School
     g.add((unit_school, RDF.type, school))
@@ -142,17 +142,20 @@ for unit_name in units_data:
     for assessment_item in units_data[unit_name]["assessment"]:
         g.add((h[assessment_item.replace(" ", "_")], RDF.type, assessment))
         g.add((h[assessment_item.replace(" ", "_")], RDFS.label, Literal(assessment_item)))
+        g.add((unit_code, has_assessment, h[assessment_item.replace(" ", "_")]))
     
     #Add relations to graph
-    g.add((unit_code, has_title, unit_title))
+    g.add((unit_code, has_title, Literal(units_data[unit_name]["title"])))
     g.add((unit_code, has_school, unit_school))
     g.add((unit_code, has_board_of_examiners, unit_board_of_examiners))
     g.add((unit_code, has_unit_delivery_mode, unit_delivery_mode))
     g.add((unit_code, has_level, unit_level))
     g.add((unit_code, has_description, Literal(units_data[unit_name]["description"])))
-    
     g.add((unit_code, has_credit, unit_credit))
     
+    if units_data[unit_name].get("outcomes") != None:
+        for unit_outcome in units_data[unit_name]["outcomes"]:
+            g.add((unit_code, has_outcome, Literal(unit_outcome)))
     # i += 1
     # if i == 5:
     #     break
