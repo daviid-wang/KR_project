@@ -33,9 +33,8 @@ delivery_mode = h.delivery_mode
 level = h.level
 credit = h.credit
 assessment = h.assessment
-prerequisite_unit_compulsory = h.prerequisite_unit_compulsory
-# prerequisite_unit_choice = h.prerequisite_unit_choice
-# prerequisite_points = h.prerequisite_points
+prerequisite = h.prerequisite
+advisable_prior_study = h.advisable_prior_study
 contact = h.contact
 major = h.major
 
@@ -55,6 +54,10 @@ g.add((credit, RDF.type, RDFS.Class))
 g.add((credit, RDFS.label, Literal("Credit")))
 g.add((assessment, RDF.type, RDFS.Class))
 g.add((assessment, RDFS.label, Literal("Assessment")))
+g.add((prerequisite, RDF.type, RDFS.Class))
+g.add((prerequisite, RDFS.label, Literal("Prerequisite")))
+g.add((advisable_prior_study, RDF.type, RDFS.Class))
+g.add((advisable_prior_study, RDFS.label, Literal("Advisable Prior Study")))
 g.add((major, RDF.type, RDFS.Class))
 g.add((major, RDFS.label, Literal("Major")))
 
@@ -69,6 +72,8 @@ has_description = h.has_description
 has_credit = h.has_credit
 has_outcome = h.has_outcome
 has_assessment = h.has_assessment
+has_prerequisite = h.has_prerequisite
+has_advisable_prior_study = h.has_advisible_prior_study
 major_of_courses = h.major_of_courses
 has_unit = h.has_unit
 has_bridging = h.has_bridging
@@ -84,6 +89,8 @@ g.add((has_description, RDF.type, RDF.Property))
 g.add((has_credit, RDF.type, RDF.Property))
 g.add((has_outcome, RDF.type, RDF.Property))
 g.add((has_assessment, RDF.type, RDF.Property))
+g.add((has_prerequisite, RDF.type, RDF.Property))
+g.add((has_advisable_prior_study, RDF.type, RDF.Property))
 g.add((major_of_courses, RDF.type, RDF.Property))
 g.add((has_unit, RDF.type, RDF.Property))
 g.add((has_bridging, RDF.type, RDF.Property))
@@ -105,11 +112,6 @@ for unit_name in units_data:
     unit_delivery_mode = h[units_data[unit_name]["delivery_mode"].replace(" ", "_")]
     unit_level = h[units_data[unit_name]["level"].replace(" ", "_")]
     unit_credit = h[units_data[unit_name]["credit"].replace(" ", "_")]
-
-    # delete?
-        
-    # unit_prerequisites_text = h[units_data[unit_name]["prerequisites_text"].replace(" ", "_")]
-    # unit_prerequisites_cnf = h[units_data[unit_name]["prerequisites_cnf"].replace(" ", "_")]
     # unit_advisable_prior_study = h[units_data[unit_name]["advisable_prior_study"].replace(" ", "_")]
     # unit_contact = h[units_data[unit_name]["contact"].replace(" ", "_")]
     
@@ -138,11 +140,35 @@ for unit_name in units_data:
     g.add((unit_credit, RDF.type, credit))
     g.add((unit_credit, RDFS.label, Literal(units_data[unit_name]["credit"])))
     
-
+    #Assessment
     for assessment_item in units_data[unit_name]["assessment"]:
         g.add((h[assessment_item.replace(" ", "_")], RDF.type, assessment))
         g.add((h[assessment_item.replace(" ", "_")], RDFS.label, Literal(assessment_item)))
         g.add((unit_code, has_assessment, h[assessment_item.replace(" ", "_")]))
+
+    #Outcomes
+    if units_data[unit_name].get("outcomes") != None:
+        for unit_outcome in units_data[unit_name]["outcomes"]:
+            g.add((unit_code, has_outcome, Literal(unit_outcome)))
+    
+    #Prerequisites
+    if units_data[unit_name].get("prerequisites_cnf") != None:
+        full_prerequisite = []
+        for prerequisite_thing in units_data[unit_name]["prerequisites_cnf"]:
+            for prereq in prerequisite_thing:
+                full_prerequisite.append(prereq)
+        for prerequisite_item in full_prerequisite:
+            g.add((h[prerequisite_item.replace(" ", "_")], RDF.type, prerequisite))
+            g.add((h[prerequisite_item.replace(" ", "_")], RDFS.label, Literal(prerequisite_item)))
+            g.add((unit_code, has_prerequisite, h[prerequisite_item.replace(" ", "_")]))
+
+    #Advisable Prior Study
+    if units_data[unit_name].get("advisable_prior_study") != None:
+        for advisable_item in units_data[unit_name]["advisable_prior_study"]:
+            g.add((h[advisable_item.replace(" ", "_")], RDF.type, advisable_prior_study))
+            g.add((h[advisable_item.replace(" ", "_")], RDFS.label, Literal(advisable_item)))
+            g.add((unit_code, has_advisable_prior_study, h[advisable_item.replace(" ", "_")]))
+
     
     #Add relations to graph
     g.add((unit_code, has_title, Literal(units_data[unit_name]["title"])))
@@ -153,11 +179,9 @@ for unit_name in units_data:
     g.add((unit_code, has_description, Literal(units_data[unit_name]["description"])))
     g.add((unit_code, has_credit, unit_credit))
     
-    if units_data[unit_name].get("outcomes") != None:
-        for unit_outcome in units_data[unit_name]["outcomes"]:
-            g.add((unit_code, has_outcome, Literal(unit_outcome)))
+
     # i += 1
-    # if i == 5:
+    # if i == 1:
     #     break
 
 for major_name in majors_data:
@@ -199,7 +223,7 @@ results = g.query("""
 #     print(result)
 
 # print graph
-print(g.serialize(destination = "handbook.ttl", format='ttl', indent=4))
+g.serialize(destination = "handbook.ttl", format='ttl', indent=4)
 
 
 # hannah's notes

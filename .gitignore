@@ -3,7 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-uni
+knowledge_graph
 
 # C extensions
 *.so
