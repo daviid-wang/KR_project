@@ -146,7 +146,7 @@ def determine_assessments(assessment_string):
                 category_matches.append(category)
 
     # if the string matched no categories, print it out
-    if not category_matches:
-        print(assessment_string)
+    # if not category_matches:
+    #     print(assessment_string)
 
     return category_matches
