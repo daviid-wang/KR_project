@@ -106,6 +106,7 @@ has_outcome = h.has_outcome
 has_assessment = h.has_assessment
 has_prerequisite = h.has_prerequisite
 has_advisable_prior_study = h.has_advisible_prior_study
+has_note = h.has_note
 major_of_courses = h.major_of_courses
 has_unit = h.has_unit
 has_bridging = h.has_bridging
@@ -124,6 +125,7 @@ g.add((has_outcome, RDF.type, RDF.Property))
 g.add((has_assessment, RDF.type, RDF.Property))
 g.add((has_prerequisite, RDF.type, RDF.Property))
 g.add((has_advisable_prior_study, RDF.type, RDF.Property))
+g.add((has_note, RDF.type, RDF.Property))
 g.add((major_of_courses, RDF.type, RDF.Property))
 g.add((has_unit, RDF.type, RDF.Property))
 g.add((has_bridging, RDF.type, RDF.Property))
@@ -219,6 +221,8 @@ for unit_name in units_data:
     g.add((unit_code, has_level, unit_level))
     g.add((unit_code, has_description, Literal(units_data[unit_name]["description"])))
     g.add((unit_code, has_credit, unit_credit))
+    if units_data[unit_name].get("note") != None:
+        g.add((unit_code, has_note, Literal(units_data[unit_name]["note"])))
     
 
     # i += 1
