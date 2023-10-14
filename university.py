@@ -35,9 +35,8 @@ delivery_mode = h.delivery_mode
 level = h.level
 credit = h.credit
 assessment = h.assessment
-prerequisite_unit_compulsory = h.prerequisite_unit_compulsory
-# prerequisite_unit_choice = h.prerequisite_unit_choice
-# prerequisite_points = h.prerequisite_points
+# prerequisite = h.prerequisite
+# advisable_prior_study = h.advisable_prior_study
 contact = h.contact
 major = h.major
 
@@ -57,39 +56,35 @@ g.add((credit, RDF.type, RDFS.Class))
 g.add((credit, RDFS.label, Literal("Credit")))
 g.add((assessment, RDF.type, RDFS.Class))
 g.add((assessment, RDFS.label, Literal("Assessment")))
+# g.add((prerequisite, RDF.type, RDFS.Class))
+# g.add((prerequisite, RDFS.label, Literal("Prerequisite")))
+# g.add((advisable_prior_study, RDF.type, RDFS.Class))
+# g.add((advisable_prior_study, RDFS.label, Literal("Advisable Prior Study")))
 g.add((major, RDF.type, RDFS.Class))
 g.add((major, RDFS.label, Literal("Major")))
 
 # Create specific assessment objects
-assignment = h.assignment
-report = h.report
-quiz = h.quiz
-presentation = h.presentation
-exam = h.exam
-seminar = h.seminar
+participation = h.participation
+group = h.group
 practical = h.practical
-activity = h.activity
-debate = h.debate
-paper = h.paper
-research_proposal = h.research_proposal
-review = h.review
-essay = h.essay
+oral = h.oral
+written = h.written
+multimedia = h.multimedia
+project = h.project
+exam = h.exam
 test = h.test
+misc = h.misc
 # Add assessment objects (type = assessment class)
-g.add((assignment, RDF.type, assessment))
-g.add((report, RDF.type, assessment)) 
-g.add((quiz, RDF.type, assessment)) 
-g.add((presentation, RDF.type, assessment)) 
-g.add((exam, RDF.type, assessment)) 
-g.add((seminar, RDF.type, assessment)) 
+g.add((participation, RDF.type, assessment))
+g.add((group, RDF.type, assessment)) 
 g.add((practical, RDF.type, assessment)) 
-g.add((activity, RDF.type, assessment)) 
-g.add((debate, RDF.type, assessment)) 
-g.add((paper, RDF.type, assessment)) 
-g.add((research_proposal, RDF.type, assessment)) 
-g.add((review, RDF.type, assessment)) 
-g.add((essay, RDF.type, assessment)) 
+g.add((oral, RDF.type, assessment)) 
+g.add((written, RDF.type, assessment)) 
+g.add((multimedia, RDF.type, assessment)) 
+g.add((project, RDF.type, assessment)) 
+g.add((exam, RDF.type, assessment)) 
 g.add((test, RDF.type, assessment)) 
+g.add((misc, RDF.type, assessment))
 
 #Create relations
 has_title = h.has_title
@@ -101,6 +96,9 @@ has_description = h.has_description
 has_credit = h.has_credit
 has_outcome = h.has_outcome
 has_assessment = h.has_assessment
+has_prerequisite = h.has_prerequisite
+has_advisable_prior_study = h.has_advisible_prior_study
+has_note = h.has_note
 major_of_courses = h.major_of_courses
 has_unit = h.has_unit
 has_bridging = h.has_bridging
@@ -117,6 +115,9 @@ g.add((has_description, RDF.type, RDF.Property))
 g.add((has_credit, RDF.type, RDF.Property))
 g.add((has_outcome, RDF.type, RDF.Property))
 g.add((has_assessment, RDF.type, RDF.Property))
+g.add((has_prerequisite, RDF.type, RDF.Property))
+g.add((has_advisable_prior_study, RDF.type, RDF.Property))
+g.add((has_note, RDF.type, RDF.Property))
 g.add((major_of_courses, RDF.type, RDF.Property))
 g.add((has_unit, RDF.type, RDF.Property))
 g.add((has_bridging, RDF.type, RDF.Property))
@@ -139,11 +140,6 @@ for unit_name in units_data:
     unit_delivery_mode = h[units_data[unit_name]["delivery_mode"].replace(" ", "_")]
     unit_level = h[units_data[unit_name]["level"].replace(" ", "_")]
     unit_credit = h[units_data[unit_name]["credit"].replace(" ", "_")]
-
-    # delete?
-        
-    # unit_prerequisites_text = h[units_data[unit_name]["prerequisites_text"].replace(" ", "_")]
-    # unit_prerequisites_cnf = h[units_data[unit_name]["prerequisites_cnf"].replace(" ", "_")]
     # unit_advisable_prior_study = h[units_data[unit_name]["advisable_prior_study"].replace(" ", "_")]
     # unit_contact = h[units_data[unit_name]["contact"].replace(" ", "_")]
     
@@ -184,6 +180,30 @@ for unit_name in units_data:
         # refer to the URI we already created for this type of assessment, and add relation to it
         assessment_object = h[a]
         g.add((unit_code, has_assessment, assessment_object))
+
+    #Outcomes
+    if units_data[unit_name].get("outcomes") != None:
+        for unit_outcome in units_data[unit_name]["outcomes"]:
+            g.add((unit_code, has_outcome, Literal(unit_outcome)))
+    
+    #Prerequisites
+    if units_data[unit_name].get("prerequisites_cnf") != None:
+        full_prerequisite = []
+        for prerequisite_thing in units_data[unit_name]["prerequisites_cnf"]:
+            for prereq in prerequisite_thing:
+                full_prerequisite.append(prereq)
+        for prerequisite_item in full_prerequisite:
+            # g.add((h[prerequisite_item.replace(" ", "_")], RDF.type, prerequisite))
+            # g.add((h[prerequisite_item.replace(" ", "_")], RDFS.label, Literal(prerequisite_item)))
+            g.add((unit_code, has_prerequisite, h[prerequisite_item.replace(" ", "_")]))
+
+    #Advisable Prior Study
+    if units_data[unit_name].get("advisable_prior_study") != None:
+        for advisable_item in units_data[unit_name]["advisable_prior_study"]:
+            # g.add((h[advisable_item.replace(" ", "_")], RDF.type, advisable_prior_study))
+            # g.add((h[advisable_item.replace(" ", "_")], RDFS.label, Literal(advisable_item)))
+            g.add((unit_code, has_advisable_prior_study, h[advisable_item.replace(" ", "_")]))
+
     
     #Add relations to graph
     g.add((unit_code, has_title, Literal(units_data[unit_name]["title"])))
@@ -193,12 +213,12 @@ for unit_name in units_data:
     g.add((unit_code, has_level, unit_level))
     g.add((unit_code, has_description, Literal(units_data[unit_name]["description"])))
     g.add((unit_code, has_credit, unit_credit))
+    if units_data[unit_name].get("note") != None:
+        g.add((unit_code, has_note, Literal(units_data[unit_name]["note"])))
     
-    if units_data[unit_name].get("outcomes") != None:
-        for unit_outcome in units_data[unit_name]["outcomes"]:
-            g.add((unit_code, has_outcome, Literal(unit_outcome)))
+
     # i += 1
-    # if i == 5:
+    # if i == 1:
     #     break
 
 for major_name in majors_data:
@@ -244,4 +264,19 @@ results = g.query("""
 #     print(result)
 
 # print graph
-print(g.serialize(destination = "handbook.ttl", format='ttl', indent=4))
+g.serialize(destination = "handbook.ttl", format='ttl', indent=4)
+
+
+# hannah's notes
+#
+# URIs are only used to make objects unique in the knowledge graph, 
+#       we don't need to make URIs for literals, 
+#       eg. unit_description = h[units_data[unit_name]["description"].replace(" ", "_")] is not necessary
+#       instead we can just give the unit object a description literal by doing:
+#       g.add((unit_code, has_description, Literal(units_data[unit_name]["description"])))
+#
+# i am thinking that maybe we don't need to give unit objects a relation to a school,
+#       instead we could give major objects a relation to a school, and then the unit's school
+#       can be inferred from the unit's major's school
+#       same for board of examiners.
+#
