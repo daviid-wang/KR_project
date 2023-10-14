@@ -33,8 +33,8 @@ delivery_mode = h.delivery_mode
 level = h.level
 credit = h.credit
 assessment = h.assessment
-prerequisite = h.prerequisite
-advisable_prior_study = h.advisable_prior_study
+# prerequisite = h.prerequisite
+# advisable_prior_study = h.advisable_prior_study
 contact = h.contact
 major = h.major
 
@@ -54,10 +54,10 @@ g.add((credit, RDF.type, RDFS.Class))
 g.add((credit, RDFS.label, Literal("Credit")))
 g.add((assessment, RDF.type, RDFS.Class))
 g.add((assessment, RDFS.label, Literal("Assessment")))
-g.add((prerequisite, RDF.type, RDFS.Class))
-g.add((prerequisite, RDFS.label, Literal("Prerequisite")))
-g.add((advisable_prior_study, RDF.type, RDFS.Class))
-g.add((advisable_prior_study, RDFS.label, Literal("Advisable Prior Study")))
+# g.add((prerequisite, RDF.type, RDFS.Class))
+# g.add((prerequisite, RDFS.label, Literal("Prerequisite")))
+# g.add((advisable_prior_study, RDF.type, RDFS.Class))
+# g.add((advisable_prior_study, RDFS.label, Literal("Advisable Prior Study")))
 g.add((major, RDF.type, RDFS.Class))
 g.add((major, RDFS.label, Literal("Major")))
 
@@ -158,15 +158,15 @@ for unit_name in units_data:
             for prereq in prerequisite_thing:
                 full_prerequisite.append(prereq)
         for prerequisite_item in full_prerequisite:
-            g.add((h[prerequisite_item.replace(" ", "_")], RDF.type, prerequisite))
-            g.add((h[prerequisite_item.replace(" ", "_")], RDFS.label, Literal(prerequisite_item)))
+            # g.add((h[prerequisite_item.replace(" ", "_")], RDF.type, prerequisite))
+            # g.add((h[prerequisite_item.replace(" ", "_")], RDFS.label, Literal(prerequisite_item)))
             g.add((unit_code, has_prerequisite, h[prerequisite_item.replace(" ", "_")]))
 
     #Advisable Prior Study
     if units_data[unit_name].get("advisable_prior_study") != None:
         for advisable_item in units_data[unit_name]["advisable_prior_study"]:
-            g.add((h[advisable_item.replace(" ", "_")], RDF.type, advisable_prior_study))
-            g.add((h[advisable_item.replace(" ", "_")], RDFS.label, Literal(advisable_item)))
+            # g.add((h[advisable_item.replace(" ", "_")], RDF.type, advisable_prior_study))
+            # g.add((h[advisable_item.replace(" ", "_")], RDFS.label, Literal(advisable_item)))
             g.add((unit_code, has_advisable_prior_study, h[advisable_item.replace(" ", "_")]))
 
     
