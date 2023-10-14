@@ -270,18 +270,3 @@ results = g.query("""
 
 # print graph
 g.serialize(destination = "handbook.ttl", format='ttl', indent=4)
-
-
-# hannah's notes
-#
-# URIs are only used to make objects unique in the knowledge graph, 
-#       we don't need to make URIs for literals, 
-#       eg. unit_description = h[units_data[unit_name]["description"].replace(" ", "_")] is not necessary
-#       instead we can just give the unit object a description literal by doing:
-#       g.add((unit_code, has_description, Literal(units_data[unit_name]["description"])))
-#
-# i am thinking that maybe we don't need to give unit objects a relation to a school,
-#       instead we could give major objects a relation to a school, and then the unit's school
-#       can be inferred from the unit's major's school
-#       same for board of examiners.
-#
