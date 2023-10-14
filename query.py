@@ -1,4 +1,5 @@
-from owlready2 import *
+# from owlready2 import *
+from rdflib import Graph
 import sys
 
 g = Graph()
@@ -8,15 +9,17 @@ arguments = sys.argv
 
 if arguments[1] == "getAllMajors":
     selection = "?major"
-    query = "?major a handbook:major ."
-
-results = default_world.sparql(
+    query = "?major a rdfs:Class ."
+if arguments[1] == "getAllDescription":
+    selection = "?unit ?description"
+    query ="?unit handbook:has_credit ?description ."
+results = g.query(
     f"""
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
         PREFIX owl: <http://www.w3.org/2002/07/owl#>
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-        PREFIX pokemon: <http://test.org/pokemon#>
+        PREFIX handbook: <http://university.org/#>
 
         SELECT {selection}
         WHERE{{
@@ -24,5 +27,5 @@ results = default_world.sparql(
         }}
         """)
 
-for result in results:
-    print(result)
+for row in results:
+    print(row)
