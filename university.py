@@ -39,6 +39,7 @@ assessment = h.assessment
 # advisable_prior_study = h.advisable_prior_study
 contact = h.contact
 major = h.major
+course = h.course
 
 
 #Add Classes
@@ -62,6 +63,8 @@ g.add((assessment, RDFS.label, Literal("Assessment")))
 # g.add((advisable_prior_study, RDFS.label, Literal("Advisable Prior Study")))
 g.add((major, RDF.type, RDFS.Class))
 g.add((major, RDFS.label, Literal("Major")))
+g.add((course, RDF.type, RDFS.Class))
+g.add((course, RDFS.label, Literal("Course")))
 
 # Create specific assessment objects
 participation = h.participation
@@ -125,8 +128,6 @@ g.add((has_major, RDF.type, RDF.Property))
 g.add((has_name, RDF.type, RDF.Property))
 
 
-
-
 #Use Json object to add to graph
 i = 0
 
@@ -143,7 +144,7 @@ for unit_name in units_data:
     # unit_advisable_prior_study = h[units_data[unit_name]["advisable_prior_study"].replace(" ", "_")]
     # unit_contact = h[units_data[unit_name]["contact"].replace(" ", "_")]
     
-    
+
     #Name
     g.add((unit_code, RDF.type, unit))
     g.add((unit_code, RDFS.label, Literal(unit_name)))
@@ -204,7 +205,7 @@ for unit_name in units_data:
             # g.add((h[advisable_item.replace(" ", "_")], RDFS.label, Literal(advisable_item)))
             g.add((unit_code, has_advisable_prior_study, h[advisable_item.replace(" ", "_")]))
 
-    
+
     #Add relations to graph
     g.add((unit_code, has_title, Literal(units_data[unit_name]["title"])))
     g.add((unit_code, has_school, unit_school))
@@ -228,7 +229,11 @@ for major_name in majors_data:
     g.add((major_code, RDFS.label, Literal(major_name)))
     g.add((major_code, has_title, Literal(majors_data[major_name]["title"])))
     g.add((major_code, has_description, Literal(majors_data[major_name]["description"])))
-    g.add((major_code, major_of_courses, Literal(majors_data[major_name]["courses"]) ))
+
+    for this_course in h[majors_data[major_name]["courses"]]:
+        major_course = h[this_course]
+        g.add((major_course, RDF.type, course))
+        g.add((major_code, major_of_courses, major_course))
 
     major_school = h[majors_data[major_name]["school"].replace(" ", "_")]
     g.add((major_school, RDF.type, school))
