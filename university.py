@@ -61,35 +61,27 @@ g.add((major, RDF.type, RDFS.Class))
 g.add((major, RDFS.label, Literal("Major")))
 
 # Create specific assessment objects
-assignment = h.assignment
-report = h.report
-quiz = h.quiz
-presentation = h.presentation
-exam = h.exam
-seminar = h.seminar
+participation = h.participation
+group = h.group
 practical = h.practical
-activity = h.activity
-debate = h.debate
-paper = h.paper
-research_proposal = h.research_proposal
-review = h.review
-essay = h.essay
+oral = h.oral
+written = h.written
+multimedia = h.multimedia
+project = h.project
+exam = h.exam
 test = h.test
+misc = h.misc
 # Add assessment objects (type = assessment class)
-g.add((assignment, RDF.type, assessment))
-g.add((report, RDF.type, assessment)) 
-g.add((quiz, RDF.type, assessment)) 
-g.add((presentation, RDF.type, assessment)) 
-g.add((exam, RDF.type, assessment)) 
-g.add((seminar, RDF.type, assessment)) 
+g.add((participation, RDF.type, assessment))
+g.add((group, RDF.type, assessment)) 
 g.add((practical, RDF.type, assessment)) 
-g.add((activity, RDF.type, assessment)) 
-g.add((debate, RDF.type, assessment)) 
-g.add((paper, RDF.type, assessment)) 
-g.add((research_proposal, RDF.type, assessment)) 
-g.add((review, RDF.type, assessment)) 
-g.add((essay, RDF.type, assessment)) 
+g.add((oral, RDF.type, assessment)) 
+g.add((written, RDF.type, assessment)) 
+g.add((multimedia, RDF.type, assessment)) 
+g.add((project, RDF.type, assessment)) 
+g.add((exam, RDF.type, assessment)) 
 g.add((test, RDF.type, assessment)) 
+g.add((misc, RDF.type, assessment))
 
 #Create relations
 has_title = h.has_title
