@@ -23,7 +23,7 @@ majors.close()
 
 #Create Graph and Namespace
 g = Graph()
-h = Namespace("https://university.org/")
+h = Namespace("http://university.org/")
 
 g.bind("handbook", h)
 
@@ -107,6 +107,7 @@ has_unit = h.has_unit
 has_bridging = h.has_bridging
 has_major = h.has_major
 has_name = h.has_name # used for assessment object names eg. "exam"
+has_number = h.has_number # used to give level objects an integer literal, bc integers are easier to use in SHACL
 
 #Add relations
 g.add((has_title, RDF.type, RDF.Property))
@@ -126,6 +127,7 @@ g.add((has_unit, RDF.type, RDF.Property))
 g.add((has_bridging, RDF.type, RDF.Property))
 g.add((has_major, RDF.type, RDF.Property))
 g.add((has_name, RDF.type, RDF.Property))
+g.add((has_number, RDF.type, RDF.Property))
 
 
 #Use Json object to add to graph
@@ -163,7 +165,7 @@ for unit_name in units_data:
     
     #Level
     g.add((unit_level, RDF.type, level))
-    g.add((unit_level, RDFS.label, Literal(units_data[unit_name]["level"])))
+    g.add((unit_level, h.has_number, Literal(int(units_data[unit_name]["level"]))))
     
     #Credit
     g.add((unit_credit, RDF.type, credit))
@@ -257,7 +259,7 @@ for major_name in majors_data:
 
 
 results = g.query("""
-    PREFIX handbook: <https://university.org/>
+    PREFIX handbook: <http://university.org/>
     
     SELECT ?unit ?description 
     WHERE {

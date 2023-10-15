@@ -1,30 +1,38 @@
 from rdflib import Graph, Literal, RDF, Namespace, BNode
 from pyshacl import validate
 
-from university import *
+data_graph = Graph()
+data_graph.parse("handbook.ttl", format="ttl")
+sha_str = """
+            @prefix sha: <http://www.w3.org/ns/shacl#> .
+            @prefix h: <http://university.org#> .
 
-g = Graph()
-g.parse("handbook.ttl", format="ttl")
+            h:unit_shape a sha:NodeShape ;
+                sha:targetClass h:unit ;
 
-SHACL = Namespace("http://www.w3.org/ns/shacl#")
-g.bind("sh", SHACL)
+            sha:property [
+                sha:path h:has_level ;
+                sha:property [
+                    sha:path h:has_number ;
+                    sha:minCount 1 ;
+                ] ;
+            ] ;
+            sha:property [
+                sha:path h:has_prerequisite ;
+                sha:qualifiedValueShape [
+                    sha:property [
+                        sha:path h:has_level ;
+                        sha:property [
+                            sha:path h:has_number ;
+                            sha:maxExclusive ???? ;
+                        ] ;
+                    ] ;
+                ] ;
+            ] .
 
-shaclGraph = Graph()
+"""
+sha_graph = Graph()
+sha_graph.parse(data=sha_str, format='ttl')
 
-
-
-
-# every prerequisite for a level X unit should have a level less than X
-unit_shape = h.unit_shape #is this supposed to be shacl.unit_shape or h.unit_shape?????????
-prereq_shape = h.unit_shape
-has_level_shape = BNode()
-has_prereq_shape = BNode()
-shaclGraph.add((unit_shape, RDF.type, SHACL.NodeShape))
-shaclGraph.add((unit_shape, SHACL.targetClass, h.unit))
-shaclGraph.add((prereq_shape, RDF.type, SHACL.NodeShape))
-shaclGraph.add((prereq_shape, SHACL.targetClass, h.unit))
-shaclGraph.add((has_level_shape, SHACL.path, h.has_level))
-shaclGraph.add((has_prereq_shape, SHACL.path, h.has_prerequisite))
-shaclGraph.add((unit_shape, has_level_shape))
-
-handbook:unit_shape a 
+conforms, results_graph, results_text = validate(data_graph, shacl_graph=sha_graph)
+print(results_text)
