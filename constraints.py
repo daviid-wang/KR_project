@@ -41,11 +41,18 @@ sha_str = """
             @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
             @prefix h: <http://university.org/> .
 
+            h:
+	            sha:declare [
+		        sha:prefix "h" ;
+		        sha:namespace "http://university.org/" ;
+	        ] .
+
             h:unit_shape a sha:NodeShape ;
                 sha:targetClass h:unit ;
 
             sha:propertyValidator [
 		        a sha:SPARQLSelectValidator ;
+                sha: prefixes h: ;
 		        sha:select '''
 			        SELECT $this ?preUnit
 			        WHERE {
@@ -59,10 +66,6 @@ sha_str = """
 			    '''
 	        ] .
 """
-
-
-
-
 
 
 sha_graph = Graph()
