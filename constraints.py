@@ -4,15 +4,15 @@ from pyshacl import validate
 data_graph = Graph()
 data_graph.parse("handbook.ttl", format="ttl")
 
-sha_str = """
-            @prefix sha: <http://www.w3.org/ns/shacl#> .
+shacl_str = """
+            @prefix shacl: <http://www.w3.org/ns/shacl#> .
             @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
             @prefix h: <http://university.org/> .
 
-            h:unit_shape a sha:NodeShape ;
-                sha:targetClass h:unit ;
-                sha:sparql [
-		            sha:select '''
+            h:unit_shape a shacl:NodeShape ;
+                shacl:targetClass h:unit ;
+                shacl:sparql [
+		            shacl:select '''
                     PREFIX h: <http://university.org/>
                         SELECT $this ?preUnit 
                         WHERE { 
@@ -24,12 +24,12 @@ sha_str = """
                             FILTER (?thisNumber <= ?preNumber) .
                         } 
                     ''' ;
-                    sha:message "The prerequisite unit's level should be less than the unit's level."
+                    shacl:message "The prerequisite unit's level should be less than the unit's level."
 	        ] . 
 """
 
-sha_graph = Graph()
-sha_graph.parse(data=sha_str, format='ttl')
+shacl_graph = Graph()
+shacl_graph.parse(data=shacl_str, format='ttl')
 
-conforms, results_graph, results_text = validate(data_graph, shacl_graph=sha_graph)
+conforms, results_graph, results_text = validate(data_graph, shacl_graph=shacl_graph)
 print(results_text)
