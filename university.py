@@ -151,25 +151,38 @@ for unit_name in units_data:
     g.add((unit_code, RDF.type, unit))
     g.add((unit_code, RDFS.label, Literal(unit_name)))
     
+    #Title
+    g.add((unit_code, has_title, Literal(units_data[unit_name]["title"])))
+    
     #School
     g.add((unit_school, RDF.type, school))
     g.add((unit_school, RDFS.label, Literal(units_data[unit_name]["school"])))
+    g.add((unit_code, has_school, unit_school))
     
     #Board of Examiners
-    g.add((unit_board_of_examiners, RDF.type, board_of_examiners))
-    g.add((unit_board_of_examiners, RDFS.label, Literal(units_data[unit_name]["board_of_examiners"])))
+    if units_data[unit_name]["board_of_examiners"] != "" and units_data[unit_name]["board_of_examiners"] != "NA":
+        g.add((unit_board_of_examiners, RDF.type, board_of_examiners))
+        g.add((unit_board_of_examiners, RDFS.label, Literal(units_data[unit_name]["board_of_examiners"])))
+        g.add((unit_code, has_board_of_examiners, unit_board_of_examiners))
+    
     
     #Delivery mode
     g.add((unit_delivery_mode, RDF.type, delivery_mode))
     g.add((unit_delivery_mode, RDFS.label, Literal(units_data[unit_name]["delivery_mode"])))
+    g.add((unit_code, has_unit_delivery_mode, unit_delivery_mode))
     
     #Level
     g.add((unit_level, RDF.type, level))
     g.add((unit_level, h.has_number, Literal(int(units_data[unit_name]["level"]))))
+    g.add((unit_code, has_level, unit_level))
+    
+    #Description
+    g.add((unit_code, has_description, Literal(units_data[unit_name]["description"])))
     
     #Credit
     g.add((unit_credit, RDF.type, credit))
     g.add((unit_credit, RDFS.label, Literal(units_data[unit_name]["credit"])))
+    g.add((unit_code, has_credit, unit_credit))
     
     #Assessments
     assessments = []
@@ -207,23 +220,11 @@ for unit_name in units_data:
             # g.add((h[advisable_item.replace(" ", "_")], RDFS.label, Literal(advisable_item)))
             g.add((unit_code, has_advisable_prior_study, h[advisable_item.replace(" ", "_")]))
 
-
-    #Add relations to graph
-    g.add((unit_code, has_title, Literal(units_data[unit_name]["title"])))
-    g.add((unit_code, has_school, unit_school))
-    g.add((unit_code, has_board_of_examiners, unit_board_of_examiners))
-    g.add((unit_code, has_unit_delivery_mode, unit_delivery_mode))
-    g.add((unit_code, has_level, unit_level))
-    g.add((unit_code, has_description, Literal(units_data[unit_name]["description"])))
-    g.add((unit_code, has_credit, unit_credit))
+    #Note
     if units_data[unit_name].get("note") != None:
         g.add((unit_code, has_note, Literal(units_data[unit_name]["note"])))
-    
 
-    # i += 1
-    # if i == 1:
-    #     break
-
+#Add majors data
 for major_name in majors_data:
 
     major_code = h[major_name]
