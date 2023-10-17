@@ -41,7 +41,7 @@ sha_str = """
             @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
             @prefix h: <http://university.org/> .
 
-            h:
+            h:prefixDeclarations
 	            sha:declare [
 		        sha:prefix "h" ;
 		        sha:namespace "http://university.org/" ;
@@ -49,22 +49,21 @@ sha_str = """
 
             h:unit_shape a sha:NodeShape ;
                 sha:targetClass h:unit ;
-
-            sha:propertyValidator [
-		        a sha:SPARQLSelectValidator ;
-                sha: prefixes h: ;
+            sha:sparql [
+                sha: prefixes h:prefixDeclarations ;
 		        sha:select '''
-			        SELECT $this ?preUnit
-			        WHERE {
-				    $this h:has_prerequisite ?preUnit .
-                    $this h:has_level ?thisLevel .
-                    ?thisLevel h:has_number ?thisNumber .
-                    ?preUnit h:has_level ?preLevel .
-                    ?preLevel h:has_number ?preNumber .
-				    FILTER (?thisNumber > ?preNumber)
-			        }
-			    '''
-	        ] .
+                    SELECT $this ?preUnit 
+                    WHERE { 
+                        $this h:has_prerequisite ?preUnit . 
+                        $this h:has_level ?thisLevel . 
+                        ?thisLevel h:has_number ?thisNumber . 
+                        ?preUnit h:has_level ?preLevel . 
+                        ?preLevel h:has_number ?preNumber . 
+                        FILTER (?thisNumber <= ?preNumber) .
+                    } 
+                ''' ;
+                sha:message "The level of a unit must be higher than its prerequisite." ;
+	        ] ; .
 """
 
 
