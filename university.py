@@ -37,10 +37,8 @@ credit = h.credit
 assessment = h.assessment
 # prerequisite = h.prerequisite
 # advisable_prior_study = h.advisable_prior_study
-contact = h.contact
 major = h.major
 course = h.course
-
 
 #Add Classes
 g.add((unit, RDF.type, RDFS.Class))
@@ -108,6 +106,7 @@ has_bridging = h.has_bridging
 has_major = h.has_major
 has_name = h.has_name # used for assessment object names eg. "exam"
 has_number = h.has_number # used to give level objects an integer literal, bc integers are easier to use in SHACL
+has_contact_hrs = h.has_contact_hrs
 
 #Add relations
 g.add((has_title, RDF.type, RDF.Property))
@@ -128,10 +127,9 @@ g.add((has_bridging, RDF.type, RDF.Property))
 g.add((has_major, RDF.type, RDF.Property))
 g.add((has_name, RDF.type, RDF.Property))
 g.add((has_number, RDF.type, RDF.Property))
-
+g.add((has_contact_hrs, RDF.type, RDF.Property))
 
 #Use Json object to add to graph
-i = 0
 
 for unit_name in units_data:
     
@@ -173,7 +171,7 @@ for unit_name in units_data:
     
     #Level
     g.add((unit_level, RDF.type, level))
-    g.add((unit_level, h.has_number, Literal(int(units_data[unit_name]["level"]))))
+    g.add((unit_level, has_number, Literal(int(units_data[unit_name]["level"]))))
     g.add((unit_code, has_level, unit_level))
     
     #Description
@@ -220,6 +218,13 @@ for unit_name in units_data:
             # g.add((h[advisable_item.replace(" ", "_")], RDFS.label, Literal(advisable_item)))
             g.add((unit_code, has_advisable_prior_study, h[advisable_item.replace(" ", "_")]))
 
+    #Contact hours
+    if units_data[unit_name].get("contact") != None:
+        hours = 0
+        for contact_item in units_data[unit_name]["contact"]:
+            hours += int(units_data[unit_name]["contact"][contact_item])
+        g.add((unit_code, has_contact_hrs, Literal(int(hours))))
+
     #Note
     if units_data[unit_name].get("note") != None:
         g.add((unit_code, has_note, Literal(units_data[unit_name]["note"])))
@@ -258,18 +263,6 @@ for major_name in majors_data:
         for major_outcome in majors_data[major_name]["outcomes"]:
             g.add((major_code, has_outcome, Literal(major_outcome)))
 
-
-results = g.query("""
-    PREFIX handbook: <http://university.org/>
-    
-    SELECT ?unit ?description 
-    WHERE {
-        ?unit handbook:has_description ?description .
-    }
-""")
-
-# for result in results:
-#     print(result)
 
 # print graph
 g.serialize(destination = "handbook.ttl", format='ttl', indent=4)
