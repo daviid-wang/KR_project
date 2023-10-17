@@ -7,19 +7,28 @@ g.parse("handbook.ttl", format="turtle")
 
 arguments = sys.argv
 
+selection = ""
+additional = ""
+
 if arguments[1] == "getAllClasses":
     selection = "?major"
     query = "?major a rdfs:Class ."
-    additional = ""
 if arguments[1] == "getDescription":
     selection = "?description"
     query =f"handbook:{arguments[2]} handbook:has_description ?description ."
-    additional = ""
 if arguments[1] == "getUnitsWithOutcomes":
     selection = "?unit"
     query = "?unit a handbook:unit . ?unit handbook:has_outcome ?outcomes ."
     additional = f"GROUP BY ?unit HAVING (COUNT(?outcomes) > {arguments[2]})"
 
+
+if arguments[1] == "getUnitsWithMajors":
+    selection = "?unit"
+    query = "?unit a handbook:unit . ?unit handbook:has_major ?major ."
+    additional = f"GROUP BY ?unit HAVING (COUNT(?major) > 3)"
+
+if selection == "":
+    raise Exception("Incorrect argument")
 
 results = g.query(
     f"""
