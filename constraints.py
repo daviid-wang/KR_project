@@ -9,8 +9,6 @@ sha_str = """
             @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
             @prefix h: <http://university.org/> .
 
-
-
             h:unit_shape a sha:NodeShape ;
                 sha:targetClass h:unit ;
                 sha:sparql [
@@ -26,6 +24,7 @@ sha_str = """
                             FILTER (?thisNumber <= ?preNumber) .
                         } 
                     ''' ;
+                    sha:message "The prerequisite unit's level should be less than the unit's level."
 	        ] . 
 """
 
@@ -60,7 +59,7 @@ david_schacl = """
 
 
 sha_graph = Graph()
-sha_graph.parse(data=david_schacl, format='ttl')
+sha_graph.parse(data=sha_str, format='ttl')
 
 conforms, results_graph, results_text = validate(data_graph, shacl_graph=sha_graph)
 print(results_text)
