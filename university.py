@@ -233,7 +233,7 @@ for major_name in majors_data:
     g.add((major_code, has_title, Literal(majors_data[major_name]["title"])))
     g.add((major_code, has_description, Literal(majors_data[major_name]["description"])))
 
-    for this_course in h[majors_data[major_name]["courses"]]:
+    for this_course in majors_data[major_name]["courses"]:
         major_course = h[this_course]
         g.add((major_course, RDF.type, course))
         g.add((major_code, major_of_courses, major_course))
