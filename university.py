@@ -23,7 +23,7 @@ majors.close()
 
 #Create Graph and Namespace
 g = Graph()
-h = Namespace("https://university.org/")
+h = Namespace("http://university.org/")
 
 g.bind("handbook", h)
 
@@ -39,6 +39,7 @@ assessment = h.assessment
 # advisable_prior_study = h.advisable_prior_study
 contact = h.contact
 major = h.major
+course = h.course
 
 
 #Add Classes
@@ -62,6 +63,8 @@ g.add((assessment, RDFS.label, Literal("Assessment")))
 # g.add((advisable_prior_study, RDFS.label, Literal("Advisable Prior Study")))
 g.add((major, RDF.type, RDFS.Class))
 g.add((major, RDFS.label, Literal("Major")))
+g.add((course, RDF.type, RDFS.Class))
+g.add((course, RDFS.label, Literal("Course")))
 
 # Create specific assessment objects
 participation = h.participation
@@ -104,6 +107,7 @@ has_unit = h.has_unit
 has_bridging = h.has_bridging
 has_major = h.has_major
 has_name = h.has_name # used for assessment object names eg. "exam"
+has_number = h.has_number # used to give level objects an integer literal, bc integers are easier to use in SHACL
 
 #Add relations
 g.add((has_title, RDF.type, RDF.Property))
@@ -123,8 +127,7 @@ g.add((has_unit, RDF.type, RDF.Property))
 g.add((has_bridging, RDF.type, RDF.Property))
 g.add((has_major, RDF.type, RDF.Property))
 g.add((has_name, RDF.type, RDF.Property))
-
-
+g.add((has_number, RDF.type, RDF.Property))
 
 
 #Use Json object to add to graph
@@ -143,7 +146,7 @@ for unit_name in units_data:
     # unit_advisable_prior_study = h[units_data[unit_name]["advisable_prior_study"].replace(" ", "_")]
     # unit_contact = h[units_data[unit_name]["contact"].replace(" ", "_")]
     
-    
+
     #Name
     g.add((unit_code, RDF.type, unit))
     g.add((unit_code, RDFS.label, Literal(unit_name)))
@@ -162,7 +165,7 @@ for unit_name in units_data:
     
     #Level
     g.add((unit_level, RDF.type, level))
-    g.add((unit_level, RDFS.label, Literal(units_data[unit_name]["level"])))
+    g.add((unit_level, h.has_number, Literal(int(units_data[unit_name]["level"]))))
     
     #Credit
     g.add((unit_credit, RDF.type, credit))
@@ -204,7 +207,7 @@ for unit_name in units_data:
             # g.add((h[advisable_item.replace(" ", "_")], RDFS.label, Literal(advisable_item)))
             g.add((unit_code, has_advisable_prior_study, h[advisable_item.replace(" ", "_")]))
 
-    
+
     #Add relations to graph
     g.add((unit_code, has_title, Literal(units_data[unit_name]["title"])))
     g.add((unit_code, has_school, unit_school))
@@ -228,7 +231,11 @@ for major_name in majors_data:
     g.add((major_code, RDFS.label, Literal(major_name)))
     g.add((major_code, has_title, Literal(majors_data[major_name]["title"])))
     g.add((major_code, has_description, Literal(majors_data[major_name]["description"])))
-    g.add((major_code, major_of_courses, Literal(majors_data[major_name]["courses"]) ))
+
+    for this_course in h[majors_data[major_name]["courses"]]:
+        major_course = h[this_course]
+        g.add((major_course, RDF.type, course))
+        g.add((major_code, major_of_courses, major_course))
 
     major_school = h[majors_data[major_name]["school"].replace(" ", "_")]
     g.add((major_school, RDF.type, school))
@@ -252,7 +259,7 @@ for major_name in majors_data:
 
 
 results = g.query("""
-    PREFIX handbook: <https://university.org/>
+    PREFIX handbook: <http://university.org/>
     
     SELECT ?unit ?description 
     WHERE {
@@ -265,18 +272,3 @@ results = g.query("""
 
 # print graph
 g.serialize(destination = "handbook.ttl", format='ttl', indent=4)
-
-
-# hannah's notes
-#
-# URIs are only used to make objects unique in the knowledge graph, 
-#       we don't need to make URIs for literals, 
-#       eg. unit_description = h[units_data[unit_name]["description"].replace(" ", "_")] is not necessary
-#       instead we can just give the unit object a description literal by doing:
-#       g.add((unit_code, has_description, Literal(units_data[unit_name]["description"])))
-#
-# i am thinking that maybe we don't need to give unit objects a relation to a school,
-#       instead we could give major objects a relation to a school, and then the unit's school
-#       can be inferred from the unit's major's school
-#       same for board of examiners.
-#
