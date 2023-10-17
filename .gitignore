@@ -4,6 +4,7 @@ __pycache__/
 *$py.class
 
 knowledge_graph
+handbook.ttl
 
 # C extensions
 *.so
