@@ -60,25 +60,28 @@ shacl_str = """
 				] .
 """
 
-david_query = """
-	@prefix shacl: <http://www.w3.org/ns/shacl#> .
-    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-    @prefix h: <http://university.org/> .
+# hannah:   this constraint is not quite ready
+in_progress = """
+            @prefix shacl: <http://www.w3.org/ns/shacl#> .
+            @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+            @prefix h: <http://university.org/> .
 
-    h:unit_shape a shacl:NodeShape ;
-        shacl:targetClass h:unit ;
-        
-        #No unit should be its own prerequisite
-		shacl:sparql [
-			shacl:select '''
-				PREFIX h: <http://university.org/>
-				SELECT $this 
-				WHERE {
-					$this h:has_prerequisite $this .
-				}
-			''' ;
-			shacl:message "A unit cannot be its own prerequisite." ;
-		] .
+            h:major_shape a shacl:NodeShape ;
+            	shacl:targetClass h:major ;
+
+				    shacl:sparql [
+						shacl:select '''
+							PREFIX h: <http://university.org/>
+							SELECT $this ?hours
+							WHERE {
+								$this h:has_unit ?unit .
+								?unit h:has_contact_hrs ?hours .
+							}
+							GROUP BY $this
+							HAVING (SUM(?hours) > 150)
+
+						''' ;
+					] .
 """
 
 shacl_graph = Graph()
