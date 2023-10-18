@@ -93,6 +93,25 @@ results = g.query(
         {additional}
         """)
 
+# hannah:   i am using this test query to test my shacl constraint
+testing_constraint = g.query(
+    """
+     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+     PREFIX owl: <http://www.w3.org/2002/07/owl#>
+     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+     PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+     PREFIX h: <http://university.org/>
+
+    SELECT ?major ?hours ?credit
+	WHERE {
+		?major h:has_unit ?unit .
+		?unit h:has_contact_hrs ?hours .
+        ?unit h:has_credit ?credit .
+	}
+    GROUP BY ?major
+    HAVING ( ( 4 * SUM(?hours) / (SUM(?credit)/24) ) > 40)
+    """
+)
 
 for row in results:
     print(row[0])

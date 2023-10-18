@@ -33,7 +33,6 @@ school = h.school
 board_of_examiners = h.board_of_examiners
 delivery_mode = h.delivery_mode
 level = h.level
-credit = h.credit
 assessment = h.assessment
 # prerequisite = h.prerequisite
 # advisable_prior_study = h.advisable_prior_study
@@ -51,8 +50,6 @@ g.add((delivery_mode, RDF.type, RDFS.Class))
 g.add((delivery_mode, RDFS.label, Literal("Delivery Mode")))
 g.add((level, RDF.type, RDFS.Class))
 g.add((level, RDFS.label, Literal("Level")))
-g.add((credit, RDF.type, RDFS.Class))
-g.add((credit, RDFS.label, Literal("Credit")))
 g.add((assessment, RDF.type, RDFS.Class))
 g.add((assessment, RDFS.label, Literal("Assessment")))
 # g.add((prerequisite, RDF.type, RDFS.Class))
@@ -140,7 +137,6 @@ for unit_name in units_data:
     unit_board_of_examiners = h[units_data[unit_name]["board_of_examiners"].replace(" ", "_")]
     unit_delivery_mode = h[units_data[unit_name]["delivery_mode"].replace(" ", "_")]
     unit_level = h[units_data[unit_name]["level"].replace(" ", "_")]
-    unit_credit = h[units_data[unit_name]["credit"].replace(" ", "_")]
     # unit_advisable_prior_study = h[units_data[unit_name]["advisable_prior_study"].replace(" ", "_")]
     # unit_contact = h[units_data[unit_name]["contact"].replace(" ", "_")]
     
@@ -178,9 +174,11 @@ for unit_name in units_data:
     g.add((unit_code, has_description, Literal(units_data[unit_name]["description"])))
     
     #Credit
-    g.add((unit_credit, RDF.type, credit))
-    g.add((unit_credit, RDFS.label, Literal(units_data[unit_name]["credit"])))
-    g.add((unit_code, has_credit, unit_credit))
+    if units_data[unit_name].get("credit") != None:
+        credit = int(units_data[unit_name]["credit"])
+        g.add((unit_code, has_credit, Literal(int(credit))))
+    else:
+        g.add((unit_code, has_credit, Literal(int(0))))
     
     #Assessments
     assessments = []
@@ -224,6 +222,8 @@ for unit_name in units_data:
         for contact_item in units_data[unit_name]["contact"]:
             hours += int(units_data[unit_name]["contact"][contact_item])
         g.add((unit_code, has_contact_hrs, Literal(int(hours))))
+    else:
+        g.add((unit_code, has_contact_hrs, Literal(int(0))))
 
     #Note
     if units_data[unit_name].get("note") != None:
