@@ -111,8 +111,7 @@ testing_constraint = g.query(
             { SELECT (COUNT(?unit) AS ?zeroCount) WHERE { ?unit h:has_credit 0 . } }
 	}
     GROUP BY ?level ?major
-    HAVING ( 
-        ( 4 * SUM(?hours) / (COUNT(?unit) - ?zeroCount) ) > 40 )
+    HAVING ( (4 * SUM(?hours) / (COUNT(?unit) - ?zeroCount)) > 40 )
     """
 )
 
