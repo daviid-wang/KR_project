@@ -51,12 +51,13 @@ with onto:
         inverse_property    = has_unit
 
     class has_contact_hrs(Unit >> int): pass
-#has_name = h.has_name # used for assessment object names eg. "exam"
-#has_number = h.has_number # used to give level objects an integer literal, bc integers are easier to use in SHACL
+    #has_name = h.has_name # used for assessment object names eg. "exam"
+    #has_number = h.has_number # used to give level objects an integer literal, bc integers are easier to use in SHACL
 
     # CITS3200 = Unit("CITS3200", has_title=[units_data["CITS3200"]['title']])
     #Add unit title for every unit
     for unit_name in units_data:
-        exec(f"{unit_name} = Unit('{unit_name}', has_title=[units_data[unit_name]['title']])")
+        # print(f"{unit_name} = Unit('{unit_name}', has_title=[units_data['{unit_name}']['title']]")
+        exec(f"{unit_name} = Unit('{unit_name}', has_title=[units_data['{unit_name}']['title']])")
     
     onto.save(file = "handbook.owl", format = "rdfxml")
