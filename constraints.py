@@ -72,20 +72,22 @@ in_progress = """
 				    shacl:sparql [
 						shacl:select '''
 							PREFIX h: <http://university.org/>
-							SELECT $this ?hours
+    						SELECT ?major ?level
 							WHERE {
-								$this h:has_unit ?unit .
+								?major h:has_unit ?unit .
 								?unit h:has_contact_hrs ?hours .
+								?unit h:has_credit ?credit .
+								?unit h:has_level ?level .
+								{SELECT (COUNT(?unit) AS ?zeroCount) WHERE { ?unit h:has_credit 0 . }}
 							}
-							GROUP BY $this
-							HAVING (SUM(?hours) > 150)
-
-						''' ;
-					] .
+							GROUP BY ?level ?major
+							HAVING ( (4 * SUM(?hours) / (COUNT(?unit) - ?zeroCount)) > 40 )
+						''' .
+					] ;
 """
 
 shacl_graph = Graph()
-shacl_graph.parse(data=shacl_str, format='ttl')
+shacl_graph.parse(data=in_progress, format='ttl')
 
 conforms, results_graph, results_text = validate(data_graph, shacl_graph=shacl_graph)
 print(results_text)
