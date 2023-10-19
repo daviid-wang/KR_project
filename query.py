@@ -102,18 +102,17 @@ testing_constraint = g.query(
      PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
      PREFIX h: <http://university.org/>
 
-    SELECT ?major ?level
+    SELECT ?major ?level ?zeroCount
 	WHERE {
 		?major h:has_unit ?unit .
 		?unit h:has_contact_hrs ?hours .
         ?unit h:has_credit ?credit .
         ?unit h:has_level ?level .
-            { SELECT (COUNT(?unit) AS ?zeroCount) WHERE { ?unit h:has_credit 0 . } GROUP BY ?level ?major }
+            { SELECT (COUNT(?unit) AS ?zeroCount) WHERE { ?unit h:has_credit 0 . } }
 	}
     GROUP BY ?level ?major
     HAVING ( 
-        ( 4 * SUM(?hours) / ( SUM(?credit)/6 - ?zeroCount) ) > 40
-    )
+        ( 4 * SUM(?hours) / (COUNT(?unit) - ?zeroCount) ) > 40 )
     """
 )
 
