@@ -1,4 +1,4 @@
-from owlready2 import *
+from owlready2 import get_ontology, Thing, ObjectProperty, DataProperty
 import json
 
 onto = get_ontology("http://university.org/")
@@ -48,7 +48,7 @@ with onto:
     class has_major(ObjectProperty):
         domain              = [Unit]
         range               = [Major]
-        inverse_property    = has_unit
+
 
     class has_contact_hrs(Unit >> int): pass
     #has_name = h.has_name # used for assessment object names eg. "exam"
@@ -57,7 +57,14 @@ with onto:
     # CITS3200 = Unit("CITS3200", has_title=[units_data["CITS3200"]['title']])
     #Add unit title for every unit
     for unit_name in units_data:
-        # print(f"{unit_name} = Unit('{unit_name}', has_title=[units_data['{unit_name}']['title']]")
-        exec(f"{unit_name} = Unit('{unit_name}', has_title=[units_data['{unit_name}']['title']])")
+        unit_add = f'''{unit_name} = \
+            Unit("{unit_name}", 
+                as_title=["{units_data[unit_name]["title"]}"], 
+                has_school=[School("{units_data[unit_name]["school"]}")]
+            )
+        '''
+        # print(unit_add)
+        exec(unit_add)
+        # AGRI5403 = Unit('AGRI5403', has_title=['Advanced Commodity Marketing'], has_school=[School('Agriculture and Environment')]) 
     
     onto.save(file = "handbook.owl", format = "rdfxml")
