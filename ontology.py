@@ -69,10 +69,11 @@ with onto:
             delivery_m = f'has_unit_delivery_mode=[DeliveryMode("{units_data[unit_name]["delivery_mode"]}")]'
         unit_add = f'''{unit_name} = \
             Unit("{unit_name}", 
-                as_title=["{units_data[unit_name]["title"]}"], 
+                has_title=["{units_data[unit_name]["title"]}"], 
                 has_school=[School("{units_data[unit_name]["school"]}")],
                 has_board_of_examiners=[BoardofExaminers("{units_data[unit_name]["board_of_examiners"]}")],
-                {delivery_m},
+                {delivery_m}
+                
             )
         '''
         # print(unit_add)
