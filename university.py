@@ -5,7 +5,7 @@ Hannah Doret (22846377)
 
 from rdflib import Graph, Literal, RDFS
 from rdflib.namespace import RDF, Namespace
-from functions import *
+from assessments import determine_assessments
 import json
 
 #Open and parse json objects
@@ -123,7 +123,6 @@ g.add((has_number, RDF.type, RDF.Property))
 g.add((has_contact_hrs, RDF.type, RDF.Property))
 
 #Use Json object to add to graph
-
 for unit_name in units_data:
     #Define URI
     unit_code = h[unit_name]

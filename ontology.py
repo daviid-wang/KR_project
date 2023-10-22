@@ -72,7 +72,7 @@ with onto:
             if units_data[unit_name]["outcomes"]:
                 outcome_s = f'has_outcome={units_data[unit_name]["outcomes"]}'
 
-        # Add each description to each unit
+        # Add all description to each unit
         unit_add = f'''{unit_name} = \
             Unit("{unit_name}", 
                 has_title=["{units_data[unit_name]["title"]}"], 
