@@ -60,29 +60,34 @@ shacl_str = """
 				] .
 """
 
-david_query = """
-	@prefix shacl: <http://www.w3.org/ns/shacl#> .
-    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-    @prefix h: <http://university.org/> .
+# hannah:   this constraint is not quite ready
+in_progress = """
+            @prefix shacl: <http://www.w3.org/ns/shacl#> .
+            @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+            @prefix h: <http://university.org/> .
 
-    h:unit_shape a shacl:NodeShape ;
-        shacl:targetClass h:unit ;
-        
-        #No unit should be its own prerequisite
-		shacl:sparql [
-			shacl:select '''
-				PREFIX h: <http://university.org/>
-				SELECT $this 
-				WHERE {
-					$this h:has_prerequisite $this .
-				}
-			''' ;
-			shacl:message "A unit cannot be its own prerequisite." ;
-		] .
+            h:major_shape a shacl:NodeShape ;
+            	shacl:targetClass h:major ;
+
+				    shacl:sparql [
+						shacl:select '''
+							PREFIX h: <http://university.org/>
+    						SELECT ?major ?level
+							WHERE {
+								?major h:has_unit ?unit .
+								?unit h:has_contact_hrs ?hours .
+								?unit h:has_credit ?credit .
+								?unit h:has_level ?level .
+								{SELECT (COUNT(?unit) AS ?zeroCount) WHERE { ?unit h:has_credit 0 . }}
+							}
+							GROUP BY ?level ?major
+							HAVING ( (4 * SUM(?hours) / (COUNT(?unit) - ?zeroCount)) > 40 )
+						''' .
+					] ;
 """
 
 shacl_graph = Graph()
-shacl_graph.parse(data=shacl_str, format='ttl')
+shacl_graph.parse(data=in_progress, format='ttl')
 
 conforms, results_graph, results_text = validate(data_graph, shacl_graph=shacl_graph)
 print(results_text)
