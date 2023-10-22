@@ -60,9 +60,9 @@ with onto:
     #Add unit to to ontology
     for unit_name in units_data:
         # Add school if it exists
-        school_string = ""
+        unit_school_string = ""
         if units_data[unit_name]["school"] != "":
-            school_string = f'has_school=[School("{units_data[unit_name]["school"]}")],'
+            unit_school_string = f'has_school=[School("{units_data[unit_name]["school"]}")],'
         
         # Add board of examiner if it exists
         board_of_examiners_string = ""
@@ -77,7 +77,7 @@ with onto:
         # Add all outcomes if it exists
         if units_data[unit_name].get("outcomes") != None:
             if units_data[unit_name]["outcomes"]:
-                outcome_string = f'has_outcome={units_data[unit_name]["outcomes"]},'
+                unit_outcome_string = f'has_outcome={units_data[unit_name]["outcomes"]},'
 
         # Add all assessments if it exists
         if units_data[unit_name].get("assessment") != None:
@@ -141,13 +141,13 @@ with onto:
         unit_add = f'''{unit_name} = \
             Unit("{unit_name}", 
                 has_title=["{units_data[unit_name]["title"]}"], 
-                {school_string}
+                {unit_school_string}
                 {board_of_examiners_string}
                 {delivery_string}
                 has_level=[{int(units_data[unit_name]["level"])}],
                 has_description=["""{units_data[unit_name]["description"].replace('"', '')}"""],
                 has_credit=[{int(units_data[unit_name]["credit"])}],
-                {outcome_string}
+                {unit_outcome_string}
                 {assessment_string}
                 {prerequisite_string}
                 {advisable_string}
@@ -159,6 +159,27 @@ with onto:
         exec(unit_add)
     
     #Add majors to ontology
-    # for major_name in majors_data:
+    for major_name in majors_data:
         
+        # Add school if it exists
+        major_school_string = ""
+        if majors_data[major_name]["school"] != "":
+            major_school_string = f'has_school=[School("{majors_data[major_name]["school"]}")],'
+        
+        # Add all outcomes if it exists
+        if majors_data[major_name].get("outcomes") != None:
+            if majors_data[major_name]["outcomes"]:
+                major_outcome_string = f'has_outcome={majors_data[major_name]["outcomes"]},'
+        
+        # Add all information to each major
+        major_add = f'''{major_name.replace("-", "_")} = \
+            Major("{major_name}", 
+                has_title=["{majors_data[major_name]["title"]}"], 
+                {major_school_string}
+                has_description=["""{majors_data[major_name]["description"].replace('"', '')}"""],
+                {major_outcome_string}
+            )
+        '''
+        # print(major_add)
+        exec(major_add)
     onto.save(file = "handbook.owl", format = "rdfxml")
