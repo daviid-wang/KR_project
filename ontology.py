@@ -134,7 +134,12 @@ with onto:
                 hours = 0
                 for contact_item in units_data[unit_name]["contact"]:
                     hours += int(units_data[unit_name]["contact"][contact_item])
-                contact_string = f'has_contact=[{hours}]'
+                contact_string = f'has_contact=[{hours}],'
+        
+        #Add notes if it exists
+        note_string = ""
+        if units_data[unit_name].get("note") != None:
+            note_string = f'has_note=["{units_data[unit_name]["note"]}"],'
         
         # Add all information to each unit
         unit_add = f'''{unit_name} = \
@@ -151,6 +156,7 @@ with onto:
                 {prerequisite_string}
                 {advisable_string}
                 {contact_string}
+                {note_string}
             )
         '''
         # print(unit_add)
