@@ -55,14 +55,10 @@ with onto:
     #has_name = h.has_name # used for assessment object names eg. "exam"
     #has_number = h.has_number # used to give level objects an integer literal, bc integers are easier to use in SHACL
 
-    # CITS3200 = Unit("CITS3200", has_title=[units_data["CITS3200"]['title']])
     data_stuff = []
     
-    #Add unit information for every unit
+    #Add unit to to ontology
     for unit_name in units_data:
-        # if units_data[unit_name]["description"] not in data_stuff:
-        #     data_stuff.append(units_data[unit_name]["description"])
-        
         # Add school if it exists
         school_string = ""
         if units_data[unit_name]["school"] != "":
@@ -161,6 +157,8 @@ with onto:
         '''
         # print(unit_add)
         exec(unit_add)
-        # AGRI5403 = Unit('AGRI5403', has_title=['Advanced Commodity Marketing'], has_school=[School('Agriculture and Environment')]) 
-    # print(data_stuff[0])
+    
+    #Add majors to ontology
+    # for major_name in majors_data:
+        
     onto.save(file = "handbook.owl", format = "rdfxml")
