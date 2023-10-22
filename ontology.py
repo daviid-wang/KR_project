@@ -62,6 +62,16 @@ with onto:
     for unit_name in units_data:
         # if units_data[unit_name]["description"] not in data_stuff:
         #     data_stuff.append(units_data[unit_name]["description"])
+        
+        # Add school if it exists
+        school_string = ""
+        if units_data[unit_name]["school"] != "":
+            school_string = f'has_school=[School("{units_data[unit_name]["school"]}")],'
+        
+        # Add board of examiner if it exists
+        board_of_examiners_string = ""
+        if units_data[unit_name]["board_of_examiners"] != "":
+            board_of_examiners_string = f'has_board_of_examiners=[BoardofExaminers("{units_data[unit_name]["board_of_examiners"]}")],'
 
         # Add delivery mode if it exists
         delivery_string = ""
@@ -111,8 +121,8 @@ with onto:
         unit_add = f'''{unit_name} = \
             Unit("{unit_name}", 
                 has_title=["{units_data[unit_name]["title"]}"], 
-                has_school=[School("{units_data[unit_name]["school"]}")],
-                has_board_of_examiners=[BoardofExaminers("{units_data[unit_name]["board_of_examiners"]}")],
+                {school_string}
+                {board_of_examiners_string}
                 {delivery_string}
                 has_level=[{int(units_data[unit_name]["level"])}],
                 has_description=["""{units_data[unit_name]["description"].replace('"', '')}"""],
