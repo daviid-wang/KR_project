@@ -70,7 +70,7 @@ with onto:
         
         # Add board of examiner if it exists
         board_of_examiners_string = ""
-        if units_data[unit_name]["board_of_examiners"] != "":
+        if units_data[unit_name]["board_of_examiners"] != "" and units_data[unit_name]["board_of_examiners"] != "NA":
             board_of_examiners_string = f'has_board_of_examiners=[BoardofExaminers("{units_data[unit_name]["board_of_examiners"]}")],'
 
         # Add delivery mode if it exists
@@ -117,7 +117,19 @@ with onto:
                         prerequisite_string += f'Unit("{prereq}")],'
                 # print(prerequisite_string)
         
-        # Add all description to each unit
+        #Add advisable prior study if it exists
+        if units_data[unit_name].get("advisable_prior_study") != None:
+            if units_data[unit_name]["advisable_prior_study"]:
+                i = 0
+                advisable_string = 'has_advisable_prior_study=['
+                for (i, advisable) in enumerate(units_data[unit_name]["advisable_prior_study"]):
+                    if i != len(units_data[unit_name]["advisable_prior_study"]) - 1:
+                        advisable_string += f'Unit("{advisable}"), '
+                    else:
+                        advisable_string += f'Unit("{advisable}")],'
+                print(advisable_string)
+        
+        # Add all information to each unit
         unit_add = f'''{unit_name} = \
             Unit("{unit_name}", 
                 has_title=["{units_data[unit_name]["title"]}"], 
@@ -130,6 +142,7 @@ with onto:
                 {outcome_string}
                 {assessment_string}
                 {prerequisite_string}
+                {advisable_string}
             )
         '''
         # print(unit_add)
