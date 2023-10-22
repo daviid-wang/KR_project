@@ -87,7 +87,8 @@ assessment_dictionary = {
     
     "test":             ["test", 
                         "quiz", 
-                        "mid-semester"],
+                        "mid-semester",
+                        " MCQ "],
 
                         # keywords I do not know how to categorize:
     "misc":             ["assessment",
@@ -131,7 +132,12 @@ assessment_dictionary = {
                         "log",
                         "collection",
                         "worksheet",
-                        "submission"]
+                        "submission",
+                        "preliminary analytical exploration and strategy development",
+                        "development of aspects of the strategy",
+                        "folio",
+                        "saq"
+                        ]
 }
 
 # a function which takes in a string describing a unit assessment,

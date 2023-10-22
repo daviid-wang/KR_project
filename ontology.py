@@ -1,5 +1,6 @@
 from owlready2 import get_ontology, Thing, ObjectProperty, DataProperty
 import json
+from assessments import determine_assessments
 
 onto = get_ontology("http://university.org/")
 
@@ -70,7 +71,25 @@ with onto:
         # Add all outcomes if it exists
         if units_data[unit_name].get("outcomes") != None:
             if units_data[unit_name]["outcomes"]:
-                outcome_s = f'has_outcome={units_data[unit_name]["outcomes"]}'
+                outcome_s = f'has_outcome={units_data[unit_name]["outcomes"]},'
+        
+
+        # Add all assessments if it exists
+        if units_data[unit_name].get("assessment") != None:
+            if units_data[unit_name]["assessment"] and "" not in units_data[unit_name]["assessment"] and " " not in units_data[unit_name]["assessment"]:
+                assessments = []
+                for assessment_item in units_data[unit_name]["assessment"]:
+                    these_assessments = determine_assessments(assessment_item)
+                    for assessment in these_assessments:
+                        if assessment not in assessments:
+                            assessments.append(assessment)
+                i = 0
+                assessment_s = 'has_assessment=['
+                for (i, assessment) in enumerate(assessments):
+                    if i != len(assessments) - 1:
+                        assessment_s += f'Assessment("{assessment}"), '
+                    else:
+                        assessment_s += f'Assessment("{assessment}")],'
 
         # Add all description to each unit
         unit_add = f'''{unit_name} = \
@@ -83,9 +102,10 @@ with onto:
                 has_description=["""{units_data[unit_name]["description"].replace('"', '')}"""],
                 has_credit=[{int(units_data[unit_name]["credit"])}],
                 {outcome_s}
+                {assessment_s}
             )
         '''
-        # print(unit_add)
+        print(unit_add)
         exec(unit_add)
         # AGRI5403 = Unit('AGRI5403', has_title=['Advanced Commodity Marketing'], has_school=[School('Agriculture and Environment')]) 
     # print(data_stuff[0])
