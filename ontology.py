@@ -48,7 +48,7 @@ with onto:
     class has_major(ObjectProperty):
         domain              = [Unit]
         range               = [Major]
-
+        inverse_property    = has_unit
 
     class has_contact_hrs(Unit >> int): pass
     #has_name = h.has_name # used for assessment object names eg. "exam"
