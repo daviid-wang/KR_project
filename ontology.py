@@ -34,6 +34,7 @@ with onto:
     class has_unit_delivery_mode(Unit >> DeliveryMode): pass
     class has_level(Unit >> int, DataProperty): pass
     class has_description(Unit >> str, DataProperty): pass
+    class has_credit(Unit >> int, DataProperty):pass
     class has_outcome(Unit >> str, DataProperty): pass
     class has_assessment(Unit >> Assessment): pass
     class has_prerequisite(Unit >> Unit): pass
@@ -71,7 +72,8 @@ with onto:
                 has_board_of_examiners=[BoardofExaminers("{units_data[unit_name]["board_of_examiners"]}")],
                 {delivery_m}
                 has_level=[{int(units_data[unit_name]["level"])}],
-                has_description=["""{units_data[unit_name]["description"].replace('"', '')}"""]
+                has_description=["""{units_data[unit_name]["description"].replace('"', '')}"""],
+                has_credit=[{int(units_data[unit_name]["credit"])}]
             )
         '''
         # print(unit_add)
