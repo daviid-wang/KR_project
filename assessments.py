@@ -1,8 +1,7 @@
-# 1 category != 1 assessment
-# one assessment may fit into multiple categories
-# also, one assessment string may describe multiple assessments
-# so we can't really tell exactly how many assessments a unit has
-# we can only list the types of assessments it has 
+"""
+David Wang (23064035)
+Hannah Doret (22846377)
+"""
 
 # assessment categories: participation, group, practical, oral, written, multimedia, project, exam, test, misc
 assessment_dictionary = {
@@ -139,6 +138,12 @@ assessment_dictionary = {
                         "saq"
                         ]
 }
+
+# 1 category != 1 assessment
+# one assessment may fit into multiple categories
+# also, one assessment string may describe multiple assessments
+# so we can't really tell exactly how many assessments a unit has
+# we can only list the types of assessments it has 
 
 # a function which takes in a string describing a unit assessment,
 # returns a list of assessment categories which were mentioned in the string

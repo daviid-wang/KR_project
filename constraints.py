@@ -1,3 +1,8 @@
+"""
+David Wang (23064035)
+Hannah Doret (22846377)
+"""
+
 from rdflib import Graph, Literal, RDF, Namespace, BNode
 from pyshacl import validate
 
@@ -81,36 +86,6 @@ shacl_str = """
 						HAVING ((4 * SUM(?hours) / (COUNT(?unit) - ?zeroCount)) > 40)
 					''' ;
 				] .
-"""
-
-# hannah:   this constraint is not quite ready
-in_progress = """
-	@prefix shacl: <http://www.w3.org/ns/shacl#> .
-    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-    @prefix h: <http://university.org/> .
-
-    h:major_shape a shacl:NodeShape ;
-		shacl:targetClass h:major ;
-		shacl:sparql [
-			shacl:select '''
-				PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-				PREFIX owl: <http://www.w3.org/2002/07/owl#>
-				PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-				PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-				PREFIX h: <http://university.org/>
-
-				SELECT $this ?level
-				WHERE {
-					$this h:has_unit ?unit .
-					?unit h:has_contact_hrs ?hours .
-					?unit h:has_credit ?credit .
-					?unit h:has_level ?level .
-					{SELECT (COUNT(?unit) AS ?zeroCount) WHERE { ?unit h:has_credit 0 . }}
-				}
-				GROUP BY ?level $this
-				HAVING ((4 * SUM(?hours) / (COUNT(?unit) - ?zeroCount)) > 40)
-			''' ;
-		] .
 """
 
 shacl_graph = Graph()

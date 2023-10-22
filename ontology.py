@@ -1,3 +1,8 @@
+"""
+David Wang (23064035)
+Hannah Doret (22846377)
+"""
+
 from owlready2 import get_ontology, Thing, ObjectProperty, DataProperty, close_world, sync_reasoner_hermit
 import json
 from assessments import determine_assessments

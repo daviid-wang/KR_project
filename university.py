@@ -30,8 +30,6 @@ board_of_examiners = h.board_of_examiners
 delivery_mode = h.delivery_mode
 level = h.level
 assessment = h.assessment
-# prerequisite = h.prerequisite
-# advisable_prior_study = h.advisable_prior_study
 major = h.major
 course = h.course
 
@@ -121,15 +119,11 @@ g.add((has_contact_hrs, RDF.type, RDF.Property))
 
 #Use Json object to add to graph
 for unit_name in units_data:
-    #Define URI
     unit_code = h[unit_name]
     unit_school = h[units_data[unit_name]["school"].replace(" ", "_")]
     unit_board_of_examiners = h[units_data[unit_name]["board_of_examiners"].replace(" ", "_")]
     unit_delivery_mode = h[units_data[unit_name]["delivery_mode"].replace(" ", "_")]
     unit_level = h[units_data[unit_name]["level"].replace(" ", "_")]
-    # unit_advisable_prior_study = h[units_data[unit_name]["advisable_prior_study"].replace(" ", "_")]
-    # unit_contact = h[units_data[unit_name]["contact"].replace(" ", "_")]
-    
 
     #Name
     g.add((unit_code, RDF.type, unit))
@@ -173,7 +167,7 @@ for unit_name in units_data:
     assessments = []
     for assessment_item in units_data[unit_name]["assessment"]:
         these_assessments = determine_assessments(assessment_item)
-        # add assessments we found to the assessments list, without duplicates (do we want duplicates??? eg. if 2 of the strings mentioned reports)
+        # add assessments we found to the assessments list, without duplicates
         for assessment in these_assessments:
             if assessment not in assessments:
                 assessments.append(assessment)
@@ -247,6 +241,5 @@ for major_name in majors_data:
         for major_outcome in majors_data[major_name]["outcomes"]:
             g.add((major_code, has_outcome, Literal(major_outcome)))
 
-
-# print graph
+# output graph
 g.serialize(destination = "handbook.ttl", format='ttl', indent=4)
