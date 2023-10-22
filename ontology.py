@@ -55,16 +55,28 @@ with onto:
     #has_number = h.has_number # used to give level objects an integer literal, bc integers are easier to use in SHACL
 
     # CITS3200 = Unit("CITS3200", has_title=[units_data["CITS3200"]['title']])
+    delivery_m = []
+    
+    
     #Add unit title for every unit
     for unit_name in units_data:
+        #data_stuff = []
+        # if units_data[unit_name]["delivery_mode"] not in data_stuff:
+        #     data_stuff.append(units_data[unit_name]["delivery_mode"])
+        #Add unit delivery mode if the unit has one
+        delivery_m = ""
+        if units_data[unit_name]["delivery_mode"] != "":
+            delivery_m = f'has_unit_delivery_mode=[DeliveryMode("{units_data[unit_name]["delivery_mode"]}")]'
         unit_add = f'''{unit_name} = \
             Unit("{unit_name}", 
                 as_title=["{units_data[unit_name]["title"]}"], 
-                has_school=[School("{units_data[unit_name]["school"]}")]
+                has_school=[School("{units_data[unit_name]["school"]}")],
+                has_board_of_examiners=[BoardofExaminers("{units_data[unit_name]["board_of_examiners"]}")],
+                {delivery_m},
             )
         '''
         # print(unit_add)
         exec(unit_add)
         # AGRI5403 = Unit('AGRI5403', has_title=['Advanced Commodity Marketing'], has_school=[School('Agriculture and Environment')]) 
-    
+    # print(data_stuff)
     onto.save(file = "handbook.owl", format = "rdfxml")
