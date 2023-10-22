@@ -1,4 +1,4 @@
-from owlready2 import get_ontology, Thing, ObjectProperty, DataProperty, close_world, sync_reasoner
+from owlready2 import get_ontology, Thing, ObjectProperty, DataProperty, close_world, sync_reasoner_hermit
 import json
 from assessments import determine_assessments
 
@@ -41,7 +41,7 @@ with onto:
     class has_prerequisite(Unit >> Unit): pass
     class has_advisable_prior_study(Unit >> Unit): pass
     class has_note(Unit >> str): pass
-    class has_courses(Major >> Course): pass
+    class has_course(Major >> Course): pass
     class has_unit(Major >> Unit): pass
     class has_bridging(Major >> Unit): pass
 
@@ -56,7 +56,6 @@ with onto:
     #has_number = h.has_number # used to give level objects an integer literal, bc integers are easier to use in SHACL
 
     data_stuff = []
-    
     #Add unit to to ontology
     for unit_name in units_data:
         # Add school if it exists
@@ -171,6 +170,31 @@ with onto:
             if majors_data[major_name]["outcomes"]:
                 major_outcome_string = f'has_outcome={majors_data[major_name]["outcomes"]},'
         
+        # Add all courses
+        course_string = 'has_course=['
+        for (i, course) in enumerate(majors_data[major_name]["courses"]):
+            if i != len(majors_data[major_name]["courses"]) - 1:
+                course_string += f'Course("{course}"), '
+            else:
+                course_string += f'Course("{course}")],'
+        
+        # Add all bridging units
+        if majors_data[major_name]["bridging"]:
+            bridging_string = 'has_bridging=['
+            for (i, bridging) in enumerate(majors_data[major_name]["bridging"]):
+                if i != len(majors_data[major_name]["bridging"]) - 1:
+                    bridging_string += f'Unit("{bridging}"), '
+                else:
+                    bridging_string += f'Unit("{bridging}")],'
+
+        # Add all units
+        unit_string = 'has_unit=['
+        for (i, unit) in enumerate(majors_data[major_name]["units"]):
+            if i != len(majors_data[major_name]["units"]) - 1:
+                unit_string += f'Unit("{unit}"), '
+            else:
+                unit_string += f'Unit("{unit}")],'
+        
         # Add all information to each major
         major_add = f'''{major_name.replace("-", "_")} = \
             Major("{major_name}", 
@@ -178,13 +202,13 @@ with onto:
                 {major_school_string}
                 has_description=["""{majors_data[major_name]["description"].replace('"', '')}"""],
                 {major_outcome_string}
+                {course_string}
+                {unit_string}
+                {bridging_string}
             )
         '''
-        # print(major_add)
         exec(major_add)
-
-
 close_world(Unit)
-sync_reasoner(infer_property_values = True, infer_data_property_values = True)
+sync_reasoner_hermit(infer_property_values = True)
 
-onto.save(file = "handbook2.owl", format = "rdfxml")
+onto.save(file = "handbook.owl", format = "rdfxml")
