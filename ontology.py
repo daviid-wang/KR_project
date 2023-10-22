@@ -1,4 +1,4 @@
-from owlready2 import get_ontology, Thing, ObjectProperty, DataProperty
+from owlready2 import get_ontology, Thing, ObjectProperty, DataProperty, close_world, sync_reasoner
 import json
 from assessments import determine_assessments
 
@@ -41,7 +41,7 @@ with onto:
     class has_prerequisite(Unit >> Unit): pass
     class has_advisable_prior_study(Unit >> Unit): pass
     class has_note(Unit >> str): pass
-    class major_of_courses(Major >> Course): pass
+    class has_courses(Major >> Course): pass
     class has_unit(Major >> Unit): pass
     class has_bridging(Major >> Unit): pass
 
@@ -182,4 +182,9 @@ with onto:
         '''
         # print(major_add)
         exec(major_add)
-    onto.save(file = "handbook.owl", format = "rdfxml")
+
+
+close_world(Unit)
+sync_reasoner(infer_property_values = True, infer_data_property_values = True)
+
+onto.save(file = "handbook2.owl", format = "rdfxml")
