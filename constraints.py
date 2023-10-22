@@ -87,7 +87,7 @@ in_progress = """
 """
 
 shacl_graph = Graph()
-shacl_graph.parse(data=in_progress, format='ttl')
+shacl_graph.parse(data=shacl_str, format='ttl')
 
 conforms, results_graph, results_text = validate(data_graph, shacl_graph=shacl_graph)
 print(results_text)
