@@ -61,19 +61,28 @@ with onto:
     for unit_name in units_data:
         # if units_data[unit_name]["description"] not in data_stuff:
         #     data_stuff.append(units_data[unit_name]["description"])
-        #Add unit delivery mode if the unit has one
-        delivery_m = ""
+
+        # Add delivery mode if it exists
+        delivery_s = ""
         if units_data[unit_name]["delivery_mode"] != "":
-            delivery_m = f'has_unit_delivery_mode=[DeliveryMode("{units_data[unit_name]["delivery_mode"]}")],'
+            delivery_s = f'has_unit_delivery_mode=[DeliveryMode("{units_data[unit_name]["delivery_mode"]}")],'
+
+        # Add all outcomes if it exists
+        if units_data[unit_name].get("outcomes") != None:
+            if units_data[unit_name]["outcomes"]:
+                outcome_s = f'has_outcome={units_data[unit_name]["outcomes"]}'
+
+        # Add each description to each unit
         unit_add = f'''{unit_name} = \
             Unit("{unit_name}", 
                 has_title=["{units_data[unit_name]["title"]}"], 
                 has_school=[School("{units_data[unit_name]["school"]}")],
                 has_board_of_examiners=[BoardofExaminers("{units_data[unit_name]["board_of_examiners"]}")],
-                {delivery_m}
+                {delivery_s}
                 has_level=[{int(units_data[unit_name]["level"])}],
                 has_description=["""{units_data[unit_name]["description"].replace('"', '')}"""],
-                has_credit=[{int(units_data[unit_name]["credit"])}]
+                has_credit=[{int(units_data[unit_name]["credit"])}],
+                {outcome_s}
             )
         '''
         # print(unit_add)
