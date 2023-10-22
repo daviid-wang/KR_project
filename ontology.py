@@ -72,7 +72,6 @@ with onto:
         if units_data[unit_name].get("outcomes") != None:
             if units_data[unit_name]["outcomes"]:
                 outcome_string = f'has_outcome={units_data[unit_name]["outcomes"]},'
-        
 
         # Add all assessments if it exists
         if units_data[unit_name].get("assessment") != None:
@@ -91,6 +90,23 @@ with onto:
                     else:
                         assessment_string += f'Assessment("{assessment}")],'
 
+        # Add all prerequisites if it exists
+        if units_data[unit_name].get("prerequisites_cnf") != None:
+            if units_data[unit_name]["prerequisites_cnf"]:
+                full_prerequisite = []
+                for prerequisite_thing in units_data[unit_name]["prerequisites_cnf"]:
+                    for prereq in prerequisite_thing:
+                        full_prerequisite.append(prereq)
+                # print(full_prerequisite)
+                i = 0
+                prerequisite_string = 'has_prerequisite=['
+                for (i, prereq) in enumerate(full_prerequisite):
+                    if i != len(full_prerequisite) - 1:
+                        prerequisite_string += f'Unit("{prereq}"), '
+                    else:
+                        prerequisite_string += f'Unit("{prereq}")],'
+                # print(prerequisite_string)
+        
         # Add all description to each unit
         unit_add = f'''{unit_name} = \
             Unit("{unit_name}", 
@@ -103,6 +119,7 @@ with onto:
                 has_credit=[{int(units_data[unit_name]["credit"])}],
                 {outcome_string}
                 {assessment_string}
+                {prerequisite_string}
             )
         '''
         # print(unit_add)
