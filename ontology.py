@@ -51,7 +51,7 @@ with onto:
         range               = [Major]
         inverse_property    = has_unit
 
-    class has_contact_hrs(Unit >> int): pass
+    class has_contact(Unit >> int): pass
     #has_name = h.has_name # used for assessment object names eg. "exam"
     #has_number = h.has_number # used to give level objects an integer literal, bc integers are easier to use in SHACL
 
@@ -127,7 +127,14 @@ with onto:
                         advisable_string += f'Unit("{advisable}"), '
                     else:
                         advisable_string += f'Unit("{advisable}")],'
-                print(advisable_string)
+        
+        #Add contact hours if it exists
+        if units_data[unit_name].get("contact") != None:
+            if units_data[unit_name]["contact"]:
+                hours = 0
+                for contact_item in units_data[unit_name]["contact"]:
+                    hours += int(units_data[unit_name]["contact"][contact_item])
+                contact_string = f'has_contact=[{hours}]'
         
         # Add all information to each unit
         unit_add = f'''{unit_name} = \
@@ -143,6 +150,7 @@ with onto:
                 {assessment_string}
                 {prerequisite_string}
                 {advisable_string}
+                {contact_string}
             )
         '''
         # print(unit_add)
