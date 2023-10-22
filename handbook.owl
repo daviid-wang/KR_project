@@ -51,6 +51,7 @@
 <owl:ObjectProperty rdf:about="has_unit">
   <rdfs:domain rdf:resource="Major"/>
   <rdfs:range rdf:resource="Unit"/>
+  <owl:inverseOf rdf:resource="has_major"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="has_bridging">
@@ -61,6 +62,7 @@
 <owl:ObjectProperty rdf:about="has_major">
   <rdfs:domain rdf:resource="Unit"/>
   <rdfs:range rdf:resource="Major"/>
+  <owl:inverseOf rdf:resource="has_unit"/>
 </owl:ObjectProperty>
 
 <owl:DatatypeProperty rdf:about="has_title">
