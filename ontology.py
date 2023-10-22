@@ -58,8 +58,8 @@ with onto:
     
     #Add unit information for every unit
     for unit_name in units_data:
-        # if units_data[unit_name]["level"] not in data_stuff:
-        #     data_stuff.append(int(units_data[unit_name]["level"]))
+        # if units_data[unit_name]["description"] not in data_stuff:
+        #     data_stuff.append(units_data[unit_name]["description"])
         #Add unit delivery mode if the unit has one
         delivery_m = ""
         if units_data[unit_name]["delivery_mode"] != "":
@@ -70,11 +70,12 @@ with onto:
                 has_school=[School("{units_data[unit_name]["school"]}")],
                 has_board_of_examiners=[BoardofExaminers("{units_data[unit_name]["board_of_examiners"]}")],
                 {delivery_m}
-                has_level=[{int(units_data[unit_name]["level"])}]
+                has_level=[{int(units_data[unit_name]["level"])}],
+                has_description=["""{units_data[unit_name]["description"].replace('"', '')}"""]
             )
         '''
         # print(unit_add)
         exec(unit_add)
         # AGRI5403 = Unit('AGRI5403', has_title=['Advanced Commodity Marketing'], has_school=[School('Agriculture and Environment')]) 
-    # print(data_stuff)
+    # print(data_stuff[0])
     onto.save(file = "handbook.owl", format = "rdfxml")
