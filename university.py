@@ -3,13 +3,9 @@ David Wang (23064035)
 Hannah Doret (22846377)
 """
 
-from rdflib import Graph, Literal, URIRef, RDFS
+from rdflib import Graph, Literal, RDFS
 from rdflib.namespace import RDF, Namespace
-# from owlready2 import *
-from pyshacl import validate
-
-from functions import *
-
+from assessments import determine_assessments
 import json
 
 #Open and parse json objects
@@ -52,10 +48,6 @@ g.add((level, RDF.type, RDFS.Class))
 g.add((level, RDFS.label, Literal("Level")))
 g.add((assessment, RDF.type, RDFS.Class))
 g.add((assessment, RDFS.label, Literal("Assessment")))
-# g.add((prerequisite, RDF.type, RDFS.Class))
-# g.add((prerequisite, RDFS.label, Literal("Prerequisite")))
-# g.add((advisable_prior_study, RDF.type, RDFS.Class))
-# g.add((advisable_prior_study, RDFS.label, Literal("Advisable Prior Study")))
 g.add((major, RDF.type, RDFS.Class))
 g.add((major, RDFS.label, Literal("Major")))
 g.add((course, RDF.type, RDFS.Class))
@@ -72,6 +64,7 @@ project = h.project
 exam = h.exam
 test = h.test
 misc = h.misc
+
 # Add assessment objects (type = assessment class)
 g.add((participation, RDF.type, assessment))
 g.add((group, RDF.type, assessment)) 
@@ -127,12 +120,9 @@ g.add((has_number, RDF.type, RDF.Property))
 g.add((has_contact_hrs, RDF.type, RDF.Property))
 
 #Use Json object to add to graph
-
 for unit_name in units_data:
-    
     #Define URI
     unit_code = h[unit_name]
-    # unit_title = h[units_data[unit_name]["title"].replace(" ", "_")]
     unit_school = h[units_data[unit_name]["school"].replace(" ", "_")]
     unit_board_of_examiners = h[units_data[unit_name]["board_of_examiners"].replace(" ", "_")]
     unit_delivery_mode = h[units_data[unit_name]["delivery_mode"].replace(" ", "_")]
@@ -158,7 +148,6 @@ for unit_name in units_data:
         g.add((unit_board_of_examiners, RDF.type, board_of_examiners))
         g.add((unit_board_of_examiners, RDFS.label, Literal(units_data[unit_name]["board_of_examiners"])))
         g.add((unit_code, has_board_of_examiners, unit_board_of_examiners))
-    
     
     #Delivery mode
     g.add((unit_delivery_mode, RDF.type, delivery_mode))
@@ -205,15 +194,11 @@ for unit_name in units_data:
             for prereq in prerequisite_thing:
                 full_prerequisite.append(prereq)
         for prerequisite_item in full_prerequisite:
-            # g.add((h[prerequisite_item.replace(" ", "_")], RDF.type, prerequisite))
-            # g.add((h[prerequisite_item.replace(" ", "_")], RDFS.label, Literal(prerequisite_item)))
             g.add((unit_code, has_prerequisite, h[prerequisite_item.replace(" ", "_")]))
 
     #Advisable Prior Study
     if units_data[unit_name].get("advisable_prior_study") != None:
         for advisable_item in units_data[unit_name]["advisable_prior_study"]:
-            # g.add((h[advisable_item.replace(" ", "_")], RDF.type, advisable_prior_study))
-            # g.add((h[advisable_item.replace(" ", "_")], RDFS.label, Literal(advisable_item)))
             g.add((unit_code, has_advisable_prior_study, h[advisable_item.replace(" ", "_")]))
 
     #Contact hours
@@ -231,7 +216,6 @@ for unit_name in units_data:
 
 #Add majors data
 for major_name in majors_data:
-
     major_code = h[major_name]
     g.add((major_code, RDF.type, major))
     g.add((major_code, RDFS.label, Literal(major_name)))

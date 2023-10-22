@@ -5,6 +5,8 @@ __pycache__/
 
 knowledge_graph
 handbook.ttl
+handbook.owl
+handbook2.owl
 
 # C extensions
 *.so
