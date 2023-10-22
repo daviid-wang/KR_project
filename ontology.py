@@ -64,14 +64,14 @@ with onto:
         #     data_stuff.append(units_data[unit_name]["description"])
 
         # Add delivery mode if it exists
-        delivery_s = ""
+        delivery_string = ""
         if units_data[unit_name]["delivery_mode"] != "":
-            delivery_s = f'has_unit_delivery_mode=[DeliveryMode("{units_data[unit_name]["delivery_mode"]}")],'
+            delivery_string = f'has_unit_delivery_mode=[DeliveryMode("{units_data[unit_name]["delivery_mode"]}")],'
 
         # Add all outcomes if it exists
         if units_data[unit_name].get("outcomes") != None:
             if units_data[unit_name]["outcomes"]:
-                outcome_s = f'has_outcome={units_data[unit_name]["outcomes"]},'
+                outcome_string = f'has_outcome={units_data[unit_name]["outcomes"]},'
         
 
         # Add all assessments if it exists
@@ -84,12 +84,12 @@ with onto:
                         if assessment not in assessments:
                             assessments.append(assessment)
                 i = 0
-                assessment_s = 'has_assessment=['
+                assessment_string = 'has_assessment=['
                 for (i, assessment) in enumerate(assessments):
                     if i != len(assessments) - 1:
-                        assessment_s += f'Assessment("{assessment}"), '
+                        assessment_string += f'Assessment("{assessment}"), '
                     else:
-                        assessment_s += f'Assessment("{assessment}")],'
+                        assessment_string += f'Assessment("{assessment}")],'
 
         # Add all description to each unit
         unit_add = f'''{unit_name} = \
@@ -97,15 +97,15 @@ with onto:
                 has_title=["{units_data[unit_name]["title"]}"], 
                 has_school=[School("{units_data[unit_name]["school"]}")],
                 has_board_of_examiners=[BoardofExaminers("{units_data[unit_name]["board_of_examiners"]}")],
-                {delivery_s}
+                {delivery_string}
                 has_level=[{int(units_data[unit_name]["level"])}],
                 has_description=["""{units_data[unit_name]["description"].replace('"', '')}"""],
                 has_credit=[{int(units_data[unit_name]["credit"])}],
-                {outcome_s}
-                {assessment_s}
+                {outcome_string}
+                {assessment_string}
             )
         '''
-        print(unit_add)
+        # print(unit_add)
         exec(unit_add)
         # AGRI5403 = Unit('AGRI5403', has_title=['Advanced Commodity Marketing'], has_school=[School('Agriculture and Environment')]) 
     # print(data_stuff[0])
